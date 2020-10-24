@@ -24,25 +24,41 @@ struct Campo* creaCampo(int righe, int colonne) {
     return campo;
 }
 
+void inizializzaPedina(struct Cella* cella, int colore) {
+    struct Pedina* pedina = malloc(sizeof(struct Pedina));
+    cella->pedina = pedina;
+    pedina->altezza = 1;
+    pedina->colore = colore;
+    pedina->tipo = soldier;
+}
+
 void inizializzaCampo(struct Campo* campo) {
     int i, f;
     for (i = 0; i < campo->righe / 2; i++) {
         for (f = 0; f < campo->colonne; f++) {
-            struct Pedina* pedina = malloc(sizeof(struct Pedina));
-            campo->celle[i*campo->colonne + f].pedina = pedina;
-            pedina->altezza = 1;
-            pedina->colore = rosso;
-            pedina->tipo = soldier;
+            if (i % 2 == 0) {
+                if (f % 2 == 0) {
+                    inizializzaPedina(&campo->celle[i*campo->colonne + f], rosso);
+                }
+            } else {
+                if (f % 2 != 0) {
+                    inizializzaPedina(&campo->celle[i*campo->colonne + f], rosso);
+                }
+            }
         }
     }
     
     for (i = campo->righe; i > campo->righe / 2; i--) {
         for (f = campo->colonne; f >= 0; f--) {
-            struct Pedina* pedina = malloc(sizeof(struct Pedina));
-            campo->celle[i*campo->colonne + f].pedina = pedina;
-            pedina->altezza = 1;
-            pedina->colore = giallo;
-            pedina->tipo = soldier;
+            if (i % 2 == 0) {
+                if (f % 2 == 0) {
+                    inizializzaPedina(&campo->celle[i*campo->colonne + f], giallo);
+                }
+            } else {
+                if (f % 2 != 0) {
+                    inizializzaPedina(&campo->celle[i*campo->colonne + f], giallo);
+                }
+            }
         }
     }
 }
@@ -52,7 +68,15 @@ void stampaCampo(struct Campo* campo) {
     for (i = 0; i < campo->righe; i++) {
         printf("%d   ", i + 1);
         for (f = 0; f < campo->colonne; f++) {
-            stampaContenutoCella(&campo->celle[i*campo->colonne + f]);
+            if (i % 2 == 0) {
+                if (f % 2 == 0) {
+                    stampaContenutoCella(&campo->celle[i*campo->colonne + f]);
+                    printf("  ");
+                }
+            } else if (f % 2 != 0) {
+                printf("  ");
+                stampaContenutoCella(&campo->celle[i*campo->colonne + f]);
+            }
         }
         printf("\n");
     }
