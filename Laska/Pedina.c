@@ -11,7 +11,3 @@ void aumentaAltezza(struct Pedina *pedina) {
 void diminuisciAltezza(struct Pedina *pedina) {
     pedina->altezza -= 1;
 }
-
-void azzera() {
-    
-}
