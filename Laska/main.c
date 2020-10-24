@@ -1,14 +1,14 @@
-//
-//  main.c
-//  Laska
-//
-//  Created by Paul Toffoloni on 21/10/2020.
-//
-
 #include <stdio.h>
+#include <stdlib.h>
+#include "Cella.h"
+#include "Pedina.h"
+#include "Campo.h"
+
+const int VUOTO = 0;
+const int PLAYER1 = 1;
+const int PLAYER2 = 2;
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
-    return 0;
+    struct Campo *campo = creaCampo(6, 6);
+    stampaCampo(campo);
 }
