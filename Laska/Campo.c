@@ -24,11 +24,51 @@ struct Campo* creaCampo(int righe, int colonne) {
     return campo;
 }
 
-void stampaScacchiera(int righe, int colonne) {
+void inizializzaCampo(struct Campo* campo) {
+    int i, f;
+    for (i = 0; i < campo->righe / 2; i++) {
+        for (f = 0; f < campo->colonne; f++) {
+            struct Pedina* pedina = malloc(sizeof(struct Pedina));
+            campo->celle[i*campo->colonne + f].pedina = pedina;
+            pedina->altezza = 1;
+            pedina->colore = rosso;
+            pedina->tipo = soldier;
+        }
+    }
+    
+    for (i = campo->righe; i > campo->righe / 2; i--) {
+        for (f = campo->colonne; f >= 0; f--) {
+            struct Pedina* pedina = malloc(sizeof(struct Pedina));
+            campo->celle[i*campo->colonne + f].pedina = pedina;
+            pedina->altezza = 1;
+            pedina->colore = giallo;
+            pedina->tipo = soldier;
+        }
+    }
+}
+
+void stampaCampo(struct Campo* campo) {
+    int i, f;
+    for (i = 0; i < campo->righe; i++) {
+        printf("%d   ", i + 1);
+        for (f = 0; f < campo->colonne; f++) {
+            stampaContenutoCella(&campo->celle[i*campo->colonne + f]);
+        }
+        printf("\n");
+    }
+    printf("\n    ");
+    for (f = 0; f < campo->colonne; f++) {
+        printf("%d ", f + 1);
+    }
+    printf("\n\n");
+    
+}
+
+void stampaScacchiera() {
     int foo = 0;
     int i, f;
-    int MAX_X = righe * 6;
-    int MAX_Y = colonne * 6;
+    int MAX_X = 36;
+    int MAX_Y = 36;
     /* Ciclo colonne */
     for (i = 0; i < MAX_Y; i++) {
         /* Ciclo righe */
@@ -41,14 +81,9 @@ void stampaScacchiera(int righe, int colonne) {
                     printf("-");
                 }
             } else {
+                /* Se la colonna è un margine */
                 if (f % 5 == 0) {
                     printf("|");
-                } else if (foo == 0) {
-                    if (foo == 0) {
-                        printf("#");
-                    } else {
-                        printf(" ");
-                    }
                 } else {
                     if (foo == 0) {
                         printf("#");
@@ -65,18 +100,6 @@ void stampaScacchiera(int righe, int colonne) {
         if (i % 5 == 0) {
             foo = !foo;
         }
-    }
-    printf("\n");
-}
-
-
-void stampaCampo(struct Campo* campo) {
-    int i, f;
-    for (i = 0; i < campo->righe; i++) {
-        for (f = 0; f < campo->colonne; f++) {
-            stampaContenutoCella(&campo->celle[i*campo->colonne + f]);
-        }
-        printf("\n");
     }
     printf("\n");
 }

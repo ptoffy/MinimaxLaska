@@ -4,6 +4,11 @@
 #include <stdio.h>
 #include "Pedina.h"
 
+enum Colore {
+    rosso = 0,
+    giallo = 1
+};
+
 struct Cella {
     int x, y;
     int colore;

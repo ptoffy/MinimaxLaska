@@ -9,6 +9,8 @@ const int PLAYER1 = 1;
 const int PLAYER2 = 2;
 
 int main(int argc, const char * argv[]) {
-    struct Campo *campo = creaCampo(6, 6);
+    struct Campo *campo = creaCampo(7, 7);
+    inizializzaCampo(campo);
     stampaCampo(campo);
+    /* stampaScacchiera(); */
 }

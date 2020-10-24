@@ -8,6 +8,7 @@ struct Campo;
 
 struct Campo* creaCampo(int righe, int colonne);
 void stampaCampo(struct Campo* campo);
-void stampaScacchiera(int righe, int colonne);
+void stampaScacchiera(void);
+void inizializzaCampo(struct Campo* campo);
 
 #endif /* Campo_h */
