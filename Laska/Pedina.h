@@ -3,9 +3,17 @@
 
 #include <stdio.h>
 
+enum Tipo {
+    soldier = 0,
+    officer = 1,
+    column = 2,
+    commander = 3
+};
+
 struct Pedina {
     int colore;
     int altezza;
+    int tipo;
 };
 
 void setAltezza(struct Pedina *pedina, int altezza);

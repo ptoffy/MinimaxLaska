@@ -12,5 +12,6 @@ struct Cella {
 
 void stampaContenutoCella(struct Cella *cella);
 void toNull(struct Cella *cella);
+struct Pedina *pedina(struct Cella *cella);
 
 #endif /* Cella_h */

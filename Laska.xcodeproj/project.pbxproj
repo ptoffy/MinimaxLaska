@@ -11,7 +11,6 @@
 		86D334A6254090D10021A26D /* Pedina.c in Sources */ = {isa = PBXBuildFile; fileRef = 86D334A5254090D10021A26D /* Pedina.c */; };
 		86D334AB254095A00021A26D /* Cella.c in Sources */ = {isa = PBXBuildFile; fileRef = 86D334AA254095A00021A26D /* Cella.c */; };
 		86D334AF25409AC00021A26D /* Campo.c in Sources */ = {isa = PBXBuildFile; fileRef = 86D334AE25409AC00021A26D /* Campo.c */; };
-		86D334B6254410330021A26D /* scacchiera.c in Sources */ = {isa = PBXBuildFile; fileRef = 86D334B5254410330021A26D /* scacchiera.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,7 +34,6 @@
 		86D334AA254095A00021A26D /* Cella.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Cella.c; sourceTree = "<group>"; };
 		86D334AD25409AC00021A26D /* Campo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Campo.h; sourceTree = "<group>"; };
 		86D334AE25409AC00021A26D /* Campo.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Campo.c; sourceTree = "<group>"; };
-		86D334B5254410330021A26D /* scacchiera.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = scacchiera.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +66,6 @@
 		86D3349A25408F990021A26D /* Laska */ = {
 			isa = PBXGroup;
 			children = (
-				86D334B5254410330021A26D /* scacchiera.c */,
 				86D334A4254090D10021A26D /* Pedina.h */,
 				86D334A5254090D10021A26D /* Pedina.c */,
 				86D334A9254095A00021A26D /* Cella.h */,
@@ -139,7 +136,6 @@
 				86D334AF25409AC00021A26D /* Campo.c in Sources */,
 				86D334AB254095A00021A26D /* Cella.c in Sources */,
 				86D334A6254090D10021A26D /* Pedina.c in Sources */,
-				86D334B6254410330021A26D /* scacchiera.c in Sources */,
 				86D3349C25408F990021A26D /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

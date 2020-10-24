@@ -12,3 +12,7 @@ void stampaContenutoCella(struct Cella *cella) {
 void toNull(struct Cella* cella) {
     cella->pedina = NULL;
 }
+
+struct Pedina *pedina(struct Cella *cella) {
+    return cella->pedina;
+}
