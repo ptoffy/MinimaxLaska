@@ -2,11 +2,20 @@
 #include "Campo.h"
 #include "Cella.h"
 
+/**
+ Il campo da gioco, contiene le dimensioni e una matrice di celle.
+ */
 struct Campo {
     int righe, colonne;
     struct Cella* celle;
 };
 
+/**
+ Crea il campo assegnando memoria e celle.
+ @param righe Il numero di righe che deve avere il campo.
+ @param colonne Il numero di colonne che deve avere il campo.
+ @return Un campo pronto con celle a null.
+ */
 struct Campo* creaCampo(int righe, int colonne) {
     int i, f;
     struct Campo *campo = malloc(sizeof(struct Campo));
@@ -24,6 +33,11 @@ struct Campo* creaCampo(int righe, int colonne) {
     return campo;
 }
 
+/**
+ Crea una pedina assegnando memoria e attributi.
+ @param cella La cella dove inizializzare una pedina.
+ @param colore Il colore del quale dev'essere la pedina inizializzata.
+ */
 void inizializzaPedina(struct Cella* cella, int colore) {
     struct Pedina* pedina = malloc(sizeof(struct Pedina));
     cella->pedina = pedina;
@@ -32,8 +46,13 @@ void inizializzaPedina(struct Cella* cella, int colore) {
     pedina->tipo = soldier;
 }
 
+/**
+ Inizializza il campo e assegna pedine nella posizione iniziale.
+ @param campo Il campo da inizializzare.
+ */
 void inizializzaCampo(struct Campo* campo) {
     int i, f;
+    /* Inizializza la parte del giocatore rosso */
     for (i = 0; i < campo->righe / 2; i++) {
         for (f = 0; f < campo->colonne; f++) {
             if (i % 2 == 0) {
@@ -47,7 +66,7 @@ void inizializzaCampo(struct Campo* campo) {
             }
         }
     }
-    
+    /* Inizializza la parte del giocatore giallo */
     for (i = campo->righe; i > campo->righe / 2; i--) {
         for (f = campo->colonne; f >= 0; f--) {
             if (i % 2 == 0) {
@@ -63,6 +82,10 @@ void inizializzaCampo(struct Campo* campo) {
     }
 }
 
+/**
+ Stampa a schermo il campo con le varie pedine.
+ @param campo Il campo da stampare.
+ */
 void stampaCampo(struct Campo* campo) {
     int i, f;
     for (i = 0; i < campo->righe; i++) {
@@ -88,6 +111,9 @@ void stampaCampo(struct Campo* campo) {
     
 }
 
+/**
+ Stampa la scacchiera.
+ */
 void stampaScacchiera() {
     int foo = 0;
     int i, f;
