@@ -1,13 +1,13 @@
 #include "Pedina.h"
 
-void setAltezza(struct Pedina *pedina, int altezza) {
+void setAltezza(Pedina *pedina, int altezza) {
     pedina->altezza = altezza;
 }
 
-void aumentaAltezza(struct Pedina *pedina) {
+void aumentaAltezza(Pedina *pedina) {
     pedina->altezza += 1;
 }
 
-void diminuisciAltezza(struct Pedina *pedina) {
+void diminuisciAltezza(Pedina *pedina) {
     pedina->altezza -= 1;
 }

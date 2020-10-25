@@ -6,7 +6,12 @@
 #define ANSI_COLOR_YELLOW "\x1b[33m"
 #define ANSI_COLOR_RESET  "\x1b[0m"
 
-void stampaContenutoCella(struct Cella *cella) {
+/**
+ Se la pedina è null, stampa 0.
+ Se la pedina è diversa da null, stampa un numero indicante l'altezza della pedina,
+ del colore del possessore della pedina.
+ */
+void stampaContenutoCella(Cella *cella) {
     if (cella->pedina != NULL) {
         if (cella->pedina->colore == 0) {
             printf(ANSI_COLOR_RED);
@@ -22,10 +27,10 @@ void stampaContenutoCella(struct Cella *cella) {
     }
 }
 
-void toNull(struct Cella* cella) {
+void setPedinaToNull(Cella* cella) {
     cella->pedina = NULL;
 }
 
-struct Pedina *pedina(struct Cella *cella) {
+struct Pedina *pedina(Cella *cella) {
     return cella->pedina;
 }

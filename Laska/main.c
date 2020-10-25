@@ -4,10 +4,6 @@
 #include "Pedina.h"
 #include "Campo.h"
 
-const int VUOTO = 0;
-const int PLAYER1 = 1;
-const int PLAYER2 = 2;
-
 int main(int argc, const char * argv[]) {
     struct Campo *campo = creaCampo(7, 7);
     inizializzaCampo(campo);

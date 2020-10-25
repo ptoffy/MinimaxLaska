@@ -4,19 +4,31 @@
 #include <stdio.h>
 #include "Pedina.h"
 
-enum Colore {
-    rosso = 0,
-    giallo = 1
-};
+/**
+ La cella singola del campo da gioco.
+ */
+typedef struct Cella {
+    int x, y; /**< Le coordinate x e y della cella rispetto al campo. */
+    struct Pedina *pedina; /**< Puntatore alla pedina attuale che c'è sulla cella. */
+} Cella;
 
-struct Cella {
-    int x, y;
-    int colore;
-    struct Pedina *pedina;
-};
+/**
+ Stampa il contenuto di una cella.
+ @param cella Il puntatore alla cella il cui contenuto è da stampare.
+ */
+void stampaContenutoCella(Cella *cella);
 
-void stampaContenutoCella(struct Cella *cella);
-void toNull(struct Cella *cella);
-struct Pedina *pedina(struct Cella *cella);
+/**
+ Imposta il puntatore pedina della cella a null.
+ @param cella La cella il cui puntatore pedina viene impostato a null.
+ */
+void setPedinaToNull(Cella *cella);
+
+/**
+ Ritorna la pedina della cella indicata.
+ @param cella La cella indicata.
+ @return La pedina della cella.
+ */
+struct Pedina *pedina(Cella *cella);
 
 #endif /* Cella_h */
