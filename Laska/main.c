@@ -8,5 +8,4 @@ int main(int argc, const char * argv[]) {
     struct Campo *campo = creaCampo(7, 7);
     inizializzaCampo(campo);
     stampaCampo(campo);
-    /* stampaScacchiera(); */
 }

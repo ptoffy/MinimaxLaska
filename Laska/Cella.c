@@ -14,13 +14,9 @@
 void stampaContenutoCella(Cella *cella) {
     if (cella->pedina != NULL) {
         if (cella->pedina->colore == 0) {
-            printf(ANSI_COLOR_RED);
-            printf("%d ", cella->pedina->altezza);
-            printf(ANSI_COLOR_RESET);
+            printf("%s%d%s ", ANSI_COLOR_RED, cella->pedina->altezza, ANSI_COLOR_RESET);
         } else {
-            printf(ANSI_COLOR_YELLOW);
-            printf("%d ", cella->pedina->altezza);
-            printf(ANSI_COLOR_RESET);
+            printf("%s%d%s ", ANSI_COLOR_YELLOW, cella->pedina->altezza, ANSI_COLOR_RESET);
         }
     } else {
         printf("0 ");
@@ -31,6 +27,6 @@ void setPedinaToNull(Cella* cella) {
     cella->pedina = NULL;
 }
 
-struct Pedina *pedina(Cella *cella) {
+Pedina *pedina(Cella *cella) {
     return cella->pedina;
 }
