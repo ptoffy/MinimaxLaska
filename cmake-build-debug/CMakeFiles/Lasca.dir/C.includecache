@@ -1,0 +1,56 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/Campo.c
+stdlib.h
+-
+headers/Campo.h
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Campo.h
+headers/Cella.h
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Cella.h
+
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/Cella.c
+stdio.h
+-
+headers/Cella.h
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Cella.h
+headers/Pedina.h
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Pedina.h
+
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/Pedina.c
+headers/Pedina.h
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Pedina.h
+
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Campo.h
+stdio.h
+-
+Cella.h
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Cella.h
+
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Cella.h
+stdio.h
+-
+Pedina.h
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Pedina.h
+
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Pedina.h
+stdio.h
+-
+
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/main.c
+stdio.h
+-
+stdlib.h
+-
+headers/Cella.h
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Cella.h
+headers/Pedina.h
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Pedina.h
+headers/Campo.h
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Campo.h
+
