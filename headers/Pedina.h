@@ -25,9 +25,9 @@ enum Colore {
  La pedina di gioco.
  */
 typedef struct Pedina {
-    int colore; /**< Il colore della pedina, indica il possessore di essa. */
+    int colore;  /**< Il colore della pedina, indica il possessore di essa. */
     int altezza; /**< L'altezza della pedina, in caso di column o commander. */
-    int tipo; /**< Il tipo di pedina, indicato dall'enum Tipo. */
+    int tipo;    /**< Il tipo di pedina, indicato dall'enum Tipo. */
 } Pedina;
 
 void setAltezza(Pedina *pedina, int altezza);

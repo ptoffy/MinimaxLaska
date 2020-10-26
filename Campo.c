@@ -1,18 +1,19 @@
 #include <stdlib.h>
 #include "headers/Campo.h"
 #include "headers/Cella.h"
+#include "headers/Pedina.h"
 
 /**
  Assegna memoria a un puntatore campo e ci assegna il numero di righe e colonne.
  Crea inoltre una matrice di celle e assegna ad ognuna le sue coordinate in base ai cicli.
  Ad ogni cella assegna poi null al puntatore della pedina, in modo da avere un campo vuoto.
  */
-struct Campo* creaCampo(int righe, int colonne) {
+Campo* creaCampo(int righe, int colonne) {
     int i, f;
-    Campo *campo = malloc(sizeof(struct Campo));
+    Campo *campo = malloc(sizeof(Campo));
     campo->righe = righe;
     campo->colonne = colonne;
-    campo->celle = malloc(sizeof(struct Cella) * righe * colonne);
+    campo->celle = malloc(sizeof(Cella) * righe * colonne);
     for (i = 0; i < righe; i++) {
         for (f = 0; f < colonne; f++) {
             campo->celle[i*colonne + f].x = f;
@@ -28,19 +29,31 @@ struct Campo* creaCampo(int righe, int colonne) {
  della cella indicata.
  Assegna poi le caratteristiche iniziali a quel puntatore.
  */
-void inizializzaPedina(struct Cella* cella, int colore) {
-    Pedina* pedina = malloc(sizeof(struct Pedina));
+void inizializzaPedina(Cella* cella, int colore) {
+    Pedina* pedina = malloc(sizeof(Pedina));
     cella->pedina = pedina;
     pedina->altezza = 1;
     pedina->colore = colore;
     pedina->tipo = soldier;
 }
 
+Cella* ottieniCella(Campo *campo, int x, int y) {
+    int i, f;
+    for (i = 0; i < campo->righe; i++) {
+        for (f = 0; f < campo->colonne; f++) {
+            if (campo->celle[i*campo->colonne + f].x == x && campo->celle[i*campo->colonne + f].y == y) {
+                return &campo->celle[i*campo->colonne + f];
+            }
+        }
+    }
+    return NULL;
+}
+
 /**
  Usa due cicli diversi per inizializzare il campo, prima per il giocatore 1 e poi
  per il giocatore 2.
  */
-void inizializzaCampo(struct Campo* campo) {
+void inizializzaCampo(Campo* campo) {
     int i, f;
     /* Inizializza la parte del giocatore rosso */
     for (i = 0; i < campo->righe / 2; i++) {
@@ -72,7 +85,7 @@ void inizializzaCampo(struct Campo* campo) {
     }
 }
 
-void stampaCampo(struct Campo* campo) {
+void stampaCampo(Campo* campo) {
     int i, f;
     for (i = 0; i < campo->righe; i++) {
         printf("%d   ", i + 1);
@@ -94,7 +107,6 @@ void stampaCampo(struct Campo* campo) {
         printf("%d ", f + 1);
     }
     printf("\n\n");
-    
 }
 
 void stampaScacchiera() {

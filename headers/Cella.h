@@ -9,7 +9,7 @@
  */
 typedef struct Cella {
     int x, y; /**< Le coordinate x e y della cella rispetto al campo. */
-    struct Pedina *pedina; /**< Puntatore alla pedina attuale che c'è sulla cella. */
+    Pedina *pedina; /**< Puntatore alla pedina attuale che c'è sulla cella. */
 } Cella;
 
 /**
@@ -29,6 +29,6 @@ void setPedinaToNull(Cella *cella);
  @param cella La cella indicata.
  @return La pedina della cella.
  */
-struct Pedina *pedina(Cella *cella);
+Pedina* ottieniPedina(Cella *cella);
 
 #endif /* Cella_h */

@@ -9,7 +9,7 @@
  */
 typedef struct Campo {
     int righe, colonne; /**< Il numero di righe e coloonne del campo. */
-    struct Cella* celle; /**< Matrice di celle. */
+    Cella* celle; /**< Matrice di celle. */
 } Campo;
 
 /**
@@ -18,7 +18,7 @@ typedef struct Campo {
  @param colonne Il numero di colonne che deve avere il campo.
  @return Un campo pronto con celle a null.
  */
-struct Campo* creaCampo(int righe, int colonne);
+Campo* creaCampo(int righe, int colonne);
 
 /**
  Stampa a schermo il campo con le varie pedine.
@@ -30,6 +30,15 @@ void stampaCampo(Campo* campo);
  Stampa la scacchiera.
  */
 void stampaScacchiera(void);
+
+/**
+ Ritorna la cella di un campo che ha le coordinate indicate.
+ @param campo Il campo in cui cercare la cella.
+ @param x La coordinata x della cella.
+ @param y La coordinata y della cella.
+ @return La cella se esiste, NULL se no.
+ */
+Cella* ottieniCella(Campo *campo, int x, int y);
 
 /**
  Inizializza il campo e assegna pedine nella posizione iniziale.

@@ -27,6 +27,6 @@ void setPedinaToNull(Cella* cella) {
     cella->pedina = NULL;
 }
 
-Pedina *pedina(Cella *cella) {
+Pedina* ottieniPedina(Cella *cella) {
     return cella->pedina;
 }
