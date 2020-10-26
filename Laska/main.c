@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Cella.h"
-#include "Pedina.h"
-#include "Campo.h"
+#include "headers/Cella.h"
+#include "headers/Pedina.h"
+#include "headers/Campo.h"
 
 int main(int argc, const char * argv[]) {
     struct Campo *campo = creaCampo(7, 7);

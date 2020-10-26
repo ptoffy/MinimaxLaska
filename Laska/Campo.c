@@ -1,6 +1,6 @@
 #include <stdlib.h>
-#include "Campo.h"
-#include "Cella.h"
+#include "headers/Campo.h"
+#include "headers/Cella.h"
 
 /**
  Assegna memoria a un puntatore campo e ci assegna il numero di righe e colonne.

@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include "Cella.h"
-#include "Pedina.h"
+#include "headers/Cella.h"
+#include "headers/Pedina.h"
 
 #define ANSI_COLOR_RED    "\x1b[31m"
 #define ANSI_COLOR_YELLOW "\x1b[33m"

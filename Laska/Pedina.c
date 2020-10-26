@@ -1,4 +1,4 @@
-#include "Pedina.h"
+#include "headers/Pedina.h"
 
 void setAltezza(Pedina *pedina, int altezza) {
     pedina->altezza = altezza;
