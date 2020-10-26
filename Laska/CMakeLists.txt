@@ -7,9 +7,9 @@ include_directories(Laska)
 
 add_executable(Laska
         Campo.c
-        Campo.h
+        headers/Campo.h
         Cella.c
-        Cella.h
+        headers/Cella.h
         main.c
         Pedina.c
-        Pedina.h)
+        headers/Pedina.h)
