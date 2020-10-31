@@ -13,6 +13,6 @@ Funzioni
   - Numero per height✅
   - Color per color del possessore✅
 
-Aggiunte
+Aggiunte:
  - GUI
  - Poter giocare contro altri sowftware(C-S?)
