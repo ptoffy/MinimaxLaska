@@ -8,8 +8,6 @@
 #ifndef Piece_h
 #define Piece_h
 
-#include <stdio.h>
-
 /**
  * The type of the piece.
  */
@@ -23,7 +21,7 @@ enum Type {
 /**
  * The color that a piece can have.
  */
-enum Color {
+enum PieceColor {
     red = 0,   /**< Red color for player 1. */
     yellow = 1 /**< Yellow color for player 2. */
 };

@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Lasca.dir/Multiplayer.c.o"
   "CMakeFiles/Lasca.dir/main.c.o"
   "CMakeFiles/Lasca.dir/src/Board.c.o"
   "CMakeFiles/Lasca.dir/src/Cell.c.o"
+  "CMakeFiles/Lasca.dir/src/Game.c.o"
   "CMakeFiles/Lasca.dir/src/Piece.c.o"
   "Lasca"
   "Lasca.pdb"

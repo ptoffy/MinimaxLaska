@@ -80,10 +80,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/Multiplayer.c">
+			<Option target="Lasca"/>
+		</Unit>
 		<Unit filename="/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Board.h">
 			<Option target="Lasca"/>
 		</Unit>
 		<Unit filename="/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Cell.h">
+			<Option target="Lasca"/>
+		</Unit>
+		<Unit filename="/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Game.h">
 			<Option target="Lasca"/>
 		</Unit>
 		<Unit filename="/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Piece.h">
@@ -96,6 +102,9 @@
 			<Option target="Lasca"/>
 		</Unit>
 		<Unit filename="/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Cell.c">
+			<Option target="Lasca"/>
+		</Unit>
+		<Unit filename="/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Game.c">
 			<Option target="Lasca"/>
 		</Unit>
 		<Unit filename="/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Piece.c">

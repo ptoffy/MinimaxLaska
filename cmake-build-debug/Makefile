@@ -143,6 +143,33 @@ Lasca/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/build
 .PHONY : Lasca/fast
 
+Multiplayer.o: Multiplayer.c.o
+
+.PHONY : Multiplayer.o
+
+# target to build an object file
+Multiplayer.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Multiplayer.c.o
+.PHONY : Multiplayer.c.o
+
+Multiplayer.i: Multiplayer.c.i
+
+.PHONY : Multiplayer.i
+
+# target to preprocess a source file
+Multiplayer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Multiplayer.c.i
+.PHONY : Multiplayer.c.i
+
+Multiplayer.s: Multiplayer.c.s
+
+.PHONY : Multiplayer.s
+
+# target to generate assembly for a file
+Multiplayer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Multiplayer.c.s
+.PHONY : Multiplayer.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -224,6 +251,33 @@ src/Cell.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/src/Cell.c.s
 .PHONY : src/Cell.c.s
 
+src/Game.o: src/Game.c.o
+
+.PHONY : src/Game.o
+
+# target to build an object file
+src/Game.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/src/Game.c.o
+.PHONY : src/Game.c.o
+
+src/Game.i: src/Game.c.i
+
+.PHONY : src/Game.i
+
+# target to preprocess a source file
+src/Game.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/src/Game.c.i
+.PHONY : src/Game.c.i
+
+src/Game.s: src/Game.c.s
+
+.PHONY : src/Game.s
+
+# target to generate assembly for a file
+src/Game.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/src/Game.c.s
+.PHONY : src/Game.c.s
+
 src/Piece.o: src/Piece.c.o
 
 .PHONY : src/Piece.o
@@ -260,6 +314,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Lasca"
+	@echo "... Multiplayer.o"
+	@echo "... Multiplayer.i"
+	@echo "... Multiplayer.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
@@ -269,6 +326,9 @@ help:
 	@echo "... src/Cell.o"
 	@echo "... src/Cell.i"
 	@echo "... src/Cell.s"
+	@echo "... src/Game.o"
+	@echo "... src/Game.i"
+	@echo "... src/Game.s"
 	@echo "... src/Piece.o"
 	@echo "... src/Piece.i"
 	@echo "... src/Piece.s"

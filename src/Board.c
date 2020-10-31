@@ -6,6 +6,7 @@
  * Board is the game field that contains every cell and every piece that make up the game.
  */
 #include <stdlib.h>
+#include <stdio.h>
 
 #include "Board.h"
 #include "Cell.h"
@@ -26,20 +27,32 @@ Board* create_board(int rows, int columns) {
         for (f = 0; f < columns; f++) {
             board->cells[i * columns + f].x = f;
             board->cells[i * columns + f].y = i;
-            set_piece_null(&board->cells[i * columns + f]);
+            set_cell_empty(&board->cells[i * columns + f]);
+
+            if ((i * columns + f) % 2 == 0) {
+                board->cells[i * columns + f].color = white;
+            } else {
+                board->cells[i * columns + f].color = black;
+            }
         }
     }
     return board;
 }
 
 void destroy_board(Board* board) {
-    /* Other cleanup stuff */
+    int i, f;
+    for (i = 0; i < board->rows; i++) {
+        for (f = 0; f < board->columns; f++) {
+            free(&board->cells[i*board->columns + f].piece);
+            free(&board->cells[i*board->columns + f]);
+        }
+    }
     free(board);
 }
 
 /**
  * Assigns memory to a pointer piece and assigns that attribute to the chosen cell.
- * Assigns then the initial settings for a piece to that pointer
+ * Assigns then the initial settings for a piece to that pointer.
  */
 void init_piece(Cell* cell, int color) {
     Piece* piece = malloc(sizeof(Piece));
@@ -47,6 +60,13 @@ void init_piece(Cell* cell, int color) {
     piece->height = 1;
     piece->color = color;
     piece->type = soldier;
+}
+
+int is_cell_white(Cell *cell) {
+    if (cell->color == white) {
+        return 0;
+    }
+    return 1;
 }
 
 Cell* get_cell(Board *board, int x, int y) {
@@ -74,10 +94,8 @@ void init_board(Board* board) {
                 if (f % 2 == 0) {
                     init_piece(&board->cells[i * board->columns + f], red);
                 }
-            } else {
-                if (f % 2 != 0) {
-                    init_piece(&board->cells[i * board->columns + f], red);
-                }
+            } else if (f % 2 != 0) {
+                init_piece(&board->cells[i * board->columns + f], red);
             }
         }
     }
@@ -88,10 +106,8 @@ void init_board(Board* board) {
                 if (f % 2 == 0) {
                     init_piece(&board->cells[i * board->columns + f], yellow);
                 }
-            } else {
-                if (f % 2 != 0) {
-                    init_piece(&board->cells[i * board->columns + f], yellow);
-                }
+            } else if (f % 2 != 0) {
+                init_piece(&board->cells[i * board->columns + f], yellow);
             }
         }
     }

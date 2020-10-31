@@ -8,7 +8,6 @@
 #ifndef Campo_h
 #define Campo_h
 
-#include <stdio.h>
 #include "Cell.h"
 
 /**
@@ -21,14 +20,22 @@ typedef struct Board {
 
 /**
  * Creates the board.
- * @param  rows    The number of rows that the field has to have.
+ * @param  rows The number of rows that the field has to have.
  * @param  columns The number of columns that the field has to have.
- * @return         A new field with NULL cells.
+ * @return A new field with NULL cells.
  */
 Board* create_board(int rows, int columns);
 
 /**
- * Destroys the board.
+ * Initializes the board and assigns pieces to their initial position.
+ * @param board The board to initialize.
+ */
+void init_board(Board* board);
+
+/**
+ * Destroys the board:
+ * frees the memory of everything that is used by the board:
+ * pieces, cells and the board itself.
  * @param board The board that gets destroyed.
  */
 void destroy_board(Board* board);
@@ -46,24 +53,21 @@ void print_board(void);
 
 /**
  * Returns the cell that has the indicated coordinates.
- * @param  board The board in which to search the cell for.
- * @param  x     The x coordinate of the cell.
- * @param  y     The y coordinate of the cell.
- * @return       The cell if it exists, NULL if it doesn't.
+ * @param board The board in which to search the cell for.
+ * @param x The x coordinate of the cell.
+ * @param y The y coordinate of the cell.
+ * @return The cell if it exists, NULL if it doesn't.
  */
 Cell* get_cell(Board *board, int x, int y);
 
 /**
- * Initializes the board and assigns pieces to their initial position.
- * @param board The board to initialize.
- */
-void init_board(Board* board);
-
-/**
  * Creates a piece assigning memory and attributes.
- * @param cell  The cell that gets is piece initialized.
+ * @param cell The cell that gets is piece initialized.
  * @param color The color of which the initialized piece has to be.
  */
 void init_piece(Cell* cell, int color);
 
+int is_cell_white(Cell *cell);
+
 #endif /* Campo_h */
+

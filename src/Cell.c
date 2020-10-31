@@ -13,11 +13,6 @@
 #define ANSI_COLOR_YELLOW "\x1b[33m"
 #define ANSI_COLOR_RESET  "\x1b[0m"
 
-/**
- * If the piece is NULL, prints 0.
- * If the piece is other than NULL, prints a number indicating the height of the piece,
- * of the color of the piece.
- */
 void print_cell_content(Cell *cell) {
     if (cell->piece != NULL) {
         if (cell->piece->color == 0) {
@@ -30,8 +25,20 @@ void print_cell_content(Cell *cell) {
     }
 }
 
-void set_piece_null(Cell* cell) {
+void set_cell_empty(Cell* cell) {
     cell->piece = NULL;
+}
+
+int is_cell_empty(Cell *cell) {
+    if (cell->piece == NULL) {
+        return 0;
+    } else {
+        return 1;
+    }
+}
+
+void set_piece(Cell *cell, Piece* piece) {
+    cell->piece = piece;
 }
 
 Piece* get_piece(Cell *cell) {

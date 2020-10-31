@@ -7,68 +7,24 @@
 #IncludeRegexTransform: 
 
 ../include/Board.h
-stdio.h
--
 Cell.h
 ../include/Cell.h
 
 ../include/Cell.h
-stdio.h
--
 Piece.h
 ../include/Piece.h
 
 ../include/Piece.h
-stdio.h
--
-
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Board.h
-stdio.h
--
-Cell.h
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Cell.h
-
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Cell.h
-stdio.h
--
-Piece.h
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Piece.h
-
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Piece.h
-stdio.h
--
-
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/main.c
-stdio.h
--
-stdlib.h
--
-include/Cell.h
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Cell.h
-include/Piece.h
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Piece.h
-include/Board.h
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Board.h
 
 /Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Board.c
 stdlib.h
+-
+stdio.h
 -
 Board.h
 /Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Board.h
 Cell.h
 /Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Cell.h
-Piece.h
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Piece.h
-
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Cell.c
-stdio.h
--
-Cell.h
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Cell.h
-Piece.h
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Piece.h
-
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Piece.c
 Piece.h
 /Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Piece.h
 

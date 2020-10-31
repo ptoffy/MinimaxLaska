@@ -11,4 +11,4 @@ Funzioni
 - Algoritmo per mangiare
 - Stampa di pedine, un quadrato di:
   - Numero per height
-  - Color per color del possessore
+  - PieceColor per color del possessore
