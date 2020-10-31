@@ -1,29 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "headers/Cella.h"
-#include "headers/Pedina.h"
-#include "headers/Campo.h"
+#include "include/Cell.h"
+#include "include/Piece.h"
+#include "include/Board.h"
 
-void spostamentoPedina(Campo *campo);
-int controllaInput(int x, int y);
+void movePiece(Board *board);
+int checkInput(int x, int y);
 
 int main(int argc, const char * argv[]) {
-    Campo *campo = creaCampo(7, 7);
-    inizializzaCampo(campo);
-    stampaCampo(campo);
+    Board *board = createBoard(7, 7);
+    initBoard(board);
+    printField(board);
 }
 
-void spostamentoPedina(Campo *campo) {
+void movePiece(Board *board) {
     int x, y;
     scanf("", &x);
     scanf("", &y);
     /*
-     * Quando va tutto a buon fine, muovi la pedina
-     * Pedina *pedina = ottieniPedina(ottieniCella(campo, x, y));
+     * Quando va tutto a buon fine, muovi la piece
+     * Piece *piece = getPiece(getCell(board, x, y));
      */
 }
 
-int controllaInput(int x, int y) {
+int checkInput(int x, int y) {
     /* Gli input sono validi?
      * Se giusto, return 0;
      * Se sbagliato, return 1;

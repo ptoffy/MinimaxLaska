@@ -143,86 +143,86 @@ Lasca/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/build
 .PHONY : Lasca/fast
 
-Campo.o: Campo.c.o
+Board.o: Board.c.o
 
-.PHONY : Campo.o
-
-# target to build an object file
-Campo.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Campo.c.o
-.PHONY : Campo.c.o
-
-Campo.i: Campo.c.i
-
-.PHONY : Campo.i
-
-# target to preprocess a source file
-Campo.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Campo.c.i
-.PHONY : Campo.c.i
-
-Campo.s: Campo.c.s
-
-.PHONY : Campo.s
-
-# target to generate assembly for a file
-Campo.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Campo.c.s
-.PHONY : Campo.c.s
-
-Cella.o: Cella.c.o
-
-.PHONY : Cella.o
+.PHONY : Board.o
 
 # target to build an object file
-Cella.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Cella.c.o
-.PHONY : Cella.c.o
+Board.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Board.c.o
+.PHONY : Board.c.o
 
-Cella.i: Cella.c.i
+Board.i: Board.c.i
 
-.PHONY : Cella.i
+.PHONY : Board.i
 
 # target to preprocess a source file
-Cella.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Cella.c.i
-.PHONY : Cella.c.i
+Board.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Board.c.i
+.PHONY : Board.c.i
 
-Cella.s: Cella.c.s
+Board.s: Board.c.s
 
-.PHONY : Cella.s
+.PHONY : Board.s
 
 # target to generate assembly for a file
-Cella.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Cella.c.s
-.PHONY : Cella.c.s
+Board.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Board.c.s
+.PHONY : Board.c.s
 
-Pedina.o: Pedina.c.o
+Cell.o: Cell.c.o
 
-.PHONY : Pedina.o
+.PHONY : Cell.o
 
 # target to build an object file
-Pedina.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Pedina.c.o
-.PHONY : Pedina.c.o
+Cell.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Cell.c.o
+.PHONY : Cell.c.o
 
-Pedina.i: Pedina.c.i
+Cell.i: Cell.c.i
 
-.PHONY : Pedina.i
+.PHONY : Cell.i
 
 # target to preprocess a source file
-Pedina.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Pedina.c.i
-.PHONY : Pedina.c.i
+Cell.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Cell.c.i
+.PHONY : Cell.c.i
 
-Pedina.s: Pedina.c.s
+Cell.s: Cell.c.s
 
-.PHONY : Pedina.s
+.PHONY : Cell.s
 
 # target to generate assembly for a file
-Pedina.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Pedina.c.s
-.PHONY : Pedina.c.s
+Cell.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Cell.c.s
+.PHONY : Cell.c.s
+
+Piece.o: Piece.c.o
+
+.PHONY : Piece.o
+
+# target to build an object file
+Piece.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Piece.c.o
+.PHONY : Piece.c.o
+
+Piece.i: Piece.c.i
+
+.PHONY : Piece.i
+
+# target to preprocess a source file
+Piece.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Piece.c.i
+.PHONY : Piece.c.i
+
+Piece.s: Piece.c.s
+
+.PHONY : Piece.s
+
+# target to generate assembly for a file
+Piece.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Piece.c.s
+.PHONY : Piece.c.s
 
 main.o: main.c.o
 
@@ -260,15 +260,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Lasca"
-	@echo "... Campo.o"
-	@echo "... Campo.i"
-	@echo "... Campo.s"
-	@echo "... Cella.o"
-	@echo "... Cella.i"
-	@echo "... Cella.s"
-	@echo "... Pedina.o"
-	@echo "... Pedina.i"
-	@echo "... Pedina.s"
+	@echo "... Board.o"
+	@echo "... Board.i"
+	@echo "... Board.s"
+	@echo "... Cell.o"
+	@echo "... Cell.i"
+	@echo "... Cell.s"
+	@echo "... Piece.o"
+	@echo "... Piece.i"
+	@echo "... Piece.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

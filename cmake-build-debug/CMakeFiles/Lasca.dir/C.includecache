@@ -6,39 +6,41 @@
 
 #IncludeRegexTransform: 
 
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/Campo.c
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/Board.c
 stdlib.h
 -
-headers/Campo.h
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Campo.h
-headers/Cella.h
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Cella.h
+include/Board.h
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Board.h
+include/Cell.h
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Cell.h
+include/Piece.h
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Piece.h
 
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/Cella.c
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/Cell.c
 stdio.h
 -
-headers/Cella.h
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Cella.h
-headers/Pedina.h
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Pedina.h
+include/Cell.h
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Cell.h
+include/Piece.h
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Piece.h
 
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/Pedina.c
-headers/Pedina.h
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Pedina.h
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/Piece.c
+include/Piece.h
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Piece.h
 
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Campo.h
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Board.h
 stdio.h
 -
-Cella.h
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Cella.h
+Cell.h
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Cell.h
 
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Cella.h
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Cell.h
 stdio.h
 -
-Pedina.h
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Pedina.h
+Piece.h
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Piece.h
 
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Pedina.h
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Piece.h
 stdio.h
 -
 
@@ -47,10 +49,10 @@ stdio.h
 -
 stdlib.h
 -
-headers/Cella.h
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Cella.h
-headers/Pedina.h
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Pedina.h
-headers/Campo.h
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/headers/Campo.h
+include/Cell.h
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Cell.h
+include/Piece.h
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Piece.h
+include/Board.h
+/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Board.h
 

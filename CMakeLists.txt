@@ -1,15 +1,16 @@
 cmake_minimum_required(VERSION 3.17)
 project(Lasca C)
 
-set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD 90)
 
-include_directories(headers)
+include_directories(include)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pedantic-errors")
 
 add_executable(Lasca
-        headers/Campo.h
-        headers/Cella.h
-        headers/Pedina.h
-        Campo.c
-        Cella.c
+        include/Board.h
+        include/Cell.h
+        include/Piece.h
+        Board.c
+        Cell.c
         main.c
-        Pedina.c)
+        Piece.c)

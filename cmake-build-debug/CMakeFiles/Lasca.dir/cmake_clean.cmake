@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Lasca.dir/Campo.c.o"
-  "CMakeFiles/Lasca.dir/Cella.c.o"
-  "CMakeFiles/Lasca.dir/Pedina.c.o"
+  "CMakeFiles/Lasca.dir/Board.c.o"
+  "CMakeFiles/Lasca.dir/Cell.c.o"
+  "CMakeFiles/Lasca.dir/Piece.c.o"
   "CMakeFiles/Lasca.dir/main.c.o"
   "Lasca"
   "Lasca.pdb"

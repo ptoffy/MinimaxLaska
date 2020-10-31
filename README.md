@@ -2,7 +2,7 @@
 
 Funzioni
 
-- Inizializzazione Campo ✅
+- Inizializzazione Board ✅
 - Algoritmo di movimento per:
   - Soldier
   - Officer
@@ -10,5 +10,5 @@ Funzioni
   - Commander
 - Algoritmo per mangiare
 - Stampa di pedine, un quadrato di:
-  - Numero per altezza
-  - Colore per colore del possessore
+  - Numero per height
+  - Color per color del possessore

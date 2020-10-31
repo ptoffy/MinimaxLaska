@@ -4,16 +4,16 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/Campo.c" "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/cmake-build-debug/CMakeFiles/Lasca.dir/Campo.c.o"
-  "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/Cella.c" "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/cmake-build-debug/CMakeFiles/Lasca.dir/Cella.c.o"
-  "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/Pedina.c" "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/cmake-build-debug/CMakeFiles/Lasca.dir/Pedina.c.o"
+  "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/Board.c" "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/cmake-build-debug/CMakeFiles/Lasca.dir/Board.c.o"
+  "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/Cell.c" "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/cmake-build-debug/CMakeFiles/Lasca.dir/Cell.c.o"
+  "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/Piece.c" "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/cmake-build-debug/CMakeFiles/Lasca.dir/Piece.c.o"
   "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/main.c" "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/cmake-build-debug/CMakeFiles/Lasca.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
-  "../headers"
+  "../include"
   )
 
 # Targets to which this target links.
