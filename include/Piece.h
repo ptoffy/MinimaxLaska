@@ -1,3 +1,10 @@
+/**
+ * @file Piece.h
+ * @author Paul Toffoloni
+ * @date October 26, 2020
+ * @brief File containing the definition and usage for Lasca:
+ * Piece represents the pieces that the players play with.
+ */
 #ifndef Piece_h
 #define Piece_h
 
@@ -17,12 +24,12 @@ enum Type {
  * The color that a piece can have.
  */
 enum Color {
-    red = 0, /**< Red color for player 1. */
+    red = 0,   /**< Red color for player 1. */
     yellow = 1 /**< Yellow color for player 2. */
 };
 
 /**
- * The game piece.
+ * Piece represents the pieces that the players play with.
  */
 typedef struct Piece {
     int color;  /**< The color of the piece, indicates the holder of the piece. */
@@ -30,8 +37,8 @@ typedef struct Piece {
     int type;   /**< The type of the piece, indicated by the Type enum. */
 } Piece;
 
-void setHeight(Piece *piece, int height);
-void increaseHeight(Piece *piece);
-void lowerHeight(Piece *piece);
+void set_height(Piece *piece, int height);
+void increase_height(Piece *piece);
+void lower_height(Piece *piece);
 
 #endif /* Piece_h */

@@ -80,15 +80,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/Board.c">
-			<Option target="Lasca"/>
-		</Unit>
-		<Unit filename="/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/Cell.c">
-			<Option target="Lasca"/>
-		</Unit>
-		<Unit filename="/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/Piece.c">
-			<Option target="Lasca"/>
-		</Unit>
 		<Unit filename="/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include/Board.h">
 			<Option target="Lasca"/>
 		</Unit>
@@ -99,6 +90,15 @@
 			<Option target="Lasca"/>
 		</Unit>
 		<Unit filename="/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/main.c">
+			<Option target="Lasca"/>
+		</Unit>
+		<Unit filename="/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Board.c">
+			<Option target="Lasca"/>
+		</Unit>
+		<Unit filename="/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Cell.c">
+			<Option target="Lasca"/>
+		</Unit>
+		<Unit filename="/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Piece.c">
 			<Option target="Lasca"/>
 		</Unit>
 		<Unit filename="/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/CMakeLists.txt">

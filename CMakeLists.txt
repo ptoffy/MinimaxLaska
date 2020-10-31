@@ -10,7 +10,7 @@ add_executable(Lasca
         include/Board.h
         include/Cell.h
         include/Piece.h
-        Board.c
-        Cell.c
+        src/Board.c
+        src/Cell.c
         main.c
-        Piece.c)
+        src/Piece.c)

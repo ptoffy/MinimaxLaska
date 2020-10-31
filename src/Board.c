@@ -1,14 +1,22 @@
+/**
+ * @file Board.c
+ * @author Paul Toffoloni
+ * @date October 26, 2020
+ * @brief File containing the source code for Lasca:
+ * Board is the game field that contains every cell and every piece that make up the game.
+ */
 #include <stdlib.h>
-#include "include/Board.h"
-#include "include/Cell.h"
-#include "include/Piece.h"
+
+#include "Board.h"
+#include "Cell.h"
+#include "Piece.h"
 
 /**
  * Assigns memory to a board pointer and assigns rows and columns to it.
  * Creates then a matrix of cells and assigns coordinates to each one of them.
  * Finally assigns NULL to the piece pointer in every cell, so that the board is empty.
  */
-Board* createBoard(int rows, int columns) {
+Board* create_board(int rows, int columns) {
     int i, f;
     Board *board = malloc(sizeof(Board));
     board->rows = rows;
@@ -18,17 +26,22 @@ Board* createBoard(int rows, int columns) {
         for (f = 0; f < columns; f++) {
             board->cells[i * columns + f].x = f;
             board->cells[i * columns + f].y = i;
-            setPieceToNull(&board->cells[i * columns + f]);
+            set_piece_null(&board->cells[i * columns + f]);
         }
     }
     return board;
+}
+
+void destroy_board(Board* board) {
+    /* Other cleanup stuff */
+    free(board);
 }
 
 /**
  * Assigns memory to a pointer piece and assigns that attribute to the chosen cell.
  * Assigns then the initial settings for a piece to that pointer
  */
-void initPiece(Cell* cell, int color) {
+void init_piece(Cell* cell, int color) {
     Piece* piece = malloc(sizeof(Piece));
     cell->piece = piece;
     piece->height = 1;
@@ -36,7 +49,7 @@ void initPiece(Cell* cell, int color) {
     piece->type = soldier;
 }
 
-Cell* getCell(Board *board, int x, int y) {
+Cell* get_cell(Board *board, int x, int y) {
     int i, f;
     for (i = 0; i < board->rows; i++) {
         for (f = 0; f < board->columns; f++) {
@@ -49,20 +62,21 @@ Cell* getCell(Board *board, int x, int y) {
 }
 
 /**
- Uses two different loops to initialize the board, first for the red player and then for the yellow one.
+ * Uses two different loops to initialize the board,
+ * first for the red player and then for the yellow one.
  */
-void initBoard(Board* board) {
+void init_board(Board* board) {
     int i, f;
     /* Initializes the red side of the board */
     for (i = 0; i < board->rows / 2; i++) {
         for (f = 0; f < board->columns; f++) {
             if (i % 2 == 0) {
                 if (f % 2 == 0) {
-                    initPiece(&board->cells[i * board->columns + f], red);
+                    init_piece(&board->cells[i * board->columns + f], red);
                 }
             } else {
                 if (f % 2 != 0) {
-                    initPiece(&board->cells[i * board->columns + f], red);
+                    init_piece(&board->cells[i * board->columns + f], red);
                 }
             }
         }
@@ -72,30 +86,30 @@ void initBoard(Board* board) {
         for (f = board->columns; f >= 0; f--) {
             if (i % 2 == 0) {
                 if (f % 2 == 0) {
-                    initPiece(&board->cells[i * board->columns + f], yellow);
+                    init_piece(&board->cells[i * board->columns + f], yellow);
                 }
             } else {
                 if (f % 2 != 0) {
-                    initPiece(&board->cells[i * board->columns + f], yellow);
+                    init_piece(&board->cells[i * board->columns + f], yellow);
                 }
             }
         }
     }
 }
 
-void printField(Board* board) {
+void print_field(Board* board) {
     int i, f;
     for (i = 0; i < board->rows; i++) {
         printf("%d   ", i + 1);
         for (f = 0; f < board->columns; f++) {
             if (i % 2 == 0) {
                 if (f % 2 == 0) {
-                    printCellContent(&board->cells[i * board->columns + f]);
+                    print_cell_content(&board->cells[i * board->columns + f]);
                     printf("  ");
                 }
             } else if (f % 2 != 0) {
                 printf("  ");
-                printCellContent(&board->cells[i * board->columns + f]);
+                print_cell_content(&board->cells[i * board->columns + f]);
             }
         }
         printf("\n");
@@ -107,16 +121,16 @@ void printField(Board* board) {
     printf("\n\n");
 }
 
-void printBoard() {
+void print_board() {
     int foo = 0;
     int i, f;
     int MAX_X = 36;
     int MAX_Y = 36;
-    /* Ciclo columns */
+    /* Columns loop */
     for (i = 0; i < MAX_Y; i++) {
-        /* Ciclo rows */
+        /* Rows loop */
         for (f = 0; f < MAX_X; f++) {
-            /* Se la riga è un divisore */
+            /* If row is a divider */
             if (i % 5 == 0) {
                 if (f % (MAX_X - 1) == 0) {
                     printf("+");
@@ -124,7 +138,7 @@ void printBoard() {
                     printf("-");
                 }
             } else {
-                /* Se la colonna è un margine */
+                /* If column is a margin */
                 if (f % 5 == 0) {
                     printf("|");
                 } else {

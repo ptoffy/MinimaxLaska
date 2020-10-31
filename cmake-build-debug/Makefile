@@ -143,87 +143,6 @@ Lasca/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/build
 .PHONY : Lasca/fast
 
-Board.o: Board.c.o
-
-.PHONY : Board.o
-
-# target to build an object file
-Board.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Board.c.o
-.PHONY : Board.c.o
-
-Board.i: Board.c.i
-
-.PHONY : Board.i
-
-# target to preprocess a source file
-Board.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Board.c.i
-.PHONY : Board.c.i
-
-Board.s: Board.c.s
-
-.PHONY : Board.s
-
-# target to generate assembly for a file
-Board.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Board.c.s
-.PHONY : Board.c.s
-
-Cell.o: Cell.c.o
-
-.PHONY : Cell.o
-
-# target to build an object file
-Cell.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Cell.c.o
-.PHONY : Cell.c.o
-
-Cell.i: Cell.c.i
-
-.PHONY : Cell.i
-
-# target to preprocess a source file
-Cell.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Cell.c.i
-.PHONY : Cell.c.i
-
-Cell.s: Cell.c.s
-
-.PHONY : Cell.s
-
-# target to generate assembly for a file
-Cell.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Cell.c.s
-.PHONY : Cell.c.s
-
-Piece.o: Piece.c.o
-
-.PHONY : Piece.o
-
-# target to build an object file
-Piece.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Piece.c.o
-.PHONY : Piece.c.o
-
-Piece.i: Piece.c.i
-
-.PHONY : Piece.i
-
-# target to preprocess a source file
-Piece.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Piece.c.i
-.PHONY : Piece.c.i
-
-Piece.s: Piece.c.s
-
-.PHONY : Piece.s
-
-# target to generate assembly for a file
-Piece.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/Piece.c.s
-.PHONY : Piece.c.s
-
 main.o: main.c.o
 
 .PHONY : main.o
@@ -251,6 +170,87 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/main.c.s
 .PHONY : main.c.s
 
+src/Board.o: src/Board.c.o
+
+.PHONY : src/Board.o
+
+# target to build an object file
+src/Board.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/src/Board.c.o
+.PHONY : src/Board.c.o
+
+src/Board.i: src/Board.c.i
+
+.PHONY : src/Board.i
+
+# target to preprocess a source file
+src/Board.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/src/Board.c.i
+.PHONY : src/Board.c.i
+
+src/Board.s: src/Board.c.s
+
+.PHONY : src/Board.s
+
+# target to generate assembly for a file
+src/Board.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/src/Board.c.s
+.PHONY : src/Board.c.s
+
+src/Cell.o: src/Cell.c.o
+
+.PHONY : src/Cell.o
+
+# target to build an object file
+src/Cell.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/src/Cell.c.o
+.PHONY : src/Cell.c.o
+
+src/Cell.i: src/Cell.c.i
+
+.PHONY : src/Cell.i
+
+# target to preprocess a source file
+src/Cell.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/src/Cell.c.i
+.PHONY : src/Cell.c.i
+
+src/Cell.s: src/Cell.c.s
+
+.PHONY : src/Cell.s
+
+# target to generate assembly for a file
+src/Cell.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/src/Cell.c.s
+.PHONY : src/Cell.c.s
+
+src/Piece.o: src/Piece.c.o
+
+.PHONY : src/Piece.o
+
+# target to build an object file
+src/Piece.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/src/Piece.c.o
+.PHONY : src/Piece.c.o
+
+src/Piece.i: src/Piece.c.i
+
+.PHONY : src/Piece.i
+
+# target to preprocess a source file
+src/Piece.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/src/Piece.c.i
+.PHONY : src/Piece.c.i
+
+src/Piece.s: src/Piece.c.s
+
+.PHONY : src/Piece.s
+
+# target to generate assembly for a file
+src/Piece.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lasca.dir/build.make CMakeFiles/Lasca.dir/src/Piece.c.s
+.PHONY : src/Piece.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -260,18 +260,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Lasca"
-	@echo "... Board.o"
-	@echo "... Board.i"
-	@echo "... Board.s"
-	@echo "... Cell.o"
-	@echo "... Cell.i"
-	@echo "... Cell.s"
-	@echo "... Piece.o"
-	@echo "... Piece.i"
-	@echo "... Piece.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/Board.o"
+	@echo "... src/Board.i"
+	@echo "... src/Board.s"
+	@echo "... src/Cell.o"
+	@echo "... src/Cell.i"
+	@echo "... src/Cell.s"
+	@echo "... src/Piece.o"
+	@echo "... src/Piece.i"
+	@echo "... src/Piece.s"
 .PHONY : help
 
 
