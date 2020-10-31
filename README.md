@@ -9,6 +9,10 @@ Funzioni
   - Column
   - Commander
 - Algoritmo per mangiare
-- Stampa di pedine, un quadrato di:
-  - Numero per height
-  - Color per color del possessore
+- Stampa di pedine, un quadrato di:✅
+  - Numero per height✅
+  - Color per color del possessore✅
+
+Aggiunte
+ - GUI
+ - Poter giocare contro altri sowftware(C-S?)
