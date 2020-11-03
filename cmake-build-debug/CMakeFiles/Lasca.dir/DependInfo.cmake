@@ -4,12 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/Multiplayer.c" "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/cmake-build-debug/CMakeFiles/Lasca.dir/Multiplayer.c.o"
-  "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/main.c" "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/cmake-build-debug/CMakeFiles/Lasca.dir/main.c.o"
-  "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Board.c" "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/cmake-build-debug/CMakeFiles/Lasca.dir/src/Board.c.o"
-  "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Cell.c" "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/cmake-build-debug/CMakeFiles/Lasca.dir/src/Cell.c.o"
-  "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Game.c" "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/cmake-build-debug/CMakeFiles/Lasca.dir/src/Game.c.o"
-  "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Piece.c" "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/cmake-build-debug/CMakeFiles/Lasca.dir/src/Piece.c.o"
+  "/Users/giovannizeno/CLionProjects/Lasca/Multiplayer.c" "/Users/giovannizeno/CLionProjects/Lasca/cmake-build-debug/CMakeFiles/Lasca.dir/Multiplayer.c.o"
+  "/Users/giovannizeno/CLionProjects/Lasca/main.c" "/Users/giovannizeno/CLionProjects/Lasca/cmake-build-debug/CMakeFiles/Lasca.dir/main.c.o"
+  "/Users/giovannizeno/CLionProjects/Lasca/src/Board.c" "/Users/giovannizeno/CLionProjects/Lasca/cmake-build-debug/CMakeFiles/Lasca.dir/src/Board.c.o"
+  "/Users/giovannizeno/CLionProjects/Lasca/src/Cell.c" "/Users/giovannizeno/CLionProjects/Lasca/cmake-build-debug/CMakeFiles/Lasca.dir/src/Cell.c.o"
+  "/Users/giovannizeno/CLionProjects/Lasca/src/Game.c" "/Users/giovannizeno/CLionProjects/Lasca/cmake-build-debug/CMakeFiles/Lasca.dir/src/Game.c.o"
+  "/Users/giovannizeno/CLionProjects/Lasca/src/Piece.c" "/Users/giovannizeno/CLionProjects/Lasca/cmake-build-debug/CMakeFiles/Lasca.dir/src/Piece.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

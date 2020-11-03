@@ -6,5 +6,5 @@ C_FLAGS =  -pedantic-errors -g -isysroot /Applications/Xcode.app/Contents/Develo
 
 C_DEFINES = 
 
-C_INCLUDES = -I"/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/include" 
+C_INCLUDES = -I/Users/giovannizeno/CLionProjects/Lasca/include 
 

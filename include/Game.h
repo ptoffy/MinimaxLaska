@@ -1,6 +1,6 @@
 /**
  * @file Game.h
- * @author Giovanni Frigerio Zen
+ * @author Giovanni Frigerio Zeno
  * @date October 31, 2020
  * @brief File containing the definition and usage for Lasca:
  * Game controls the whole game, so if a piece is moved or the game has to end,
@@ -59,6 +59,6 @@ int get_y_input_coordinate();
  * @param cell The cell of the selected piece.
  * @return 0 if it can move or eat, 1 if not.
  */
-int can_piece_move(Cell* cell);
+int can_piece_move(Cell* cell, Board *board);
 
 #endif //LASCA_GAME_H

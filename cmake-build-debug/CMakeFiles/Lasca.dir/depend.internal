@@ -6,24 +6,24 @@ CMakeFiles/Lasca.dir/Multiplayer.c.o
  ../include/Cell.h
  ../include/Game.h
  ../include/Piece.h
- /Users/paultoffy/Documents/UniVe/Programmi C/Lasca/Multiplayer.c
+ /Users/giovannizeno/CLionProjects/Lasca/Multiplayer.c
 CMakeFiles/Lasca.dir/main.c.o
- /Users/paultoffy/Documents/UniVe/Programmi C/Lasca/main.c
+ /Users/giovannizeno/CLionProjects/Lasca/main.c
 CMakeFiles/Lasca.dir/src/Board.c.o
  ../include/Board.h
  ../include/Cell.h
  ../include/Piece.h
- /Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Board.c
+ /Users/giovannizeno/CLionProjects/Lasca/src/Board.c
 CMakeFiles/Lasca.dir/src/Cell.c.o
  ../include/Cell.h
  ../include/Piece.h
- /Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Cell.c
+ /Users/giovannizeno/CLionProjects/Lasca/src/Cell.c
 CMakeFiles/Lasca.dir/src/Game.c.o
  ../include/Board.h
  ../include/Cell.h
  ../include/Game.h
  ../include/Piece.h
- /Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Game.c
+ /Users/giovannizeno/CLionProjects/Lasca/src/Game.c
 CMakeFiles/Lasca.dir/src/Piece.c.o
  ../include/Piece.h
- /Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Piece.c
+ /Users/giovannizeno/CLionProjects/Lasca/src/Piece.c

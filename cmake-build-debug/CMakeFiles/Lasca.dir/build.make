@@ -54,19 +54,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/paultoffy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = "/Users/paultoffy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E rm -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca"
+CMAKE_SOURCE_DIR = /Users/giovannizeno/CLionProjects/Lasca
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/cmake-build-debug"
+CMAKE_BINARY_DIR = /Users/giovannizeno/CLionProjects/Lasca/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Lasca.dir/depend.make
@@ -79,81 +79,81 @@ include CMakeFiles/Lasca.dir/flags.make
 
 CMakeFiles/Lasca.dir/src/Board.c.o: CMakeFiles/Lasca.dir/flags.make
 CMakeFiles/Lasca.dir/src/Board.c.o: ../src/Board.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Lasca.dir/src/Board.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lasca.dir/src/Board.c.o   -c "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Board.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/giovannizeno/CLionProjects/Lasca/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Lasca.dir/src/Board.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lasca.dir/src/Board.c.o   -c /Users/giovannizeno/CLionProjects/Lasca/src/Board.c
 
 CMakeFiles/Lasca.dir/src/Board.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Lasca.dir/src/Board.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Board.c" > CMakeFiles/Lasca.dir/src/Board.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/giovannizeno/CLionProjects/Lasca/src/Board.c > CMakeFiles/Lasca.dir/src/Board.c.i
 
 CMakeFiles/Lasca.dir/src/Board.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lasca.dir/src/Board.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Board.c" -o CMakeFiles/Lasca.dir/src/Board.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/giovannizeno/CLionProjects/Lasca/src/Board.c -o CMakeFiles/Lasca.dir/src/Board.c.s
 
 CMakeFiles/Lasca.dir/src/Cell.c.o: CMakeFiles/Lasca.dir/flags.make
 CMakeFiles/Lasca.dir/src/Cell.c.o: ../src/Cell.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Lasca.dir/src/Cell.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lasca.dir/src/Cell.c.o   -c "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Cell.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/giovannizeno/CLionProjects/Lasca/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Lasca.dir/src/Cell.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lasca.dir/src/Cell.c.o   -c /Users/giovannizeno/CLionProjects/Lasca/src/Cell.c
 
 CMakeFiles/Lasca.dir/src/Cell.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Lasca.dir/src/Cell.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Cell.c" > CMakeFiles/Lasca.dir/src/Cell.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/giovannizeno/CLionProjects/Lasca/src/Cell.c > CMakeFiles/Lasca.dir/src/Cell.c.i
 
 CMakeFiles/Lasca.dir/src/Cell.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lasca.dir/src/Cell.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Cell.c" -o CMakeFiles/Lasca.dir/src/Cell.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/giovannizeno/CLionProjects/Lasca/src/Cell.c -o CMakeFiles/Lasca.dir/src/Cell.c.s
 
 CMakeFiles/Lasca.dir/main.c.o: CMakeFiles/Lasca.dir/flags.make
 CMakeFiles/Lasca.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Lasca.dir/main.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lasca.dir/main.c.o   -c "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/main.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/giovannizeno/CLionProjects/Lasca/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Lasca.dir/main.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lasca.dir/main.c.o   -c /Users/giovannizeno/CLionProjects/Lasca/main.c
 
 CMakeFiles/Lasca.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Lasca.dir/main.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/main.c" > CMakeFiles/Lasca.dir/main.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/giovannizeno/CLionProjects/Lasca/main.c > CMakeFiles/Lasca.dir/main.c.i
 
 CMakeFiles/Lasca.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lasca.dir/main.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/main.c" -o CMakeFiles/Lasca.dir/main.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/giovannizeno/CLionProjects/Lasca/main.c -o CMakeFiles/Lasca.dir/main.c.s
 
 CMakeFiles/Lasca.dir/src/Piece.c.o: CMakeFiles/Lasca.dir/flags.make
 CMakeFiles/Lasca.dir/src/Piece.c.o: ../src/Piece.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Lasca.dir/src/Piece.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lasca.dir/src/Piece.c.o   -c "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Piece.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/giovannizeno/CLionProjects/Lasca/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Lasca.dir/src/Piece.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lasca.dir/src/Piece.c.o   -c /Users/giovannizeno/CLionProjects/Lasca/src/Piece.c
 
 CMakeFiles/Lasca.dir/src/Piece.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Lasca.dir/src/Piece.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Piece.c" > CMakeFiles/Lasca.dir/src/Piece.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/giovannizeno/CLionProjects/Lasca/src/Piece.c > CMakeFiles/Lasca.dir/src/Piece.c.i
 
 CMakeFiles/Lasca.dir/src/Piece.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lasca.dir/src/Piece.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Piece.c" -o CMakeFiles/Lasca.dir/src/Piece.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/giovannizeno/CLionProjects/Lasca/src/Piece.c -o CMakeFiles/Lasca.dir/src/Piece.c.s
 
 CMakeFiles/Lasca.dir/Multiplayer.c.o: CMakeFiles/Lasca.dir/flags.make
 CMakeFiles/Lasca.dir/Multiplayer.c.o: ../Multiplayer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Lasca.dir/Multiplayer.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lasca.dir/Multiplayer.c.o   -c "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/Multiplayer.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/giovannizeno/CLionProjects/Lasca/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Lasca.dir/Multiplayer.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lasca.dir/Multiplayer.c.o   -c /Users/giovannizeno/CLionProjects/Lasca/Multiplayer.c
 
 CMakeFiles/Lasca.dir/Multiplayer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Lasca.dir/Multiplayer.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/Multiplayer.c" > CMakeFiles/Lasca.dir/Multiplayer.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/giovannizeno/CLionProjects/Lasca/Multiplayer.c > CMakeFiles/Lasca.dir/Multiplayer.c.i
 
 CMakeFiles/Lasca.dir/Multiplayer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lasca.dir/Multiplayer.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/Multiplayer.c" -o CMakeFiles/Lasca.dir/Multiplayer.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/giovannizeno/CLionProjects/Lasca/Multiplayer.c -o CMakeFiles/Lasca.dir/Multiplayer.c.s
 
 CMakeFiles/Lasca.dir/src/Game.c.o: CMakeFiles/Lasca.dir/flags.make
 CMakeFiles/Lasca.dir/src/Game.c.o: ../src/Game.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Lasca.dir/src/Game.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lasca.dir/src/Game.c.o   -c "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Game.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/giovannizeno/CLionProjects/Lasca/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Lasca.dir/src/Game.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lasca.dir/src/Game.c.o   -c /Users/giovannizeno/CLionProjects/Lasca/src/Game.c
 
 CMakeFiles/Lasca.dir/src/Game.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Lasca.dir/src/Game.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Game.c" > CMakeFiles/Lasca.dir/src/Game.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/giovannizeno/CLionProjects/Lasca/src/Game.c > CMakeFiles/Lasca.dir/src/Game.c.i
 
 CMakeFiles/Lasca.dir/src/Game.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lasca.dir/src/Game.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Game.c" -o CMakeFiles/Lasca.dir/src/Game.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/giovannizeno/CLionProjects/Lasca/src/Game.c -o CMakeFiles/Lasca.dir/src/Game.c.s
 
 # Object files for target Lasca
 Lasca_OBJECTS = \
@@ -175,7 +175,7 @@ Lasca: CMakeFiles/Lasca.dir/Multiplayer.c.o
 Lasca: CMakeFiles/Lasca.dir/src/Game.c.o
 Lasca: CMakeFiles/Lasca.dir/build.make
 Lasca: CMakeFiles/Lasca.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable Lasca"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/giovannizeno/CLionProjects/Lasca/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable Lasca"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Lasca.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -188,6 +188,6 @@ CMakeFiles/Lasca.dir/clean:
 .PHONY : CMakeFiles/Lasca.dir/clean
 
 CMakeFiles/Lasca.dir/depend:
-	cd "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca" "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca" "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/cmake-build-debug" "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/cmake-build-debug" "/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/cmake-build-debug/CMakeFiles/Lasca.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /Users/giovannizeno/CLionProjects/Lasca/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/giovannizeno/CLionProjects/Lasca /Users/giovannizeno/CLionProjects/Lasca /Users/giovannizeno/CLionProjects/Lasca/cmake-build-debug /Users/giovannizeno/CLionProjects/Lasca/cmake-build-debug /Users/giovannizeno/CLionProjects/Lasca/cmake-build-debug/CMakeFiles/Lasca.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Lasca.dir/depend
 

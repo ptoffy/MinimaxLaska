@@ -14,17 +14,19 @@ Cell.h
 Piece.h
 ../include/Piece.h
 
+../include/Game.h
+Board.h
+../include/Board.h
+
 ../include/Piece.h
 
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Board.c
-stdlib.h
--
+/Users/giovannizeno/CLionProjects/Lasca/src/Game.c
 stdio.h
 -
-Board.h
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Board.h
+Game.h
+/Users/giovannizeno/CLionProjects/Lasca/src/Game.h
 Cell.h
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Cell.h
-Piece.h
-/Users/paultoffy/Documents/UniVe/Programmi C/Lasca/src/Piece.h
+/Users/giovannizeno/CLionProjects/Lasca/src/Cell.h
+Board.h
+/Users/giovannizeno/CLionProjects/Lasca/src/Board.h
 
