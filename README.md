@@ -7,7 +7,7 @@ Funzioni
   - Algoritmo di movimento -> 10 Novembre
     - Controlli:
       - Turno (Giocatore 1 non può muovere pedine del 2 e viceversa)
-      - Giova:
+      - Giova🖕:
         - se le pedina si può muovere in una qualsiasi direzione
         - se la pedina può mangiare in qualsiasi direzione 
         - lista di possibili mosse
