@@ -15,9 +15,7 @@ Funzioni
  - Modalità PvE:
   - Algoritmo di base (CPU) -> 20 Novembre
   - Strategie per vittoria (CPU) -> 25 Novembre
-- Stampa di pedine, un quadrato di:✅
-  - Numero per height✅
-  - Color per color del possessore✅
+- Stampa di pedine in console ✅
 
 Aggiunte:
  - GUI
