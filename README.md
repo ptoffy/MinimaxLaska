@@ -13,8 +13,8 @@ Funzioni
         - lista di possibili mosse
         - mangiare una pedina
  - Modalità PvE:
-  - Algoritmo di base (CPU) -> 20 Novembre
-  - Strategie per vittoria (CPU) -> 25 Novembre
+   - Algoritmo di base (CPU) -> 20 Novembre
+   - Strategie per vittoria (CPU) -> 25 Novembre
 - Stampa di pedine in console ✅
 
 Aggiunte:
