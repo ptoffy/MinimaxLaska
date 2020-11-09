@@ -20,6 +20,7 @@ void move_piece(Board *board) {
     x = get_x_input_coordinate();
     y = get_y_input_coordinate();
 
+
     /* Checks input data for impossible moves */
     if (check_initial_input(board, x, y) == 0) {
         initialCell = get_cell(board, x - 1, y - 1);
@@ -28,6 +29,7 @@ void move_piece(Board *board) {
         /* Gets data from user input */
         x = get_x_input_coordinate();
         y = get_y_input_coordinate();
+
 
         /* Sets the piece to the new cell and deletes it from the old one */
         set_piece(get_cell(board, x - 1, y - 1), piece);
@@ -38,7 +40,7 @@ void move_piece(Board *board) {
 int check_initial_input(Board* board, int x, int y) {
     if (is_cell_white(get_cell(board, x, y)) == 0) {
         if (is_cell_empty(get_cell(board, x, y)) == 1) {
-            if (can_piece_move(get_cell(board, x, y)) == 0) {
+            if (can_piece_move(get_cell(board, x, y), board) == 0) {
                 return 0;
             } else {
                 printf("Questa pedina non può essere mossa in nessuna cella, riprova.\n");
@@ -56,6 +58,7 @@ int check_final_input(Board* board, int x, int y) {
     if (is_cell_white(get_cell(board, x, y)) == 0) {
         if (is_cell_empty(get_cell(board, x, y)) == 0) {
             /* TODO: Add control for if cell is next to first cell or if you can eat */
+
             return 0;
         } else {
             printf("Qui c'è già una pedina! Riprova.\n");
@@ -66,10 +69,69 @@ int check_final_input(Board* board, int x, int y) {
     return 1;
 }
 
-int can_piece_move(Cell* cell) {
+int can_piece_move(Cell* cell, Board* board) {
     /* TODO: Complete */
-    return 0;
+
+    Cell *move;
+
+    if (cell->piece->type == soldier) {
+        move = get_cell(board, cell->x + 1, cell->y - 1);
+        if (is_cell_empty(move) == 0) {
+            return 0;
+        } else {
+            move = get_cell(board, cell->x - 1, cell->y - 1);
+            if (is_cell_empty(move) == 0) {
+                return 0;
+            } else {
+              /*  move = get_cell(board, cell->x - 1, cell->y + 1); una parte di questo codice deve essere
+                                                                        * cancellata perche la pedina puo` muoversi
+                                                                        * solo in avanti
+                if (is_cell_empty(move) == 0) {
+                    return 0;
+                } else {
+                    move = get_cell(board, cell->x + 1, cell->y + 1);
+                    if (is_cell_empty(move) == 0) {
+                        return 0;
+                    } else {
+                        return 1;
+                    }
+                }*/
+            }
+        }
+    }
+    if(cell->piece->type == column) {
+
+    }
 }
+
+/*int you_can_eat(Cell* cell, Board* board){
+    Cell* eat;
+    Cell* eat1;
+    Cell* eat2;
+    Cell* move1;
+    Cell* move2;
+
+
+
+    eat = get_cell(board, cell->x+1, cell->y+1);
+
+    /* TODO: check if the player can move in an empty cell over opponent piece */
+ /*   if(is_cell_empty(move1) == 1) {
+        if (is_cell_empty(eat) == 0) {                              CONTROLLA SE è DELL'AVVERSARIO
+            eat1 = get_cell(board, cell->x + 1, cell->y - 1);
+            return 0;
+        } else { return 1;}
+    } else if(is_cell_empty(move2) == 1){
+        if (is_cell_empty(eat) == 0){
+            eat2 = get_cell(board, cell->x-1, cell->y-1);
+            return 0;
+        } else {return 1;}
+    }
+
+
+} */
+
+
 
 int get_x_input_coordinate() {
     int x;
