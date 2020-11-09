@@ -15,7 +15,7 @@
 
 void print_cell_content(Cell *cell) {
     if (cell->piece != NULL) {
-        if (cell->piece->color == 0) {
+        if (cell->piece->color == red) {
             printf("%s%d%s ", ANSI_COLOR_RED, cell->piece->height, ANSI_COLOR_RESET);
         } else {
             printf("%s%d%s ", ANSI_COLOR_YELLOW, cell->piece->height, ANSI_COLOR_RESET);
@@ -31,9 +31,9 @@ void set_cell_empty(Cell* cell) {
 
 int is_cell_empty(Cell *cell) {
     if (cell->piece == NULL) {
-        return 0;
-    } else {
         return 1;
+    } else {
+        return 0;
     }
 }
 

@@ -25,8 +25,8 @@ Board* create_board(int rows, int columns) {
     board->cells = malloc(sizeof(Cell) * rows * columns);
     for (i = 0; i < rows; i++) {
         for (f = 0; f < columns; f++) {
-            board->cells[i * columns + f].x = f;
-            board->cells[i * columns + f].y = i;
+            board->cells[i * columns + f].x = f + 1;
+            board->cells[i * columns + f].y = i + 1;
             set_cell_empty(&board->cells[i * columns + f]);
 
             if ((i * columns + f) % 2 == 0) {
@@ -64,9 +64,9 @@ void init_piece(Cell* cell, int color) {
 
 int is_cell_white(Cell *cell) {
     if (cell->color == white) {
-        return 0;
+        return 1;
     }
-    return 1;
+    return 0;
 }
 
 Cell* get_cell(Board *board, int x, int y) {

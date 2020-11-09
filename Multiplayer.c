@@ -12,6 +12,10 @@ int main(int argc, const char * argv[]) {
     move_piece(board);
 
     print_field(board);
+
+    move_piece(board);
+
+    print_field(board);
 //    int i, f;
 //    for (i = 0; i < board->rows; i++) {
 //        for (f = 0; f < board->columns; f++) {

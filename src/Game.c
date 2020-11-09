@@ -22,8 +22,8 @@ void move_piece(Board *board) {
 
 
     /* Checks input data for impossible moves */
-    if (check_initial_input(board, x, y) == 0) {
-        initialCell = get_cell(board, x - 1, y - 1);
+    if (check_initial_input(board, x, y) == 1) {
+        initialCell = get_cell(board, x, y);
         piece = get_piece(initialCell);
 
         /* Gets data from user input */
@@ -32,16 +32,16 @@ void move_piece(Board *board) {
 
 
         /* Sets the piece to the new cell and deletes it from the old one */
-        set_piece(get_cell(board, x - 1, y - 1), piece);
+        set_piece(get_cell(board, x, y), piece);
         set_cell_empty(initialCell);
     }
 }
 
 int check_initial_input(Board* board, int x, int y) {
-    if (is_cell_white(get_cell(board, x, y)) == 0) {
-        if (is_cell_empty(get_cell(board, x, y)) == 1 ) {
-            if (can_piece_move(get_cell(board, x, y), board) == 0) {
-                return 0;
+    if (is_cell_white(get_cell(board, x, y)) == 1) {
+        if (is_cell_empty(get_cell(board, x, y)) == 0) {
+            if (can_piece_move(get_cell(board, x, y), board) == 1) {
+                return 1;
             } else {
                 printf("Questa pedina non può essere mossa in nessuna cella, riprova.\n");
             }
@@ -51,22 +51,22 @@ int check_initial_input(Board* board, int x, int y) {
     } else {
         printf("Quella cella non fa parte del campo, riprova.\n");
     }
-    return 1;
+    return 0;
 }
 
 int check_final_input(Board* board, int x, int y) {
-    if (is_cell_white(get_cell(board, x, y)) == 0) {
-        if (is_cell_empty(get_cell(board, x, y)) == 0) {
+    if (is_cell_white(get_cell(board, x, y)) == 1) {
+        if (is_cell_empty(get_cell(board, x, y)) == 1) {
             /* TODO: Add control for if cell is next to first cell or if you can eat */
 
-            return 0;
+            return 1;
         } else {
             printf("Qui c'è già una pedina! Riprova.\n");
         }
     } else {
         printf("Quella cella non fa parte del campo, riprova.\n");
     }
-    return 1;
+    return 0;
 }
 
 int can_piece_move(Cell* cell, Board* board) {
@@ -82,19 +82,18 @@ int can_piece_move(Cell* cell, Board* board) {
     move3 = get_cell(board, cell->x - 1, cell->y + 1);
     move4 = get_cell(board, cell->x + 1, cell->y + 1);
 
-
     if (cell->piece->type == soldier) {
-        if (is_cell_empty(move1) == 0) {
-            return 0;
-        } else {
-            if (is_cell_empty(move2) == 0) {
-                return 0;
-            } else { return 1;}
+        if (move1 != NULL) {
+            return is_cell_empty(move1);
         }
+        if (move2 != NULL) {
+            return is_cell_empty(move2);
+        }
+        return 0;
     }
 
     if (cell->piece->type == column) {
-        if (is_cell_empty(move1) == 1) {
+        if (is_cell_empty(move1) == 0) {
             return 0;
         } else if (is_cell_empty(move2) == 0) {
             return 0;
@@ -104,13 +103,7 @@ int can_piece_move(Cell* cell, Board* board) {
             return 0;
         } else { return 1; }
     }
-
-
-
-
-
-
-
+}
 
 
 int you_can_eat(Cell* cell, Board* board) {
@@ -132,61 +125,36 @@ int you_can_eat(Cell* cell, Board* board) {
     eat3 = get_cell(board, cell->x - 1, cell->y + 1);
     eat4 = get_cell(board, cell->x + 1, cell->y + 1);
 
-
-
-
-
     /* TODO: check if the player can move in an empty cell over opponent piece */
     if (is_cell_empty(move1) == 1) {
         if (is_cell_empty(eat1) == 0) {
-            printf("%d %d"), eat1[cell->x, cell->y]; /* come richiamare x, y dei vari eat, utilizzo il printf per far vedere le possibile mosse che si possono fare*/
+            printf("%d %d", eat1->x, eat1->y);
+            return 0;
         }
-        return 0;
-
     } else if (is_cell_empty(move2) == 1) {
         if (is_cell_empty(eat2) == 0) {
-            printf("%d %d"), eat2[cell->x], eat2[cell->y]; /*questo mi sembra il modo corretto*/
+            printf("%d %d", eat2->x, eat2->y);
             return 0;
         }
     } else if (is_cell_empty(move3) == 1 && cell->piece->type == column) {  /*mosse possibili con una column*/
         if (is_cell_empty(eat3) == 0) {
-            printf("%d %d"), eat3->x, eat3->y;
+            printf("%d %d", eat3->x, eat3->y);
             return 0;
         }
     } else if (is_cell_empty(move4) == 1 && cell->piece->type == column) {
         if (is_cell_empty(eat4) == 0) {
-            printf("%d");
+            printf("%d %d", eat4->x, eat4->y);
         }
         return 0;
 
     } else { return 1; }
-
 }
-
-
-
   /*  void move_piece(Cell *cell, Board *board) {
         printf("dove vuoi muovere la pendina?")
         scanf()
 
 
     }*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 int get_x_input_coordinate() {
     int x;
     printf("Inserisci la coordinata x della cella:");
