@@ -1,6 +1,6 @@
 /**
  * @file Game.c
- * @author Giovanni Frigerio Zen
+ * @author Giovanni Frigerio Zeno
  * @date October 31, 2020
  * @brief File containing the source code for Lasca:
  * Game controls the whole game, so if a piece is moved or the game has to end,
@@ -163,7 +163,16 @@ int you_can_eat(Cell* cell, Board* board) {
 
 }
 
-    void move_piece(Cell *cell, Board *board )
+
+
+  /*  void move_piece(Cell *cell, Board *board) {
+        printf("dove vuoi muovere la pendina?")
+        scanf()
+
+
+    }*/
+
+
 
 
 
