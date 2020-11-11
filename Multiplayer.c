@@ -3,25 +3,21 @@
 
 Board* init();
 
-int main(int argc, const char * argv[]) {
+int main() {
+
     Board *board = create_board(7, 7);
+
+    int turn = red;
+    int is_match_finished = 0;
+
     init_board(board);
 
-    print_field(board);
+    while (is_match_finished == 0) {
+        print_field(board);
+        move_piece(board, turn);
+        turn = yellow;
 
-    move_piece(board);
+        is_match_finished = 1;
+    }
 
-    print_field(board);
-
-    move_piece(board);
-
-    print_field(board);
-//    int i, f;
-//    for (i = 0; i < board->rows; i++) {
-//        for (f = 0; f < board->columns; f++) {
-//                printf("%d,%d ", board->cells[i*column + f].x, board->cells[i*column + f].y);
-//           // printf("%p ", (void*) board->cells[i*column + f].piece);
-//        }
-//        printf("\n");
-//    }
 }

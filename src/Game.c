@@ -10,8 +10,9 @@
 #include "Game.h"
 #include "Cell.h"
 #include "Board.h"
+#include "Play.h"
 
-void move_piece(Board *board) {
+void move_piece(Board *board, int turn) {
     int x, y;
     Piece *piece;
     Cell *initialCell;
@@ -20,37 +21,31 @@ void move_piece(Board *board) {
     x = get_x_input_coordinate();
     y = get_y_input_coordinate();
 
-
     /* Checks input data for impossible moves */
     if (check_initial_input(board, x, y) == 1) {
         initialCell = get_cell(board, x, y);
         piece = get_piece(initialCell);
-
         /* Gets data from user input */
         x = get_x_input_coordinate();
         y = get_y_input_coordinate();
-
-
-        /* Sets the piece to the new cell and deletes it from the old one */
+        /* Sets the piece to the new cell */
         set_piece(get_cell(board, x, y), piece);
+        /* Deletes the piece from the old cell */
         set_cell_empty(initialCell);
     }
 }
 
 int check_initial_input(Board* board, int x, int y) {
-    if (is_cell_white(get_cell(board, x, y)) == 1) {
-        if (is_cell_empty(get_cell(board, x, y)) == 0) {
-            if (can_piece_move(get_cell(board, x, y), board) == 1) {
+    if (is_cell_white(get_cell(board, x, y)) == 1)
+        if (is_cell_empty(get_cell(board, x, y)) == 0)
+            if (can_piece_move(get_cell(board, x, y), board) == 1)
                 return 1;
-            } else {
+            else
                 printf("Questa pedina non può essere mossa in nessuna cella, riprova.\n");
-            }
-        } else {
+        else
             printf("Qui non c'è nessuna pedina! Riprova.\n");
-        }
-    } else {
+    else
         printf("Quella cella non fa parte del campo, riprova.\n");
-    }
     return 0;
 }
 
@@ -70,39 +65,37 @@ int check_final_input(Board* board, int x, int y) {
 }
 
 int can_piece_move(Cell* cell, Board* board) {
-    /* TODO: Complete */
 
-    Cell *move1;
-    Cell *move2;
-    Cell *move3;
-    Cell *move4;
+    Cell *move1, *move2, *move3, *move4;
 
-    move1 = get_cell(board, cell->x + 1, cell->y - 1);   /* ti metto qua le mosse cosi e` piu` chiaro*/
+    Play *play = malloc(sizeof(Play));
+    play[0] = *new_play(1, 2, red, soldier, cell, move1);
+
+    move1 = get_cell(board, cell->x + 1, cell->y - 1);
     move2 = get_cell(board, cell->x - 1, cell->y - 1);
     move3 = get_cell(board, cell->x - 1, cell->y + 1);
     move4 = get_cell(board, cell->x + 1, cell->y + 1);
 
     if (cell->piece->type == soldier) {
-        if (move1 != NULL) {
+        if (move1 != NULL)
             return is_cell_empty(move1);
-        }
-        if (move2 != NULL) {
+        if (move2 != NULL)
             return is_cell_empty(move2);
-        }
         return 0;
     }
 
     if (cell->piece->type == column) {
-        if (is_cell_empty(move1) == 0) {
-            return 0;
-        } else if (is_cell_empty(move2) == 0) {
-            return 0;
-        } else if (is_cell_empty(move3) == 0) {
-            return 0;
-        } else if (is_cell_empty(move4) == 0) {
-            return 0;
-        } else { return 1; }
+        if (move1 != NULL)
+            return is_cell_empty(move1);
+        if (move2 != NULL)
+            return is_cell_empty(move2);
+        if (move3 != NULL)
+            return is_cell_empty(move3);
+        if (move4 != NULL)
+            return is_cell_empty(move4);
+        return 0;
     }
+    return 0;
 }
 
 
@@ -147,14 +140,15 @@ int you_can_eat(Cell* cell, Board* board) {
         }
         return 0;
 
-    } else { return 1; }
+    }
+    return 1;
 }
-  /*  void move_piece(Cell *cell, Board *board) {
+
+/*  void move_piece(Cell *cell, Board *board) {
         printf("dove vuoi muovere la pendina?")
         scanf()
-
-
-    }*/
+    }
+    */
 int get_x_input_coordinate() {
     int x;
     printf("Inserisci la coordinata x della cella:");

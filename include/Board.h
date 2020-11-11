@@ -60,14 +60,5 @@ void print_board(void);
  */
 Cell* get_cell(Board *board, int x, int y);
 
-/**
- * Creates a piece assigning memory and attributes.
- * @param cell The cell that gets is piece initialized.
- * @param color The color of which the initialized piece has to be.
- */
-void init_piece(Cell* cell, int color);
-
-int is_cell_white(Cell *cell);
-
 #endif /* Campo_h */
 

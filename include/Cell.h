@@ -9,6 +9,7 @@
 #define Cell_h
 
 #include "Piece.h"
+#include <stdlib.h>
 
 enum CellColor {
    white = 0,
@@ -60,5 +61,19 @@ void set_piece(Cell *cell, Piece* piece);
  * @return 0 if the cell is empty.
  */
 int is_cell_empty(Cell *cell);
+
+/**
+ *
+ * @param cell
+ * @return
+ */
+int is_cell_white(Cell *cell);
+
+/**
+ * Creates a piece assigning memory and attributes.
+ * @param cell The cell that gets is piece initialized.
+ * @param color The color of which the initialized piece has to be.
+ */
+void init_piece(Cell* cell, int color);
 
 #endif /* Cell_h */

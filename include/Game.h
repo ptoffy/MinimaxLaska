@@ -39,8 +39,9 @@ int check_final_input(Board* board, int x, int y);
 /**
  * Moves a piece selected by the user to another cell.
  * @param board The board in which the piece is moved.
+ * @param turn The turn indicating which player is playing.
  */
-void move_piece(Board *board);
+void move_piece(Board *board, int turn);
 
 /**
  * Reads and returns x coordinate from user input.
@@ -60,5 +61,7 @@ int get_y_input_coordinate();
  * @return 0 if it can move or eat, 1 if not.
  */
 int can_piece_move(Cell* cell, Board *board);
+
+int you_can_eat(Cell* cell, Board* board);
 
 #endif //LASCA_GAME_H

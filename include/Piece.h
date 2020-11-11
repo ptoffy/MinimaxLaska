@@ -30,9 +30,9 @@ enum PieceColor {
  * Piece represents the pieces that the players play with.
  */
 typedef struct Piece {
-    int color;  /**< The color of the piece, indicates the holder of the piece. */
+    int color; /**< The color of the piece, indicates the holder of the piece. */
     int height; /**< The height of the piece. */
-    int type;   /**< The type of the piece, indicated by the Type enum. */
+    int type; /**< The type of the piece, indicated by the Type enum. */
 } Piece;
 
 void set_height(Piece *piece, int height);

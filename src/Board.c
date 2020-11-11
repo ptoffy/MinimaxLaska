@@ -50,25 +50,6 @@ void destroy_board(Board* board) {
     free(board);
 }
 
-/**
- * Assigns memory to a pointer piece and assigns that attribute to the chosen cell.
- * Assigns then the initial settings for a piece to that pointer.
- */
-void init_piece(Cell* cell, int color) {
-    Piece* piece = malloc(sizeof(Piece));
-    cell->piece = piece;
-    piece->height = 1;
-    piece->color = color;
-    piece->type = soldier;
-}
-
-int is_cell_white(Cell *cell) {
-    if (cell->color == white) {
-        return 1;
-    }
-    return 0;
-}
-
 Cell* get_cell(Board *board, int x, int y) {
     int i, f;
     for (i = 0; i < board->rows; i++) {

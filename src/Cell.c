@@ -44,3 +44,22 @@ void set_piece(Cell *cell, Piece* piece) {
 Piece* get_piece(Cell *cell) {
     return cell->piece;
 }
+
+/**
+ * Assigns memory to a pointer piece and assigns that attribute to the chosen cell.
+ * Assigns then the initial settings for a piece to that pointer.
+ */
+void init_piece(Cell* cell, int color) {
+    Piece* piece = malloc(sizeof(Piece));
+    cell->piece = piece;
+    piece->height = 1;
+    piece->color = color;
+    piece->type = soldier;
+}
+
+int is_cell_white(Cell *cell) {
+    if (cell->color == white) {
+        return 1;
+    }
+    return 0;
+}
