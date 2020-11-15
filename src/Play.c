@@ -12,3 +12,10 @@ Play *new_play(int gain, int risk, int color, int piece_type, Cell *initial_cell
 }
 
 
+
+
+
+
+
+
+

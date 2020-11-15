@@ -12,7 +12,7 @@ typedef struct Play {
     int color; /**< Represents who is making the move. */
     int piece_type; /**< Represents the type of piece that is being used. */
     Cell *initial_cell; /**< Represents the cell where there is the first piece, so where the piece is before the move. */
-    Cell *arrival_cell; /**< Represents the cell where the piece is going. */
+    Cell *arrival_cell; /**< Represents the cell where the piece is going. *
 } Play;
 
 /**
@@ -26,5 +26,7 @@ typedef struct Play {
  * @return The newly created play.
  */
 Play *new_play(int gain, int risk, int color, int piece_type, Cell *initial_cell, Cell *arrival_cell);
+
+
 
 #endif //LASCA_PLAY_H
