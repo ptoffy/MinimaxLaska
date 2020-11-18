@@ -12,7 +12,7 @@ typedef struct Play {
     int color; /**< Represents who is making the move. */
     int piece_type; /**< Represents the type of piece that is being used. */
     Cell *initial_cell; /**< Represents the cell where there is the first piece, so where the piece is before the move. */
-    Cell *arrival_cell; /**< Represents the cell where the piece is going. *
+    Cell *arrival_cell; /**< Represents the cell where the piece is going. */
 } Play;
 
 /**

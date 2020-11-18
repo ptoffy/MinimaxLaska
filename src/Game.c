@@ -12,6 +12,7 @@
 #include "Board.h"
 #include "Play.h"
 
+
 void move_piece(Board *board, int turn) {
     int x, y;
     Piece *piece;
@@ -76,7 +77,7 @@ int can_piece_move(Cell* cell, Board* board) {
     move3 = get_cell(board, cell->x - 1, cell->y + 1);
     move4 = get_cell(board, cell->x + 1, cell->y + 1);
 
-    if (cell->piece->type == soldier && turn == red) {   /* check the type of piece*/
+    if (cell->piece->type == soldier) {   /* check the type of piece*/
         if (move1 != NULL)                /* if the cell are empty you can move the piece on the next cell*/
             return is_cell_empty(move1);
         if (move2 != NULL)
@@ -84,7 +85,7 @@ int can_piece_move(Cell* cell, Board* board) {
         return 0;
     }
 
-    if (cell->piece->type == soldier && turn == yellow) {   /* check the type of piece*/
+    if (cell->piece->type == soldier) {   /* check the type of piece*/
         if (move3 != NULL)                /* if the cell are empty you can move the piece on the next cell*/
             return is_cell_empty(move1);
         if (move4 != NULL)
@@ -103,6 +104,7 @@ int can_piece_move(Cell* cell, Board* board) {
         return 0;
     }
     return 0;
+    }
 }
 
 
@@ -149,6 +151,27 @@ int you_can_eat(Cell* cell, Board* board) {
 
     }
     return 1;
+}
+
+int change_piece(Play Play, Cell Cell){
+
+    if(/*manca il turno*/ yellow)
+        if(Play.arrival_cell->x == 1 && Play.arrival_cell->y == 1 || Play.arrival_cell->x == 3 && Play.arrival_cell->y == 1)
+            Play.piece_type = officer;
+        else if(Play.arrival_cell->x == 5 && Play.arrival_cell->y == 1 || Play.arrival_cell->x == 7 && Play.arrival_cell->y == 4)
+            Play.piece_type = officer;
+        else
+            return 0;
+        /*when the piece arrive at the end of the board it became an officer*/
+
+    if( /*manca il turno*/yellow)
+        if(Play.arrival_cell->x == 1 && Play.arrival_cell->y == 7 || Play.arrival_cell->x == 3 && Play.arrival_cell->y ==7)
+            Play.piece_type = officer;
+        else if(Play.arrival_cell->x == 5 && Play.arrival_cell->y == 7 || Play.arrival_cell->x == 7 && Play.arrival_cell->y == 7)
+            Play.piece_type = officer;
+        else return 0;
+
+
 }
 
 
