@@ -9,15 +9,20 @@ int main() {
 
     int turn = red;
     int is_match_finished = 0;
+    int i=0;
 
     init_board(board);
 
-    while (is_match_finished == 0) {
+    while (i<100) {
         print_field(board);
         move_piece(board, turn);
         turn = yellow;
 
         is_match_finished = 1;
+
+        print_field(board);
+        move_piece(board, turn);
+        turn = red;
     }
 
 }

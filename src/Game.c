@@ -33,6 +33,7 @@ void move_piece(Board *board, int turn) {
         set_piece(get_cell(board, x, y), piece);
         /* Deletes the piece from the old cell */
         set_cell_empty(initialCell);
+
     }
 }
 
@@ -41,8 +42,10 @@ int check_initial_input(Board* board, int x, int y) {
         if (is_cell_empty(get_cell(board, x, y)) == 0)
             if (can_piece_move(get_cell(board, x, y), board) == 1)
                 return 1;
+            else if(you_can_eat(get_cell(board, x, y), board) ==1)
+                return 1;
             else
-                printf("Questa pedina non può essere mossa in nessuna cella, riprova.\n");
+                printf("Questa pedina non può essere mossa in quella cella! Riprova.\n");
         else
             printf("Qui non c'è nessuna pedina! Riprova.\n");
     else
@@ -50,10 +53,11 @@ int check_initial_input(Board* board, int x, int y) {
     return 0;
 }
 
-int check_final_input(Board* board, int x, int y) {
+/*int check_final_input(Board* board, int x, int y) {
     if (is_cell_white(get_cell(board, x, y)) == 1) {
         if (is_cell_empty(get_cell(board, x, y)) == 1) {
-            /* TODO: Add control for if cell is next to first cell or if you can eat */
+             TODO: QUESTA FUNZIONE LA TOGLIEREI PERCHè GIà DALLE FUNZIONI DI MOVIMENTO CAPIAMO SE VA BENE
+             TODO;OPPURE NO MUOVERE LA PEDINA QUINDI METTIAMO SULL'ELSE I VARI MESSAGGI
 
             return 1;
         } else {
@@ -63,7 +67,7 @@ int check_final_input(Board* board, int x, int y) {
         printf("Quella cella non fa parte del campo, riprova.\n");
     }
     return 0;
-}
+}*/
 
 int can_piece_move(Cell* cell, Board* board) {
 
@@ -92,7 +96,7 @@ int can_piece_move(Cell* cell, Board* board) {
             return is_cell_empty(move2);
         return 0;
 
-    if (cell->piece->type == column) {   /* same control for the column piece */
+    if (cell->piece->type == column) {   /* same control for the columns pieces */
         if (move1 != NULL)
             return is_cell_empty(move1);
         if (move2 != NULL)
@@ -162,7 +166,7 @@ int change_piece(Play Play, Cell Cell){
             Play.piece_type = officer;
         else
             return 0;
-        /*when the piece arrive at the end of the board it became an officer*/
+        /*when the piece arrive at the end of the board it will become an officer*/
 
     if( /*manca il turno*/yellow)
         if(Play.arrival_cell->x == 1 && Play.arrival_cell->y == 7 || Play.arrival_cell->x == 3 && Play.arrival_cell->y ==7)
@@ -173,6 +177,12 @@ int change_piece(Play Play, Cell Cell){
 
 
 }
+
+
+
+
+
+
 
 
 int get_x_input_coordinate() {

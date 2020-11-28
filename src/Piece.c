@@ -13,6 +13,7 @@ void set_height(Piece *piece, int height) {
 
 void increase_height(Piece *piece) {
     piece->height += 1;
+
 }
 
 void lower_height(Piece *piece) {

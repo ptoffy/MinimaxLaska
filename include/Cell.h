@@ -23,7 +23,8 @@ enum CellColor {
 typedef struct Cell {
     int x, y;     /**< The x and y coordinates of the cell in the board. */
     int color;    /**< The color of the cell. */
-    Piece *piece; /**< Pointer that represents the piece in the cell. */
+    Piece *piece;/**< Pointer that represents the piece in the cell. */
+
 } Cell;
 
 /**
