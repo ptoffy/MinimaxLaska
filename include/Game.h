@@ -61,8 +61,5 @@ int get_y_input_coordinate();
  * @return 0 if it can move or eat, 1 if not.
  */
 
-int can_piece_move(Cell* cell, Board *board);
-
-int you_can_eat(Cell* cell, Board* board);
 
 #endif //LASCA_GAME_H

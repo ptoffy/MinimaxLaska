@@ -37,37 +37,9 @@ void move_piece(Board *board, int turn) {
     }
 }
 
-int check_initial_input(Board* board, int x, int y) {
-    if (is_cell_white(get_cell(board, x, y)) == 1)
-        if (is_cell_empty(get_cell(board, x, y)) == 0)
-            if (can_piece_move(get_cell(board, x, y), board) == 1)
-                return 1;
-            else if(you_can_eat(get_cell(board, x, y), board) ==1)
-                return 1;
-            else
-                printf("Questa pedina non può essere mossa in quella cella! Riprova.\n");
-        else
-            printf("Qui non c'è nessuna pedina! Riprova.\n");
-    else
-        printf("Quella cella non fa parte del campo, riprova.\n");
-    return 0;
-}
 
-/*int check_final_input(Board* board, int x, int y) {
-    if (is_cell_white(get_cell(board, x, y)) == 1) {
-        if (is_cell_empty(get_cell(board, x, y)) == 1) {
-             TODO: QUESTA FUNZIONE LA TOGLIEREI PERCHè GIà DALLE FUNZIONI DI MOVIMENTO CAPIAMO SE VA BENE
-             TODO;OPPURE NO MUOVERE LA PEDINA QUINDI METTIAMO SULL'ELSE I VARI MESSAGGI
 
-            return 1;
-        } else {
-            printf("Qui c'è già una pedina! Riprova.\n");
-        }
-    } else {
-        printf("Quella cella non fa parte del campo, riprova.\n");
-    }
-    return 0;
-}*/
+
 
 int can_piece_move(Cell* cell, Board* board) {
 
@@ -157,9 +129,9 @@ int you_can_eat(Cell* cell, Board* board) {
     return 1;
 }
 
-int change_piece(Play Play, Cell Cell){
+int change_piece(Play Play, Cell Cell, Piece piece){
 
-    if(/*manca il turno*/ yellow)
+    if(piece.color == yellow)
         if(Play.arrival_cell->x == 1 && Play.arrival_cell->y == 1 || Play.arrival_cell->x == 3 && Play.arrival_cell->y == 1)
             Play.piece_type = officer;
         else if(Play.arrival_cell->x == 5 && Play.arrival_cell->y == 1 || Play.arrival_cell->x == 7 && Play.arrival_cell->y == 4)
@@ -168,7 +140,7 @@ int change_piece(Play Play, Cell Cell){
             return 0;
         /*when the piece arrive at the end of the board it will become an officer*/
 
-    if( /*manca il turno*/yellow)
+    if(piece.color == red)
         if(Play.arrival_cell->x == 1 && Play.arrival_cell->y == 7 || Play.arrival_cell->x == 3 && Play.arrival_cell->y ==7)
             Play.piece_type = officer;
         else if(Play.arrival_cell->x == 5 && Play.arrival_cell->y == 7 || Play.arrival_cell->x == 7 && Play.arrival_cell->y == 7)
@@ -178,9 +150,34 @@ int change_piece(Play Play, Cell Cell){
 
 }
 
+int check_initial_input(Board* board, int x, int y) {
+    if (is_cell_white(get_cell(board, x, y)) == 1)
+        if (is_cell_empty(get_cell(board, x, y)) == 0)
+            if (can_piece_move(get_cell(board, x, y), board) == 1)
+                return 1;
+            else if(you_can_eat(get_cell(board, x, y), board) ==1)
+                return 1;
+            else
+                printf("Questa pedina non può essere mossa in quella cella! Riprova.\n");
+        else
+            printf("Qui non c'è nessuna pedina! Riprova.\n");
+    else
+        printf("Quella cella non fa parte del campo, riprova.\n");
+    return 0;
+}
 
-
-
+int check_final_input(Board* board, int x, int y) {
+    if (is_cell_white(get_cell(board, x, y)) == 1) {
+        if (is_cell_empty(get_cell(board, x, y)) == 1) {
+            return 1;
+        } else {
+            printf("Qui c'è già una pedina! Riprova.\n");
+        }
+    } else {
+        printf("Quella cella non fa parte del campo, riprova.\n");
+    }
+    return 0;
+}
 
 
 
