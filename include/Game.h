@@ -41,12 +41,15 @@ int check_final_input(Board* board, int x, int y);
  * @param board The board in which the piece is moved.
  * @param turn The turn indicating which player is playing.
  */
+
 void move_piece(Board *board, int turn);
 
 /**
  * Reads and returns x coordinate from user input.
  * @return The read x coordinate.
  */
+
+
 int get_x_input_coordinate();
 
 /**

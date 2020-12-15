@@ -11,6 +11,7 @@
 #include "Cell.h"
 #include "Board.h"
 #include "Play.h"
+#include "Moves.h"
 
 
 void move_piece(Board *board, int turn) {
@@ -37,11 +38,41 @@ void move_piece(Board *board, int turn) {
     }
 }
 
+int can_piece_move(Cell* cell, Board* board){
+
+    if (cell->piece->type == soldier) {   /* check the type of piece*/
+        if (cell ->piece != NULL)     /* if the cell are empty you can move the piece on the next cell*/
+            return is_cell_empty(Move_UR());
+        if (move2 != NULL)
+            return is_cell_empty(move2);
+        return 1;
+    }
+
+    if (cell->piece->type == soldier) {   /* check the type of piece*/
+        if (move3 != NULL)                /* if the cell are empty you can move the piece on the next cell*/
+            return is_cell_empty(move1);
+        if (move4 != NULL)
+            return is_cell_empty(move2);
+        return 1;
+
+        if (cell->piece->type == column) {   /* same control for the columns pieces */
+            if (move1 != NULL)
+                return is_cell_empty(move1);
+            if (move2 != NULL)
+                return is_cell_empty(move2);
+            if (move3 != NULL)
+                return is_cell_empty(move3);
+            if (move4 != NULL)
+                return is_cell_empty(move4);
+            return 1;
+        }
+        return 0;
+    }
+}
 
 
 
-
-int can_piece_move(Cell* cell, Board* board) {
+int can_piece_move1(Cell* cell, Board* board, Cell) {
 
     Cell *move1, *move2, *move3, *move4;
 
@@ -58,7 +89,7 @@ int can_piece_move(Cell* cell, Board* board) {
             return is_cell_empty(move1);
         if (move2 != NULL)
             return is_cell_empty(move2);
-        return 0;
+        return 1;
     }
 
     if (cell->piece->type == soldier) {   /* check the type of piece*/
@@ -66,7 +97,7 @@ int can_piece_move(Cell* cell, Board* board) {
             return is_cell_empty(move1);
         if (move4 != NULL)
             return is_cell_empty(move2);
-        return 0;
+        return 1;
 
     if (cell->piece->type == column) {   /* same control for the columns pieces */
         if (move1 != NULL)
@@ -77,7 +108,7 @@ int can_piece_move(Cell* cell, Board* board) {
             return is_cell_empty(move3);
         if (move4 != NULL)
             return is_cell_empty(move4);
-        return 0;
+        return 1;
     }
     return 0;
     }
@@ -107,26 +138,26 @@ int you_can_eat(Cell* cell, Board* board) {
     if (is_cell_empty(move1) == 1) {             /* we use 'move' for see if there is a opponent piece */
         if (is_cell_empty(eat1) == 0) {          /* and with 'eat function' for check if there is a empty*/
             printf("%d %d", eat1->x, eat1->y);    /* cell after opponent piece for eat */
-            return 0;
+            return 1;
         }
     } else if (is_cell_empty(move2) == 1) {
         if (is_cell_empty(eat2) == 0) {
             printf("%d %d", eat2->x, eat2->y);
-            return 0;
+            return 1;
         }
     } else if (is_cell_empty(move3) == 1 && cell->piece->type == column) {  /* column eat QUI AGGIUNGERE COLORI*/
         if (is_cell_empty(eat3) == 0) {
             printf("%d %d", eat3->x, eat3->y);
-            return 0;
+            return 1;
         }
     } else if (is_cell_empty(move4) == 1 && cell->piece->type == column) {
         if (is_cell_empty(eat4) == 0) {
             printf("%d %d", eat4->x, eat4->y);
         }
-        return 0;
+        return 1;
 
     }
-    return 1;
+    return 0;
 }
 
 int change_piece(Play Play, Cell Cell, Piece piece){
@@ -155,7 +186,7 @@ int check_initial_input(Board* board, int x, int y) {
         if (is_cell_empty(get_cell(board, x, y)) == 0)
             if (can_piece_move(get_cell(board, x, y), board) == 1)
                 return 1;
-            else if(you_can_eat(get_cell(board, x, y), board) ==1)
+            else if(you_can_eat(get_cell(board, x, y), board) == 1)
                 return 1;
             else
                 printf("Questa pedina non può essere mossa in quella cella! Riprova.\n");

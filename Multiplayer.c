@@ -16,6 +16,7 @@ int main() {
     while (i<100) {
         print_field(board);
         move_piece(board, turn);
+
         turn = yellow;
 
         is_match_finished = 1;
