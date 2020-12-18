@@ -23,13 +23,14 @@ void move_piece(Board *board, int turn) {
     x = get_x_input_coordinate();
     y = get_y_input_coordinate();
 
+
     /* Checks input data for impossible moves */
     if (check_initial_input(board, x, y) == 1) {
         initialCell = get_cell(board, x, y);
         piece = get_piece(initialCell);
         /* Gets data from user input */
-        x = get_x_input_coordinate();
-        y = get_y_input_coordinate();
+        x = get_x_input_coordinate_final();
+        y = get_y_input_coordinate_final();
         /* Sets the piece to the new cell */
         set_piece(get_cell(board, x, y), piece);
         /* Deletes the piece from the old cell */
@@ -38,41 +39,55 @@ void move_piece(Board *board, int turn) {
     }
 }
 
-int can_piece_move(Cell* cell, Board* board){
+int set_move(Cell* cell, Board* board){
 
-    if (cell->piece->type == soldier) {   /* check the type of piece*/
-        if (cell ->piece != NULL)     /* if the cell are empty you can move the piece on the next cell*/
-            return is_cell_empty(Move_UR());
-        if (move2 != NULL)
-            return is_cell_empty(move2);
-        return 1;
-    }
+    if (cell->piece->type == soldier) {   /* nuova funzione per gestire le mosse possibili con l'utilizzo dell'header moves*/
+        if (get_x_input_coordinate_final()== get_x_input_coordinate() + 1 && get_y_input_coordinate_final() == get_y_input_coordinate() - 1) {
+            if (is_cell_empty(cell)){
+                Move_UR(cell, board);
+                return 1;
+            }
+            else {
+                printf("la pedina non può essere mossa qui");
+                return 0;
+            }
 
-    if (cell->piece->type == soldier) {   /* check the type of piece*/
-        if (move3 != NULL)                /* if the cell are empty you can move the piece on the next cell*/
-            return is_cell_empty(move1);
-        if (move4 != NULL)
-            return is_cell_empty(move2);
-        return 1;
-
-        if (cell->piece->type == column) {   /* same control for the columns pieces */
-            if (move1 != NULL)
-                return is_cell_empty(move1);
-            if (move2 != NULL)
-                return is_cell_empty(move2);
-            if (move3 != NULL)
-                return is_cell_empty(move3);
-            if (move4 != NULL)
-                return is_cell_empty(move4);
-            return 1;
         }
-        return 0;
+        else if(get_x_input_coordinate_final() == get_x_input_coordinate()-1 && get_y_input_coordinate_final() == get_y_input_coordinate()-1){
+            if (is_cell_empty(cell)){
+                Move_UL(cell, board);
+                return 1;
+            } else {
+                printf("la pedina non può essere mossa qui");
+                return 0;
+            }
+        }
+        else if(get_x_input_coordinate_final() == get_x_input_coordinate()-1 && get_y_input_coordinate_final() == get_y_input_coordinate()+1) {
+            if (is_cell_empty(cell)) {
+                Move_DL(cell, board);
+                return 1;
+            } else {
+                printf("la pedina non può essere mossa qui");
+                return 0;
+            }
+        }
+        else if(get_x_input_coordinate_final() == get_x_input_coordinate()+1 && get_y_input_coordinate_final() == get_y_input_coordinate()+1) {
+            if (is_cell_empty(cell)) {
+                Move_DR(cell, board);
+                return 1;
+            } else {
+                printf("la pedina non può essere mossa qui");
+                return 0;
+            }
+        }
     }
 }
 
 
 
-int can_piece_move1(Cell* cell, Board* board, Cell) {
+
+
+int can_piece_move(Cell* cell, Board* board) {
 
     Cell *move1, *move2, *move3, *move4;
 
@@ -113,6 +128,7 @@ int can_piece_move1(Cell* cell, Board* board, Cell) {
     return 0;
     }
 }
+
 
 
 int you_can_eat(Cell* cell, Board* board) {
@@ -184,7 +200,7 @@ int change_piece(Play Play, Cell Cell, Piece piece){
 int check_initial_input(Board* board, int x, int y) {
     if (is_cell_white(get_cell(board, x, y)) == 1)
         if (is_cell_empty(get_cell(board, x, y)) == 0)
-            if (can_piece_move(get_cell(board, x, y), board) == 1)
+            if (can_piece_move(get_cell(board, x, y)) == 1)
                 return 1;
             else if(you_can_eat(get_cell(board, x, y), board) == 1)
                 return 1;
@@ -221,6 +237,20 @@ int get_x_input_coordinate() {
 }
 
 int get_y_input_coordinate() {
+    int y;
+    printf("Inserisci la coordinata y della cella:");
+    scanf("%d", &y);
+    return y;
+}
+
+int get_x_input_coordinate_final() {
+    int x;
+    printf("Inserisci la coordinata x della cella:");
+    scanf("%d", &x);
+    return x;
+}
+
+int get_y_input_coordinate_final() {
     int y;
     printf("Inserisci la coordinata y della cella:");
     scanf("%d", &y);

@@ -64,5 +64,8 @@ int get_y_input_coordinate();
  * @return 0 if it can move or eat, 1 if not.
  */
 
+int get_x_input_coordinate_final();
+int get_y_input_coordinate_final();
+
 
 #endif //LASCA_GAME_H
