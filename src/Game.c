@@ -78,6 +78,7 @@ int set_move(Cell* cell, Board* board){
             } else {
                 printf("la pedina non può essere mossa qui");
                 return 0;
+
             }
         }
     }
