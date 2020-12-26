@@ -10,11 +10,7 @@
 
 #include "Board.h"
 
-typedef struct Moves{
-    Cell Move_UR;
-    Cell *move_ul;
-    int bailamorena;
-}Moves;
+
 
 
 

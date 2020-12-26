@@ -39,30 +39,31 @@ void move_piece(Board *board, int turn) {
     }
 }
 
-int set_move(Cell* cell, Board* board){
+int set_move(Cell* cell, Board* board) {
 
-    if (cell->piece->type == soldier) {   /* nuova funzione per gestire le mosse possibili con l'utilizzo dell'header moves*/
-        if (get_x_input_coordinate_final()== get_x_input_coordinate() + 1 && get_y_input_coordinate_final() == get_y_input_coordinate() - 1) {
-            if (is_cell_empty(cell)){
+    if (cell->piece->type ==
+        soldier) {   /* nuova funzione per gestire le mosse possibili con l'utilizzo dell'header moves*/
+        if (get_x_input_coordinate_final() == get_x_input_coordinate() + 1 &&
+            get_y_input_coordinate_final() == get_y_input_coordinate() - 1) {
+            if (is_cell_empty(cell)) {
                 Move_UR(cell, board);
                 return 1;
-            }
-            else {
+            } else {
                 printf("la pedina non può essere mossa qui");
                 return 0;
             }
 
-        }
-        else if(get_x_input_coordinate_final() == get_x_input_coordinate()-1 && get_y_input_coordinate_final() == get_y_input_coordinate()-1){
-            if (is_cell_empty(cell)){
+        } else if (get_x_input_coordinate_final() == get_x_input_coordinate() - 1 &&
+                   get_y_input_coordinate_final() == get_y_input_coordinate() - 1) {
+            if (is_cell_empty(cell)) {
                 Move_UL(cell, board);
                 return 1;
             } else {
                 printf("la pedina non può essere mossa qui");
                 return 0;
             }
-        }
-        else if(get_x_input_coordinate_final() == get_x_input_coordinate()-1 && get_y_input_coordinate_final() == get_y_input_coordinate()+1) {
+        } else if (get_x_input_coordinate_final() == get_x_input_coordinate() - 1 &&
+                   get_y_input_coordinate_final() == get_y_input_coordinate() + 1) {
             if (is_cell_empty(cell)) {
                 Move_DL(cell, board);
                 return 1;
@@ -70,15 +71,58 @@ int set_move(Cell* cell, Board* board){
                 printf("la pedina non può essere mossa qui");
                 return 0;
             }
-        }
-        else if(get_x_input_coordinate_final() == get_x_input_coordinate()+1 && get_y_input_coordinate_final() == get_y_input_coordinate()+1) {
+        } else if (get_x_input_coordinate_final() == get_x_input_coordinate() + 1 &&
+                   get_y_input_coordinate_final() == get_y_input_coordinate() + 1) {
             if (is_cell_empty(cell)) {
                 Move_DR(cell, board);
                 return 1;
             } else {
                 printf("la pedina non può essere mossa qui");
                 return 0;
-
+            }
+        } else if (get_x_input_coordinate_final() == get_x_input_coordinate() + 2 &&
+                   get_y_input_coordinate_final() == get_y_input_coordinate() - 2) {
+            if (is_cell_empty(cell)) {
+                if (get_cell(board, cell->x == get_x_input_coordinate() + 1, cell->y == get_y_input_coordinate() - 1) !=
+                    NULL)
+                    Eat_UR(cell, board);
+                return 1;
+            } else {
+                printf("la pedina non può essere mossa qui");
+                return 0;
+            }
+        } else if (get_x_input_coordinate_final() == get_x_input_coordinate() - 2 &&
+                   get_y_input_coordinate_final() == get_y_input_coordinate() - 2) {
+            if (is_cell_empty(cell)) {
+                if (get_cell(board, cell->x == get_x_input_coordinate() - 1, cell->y == get_y_input_coordinate() - 1) !=
+                    NULL)
+                    Eat_UL(cell, board);
+                return 1;
+            } else {
+                printf("la pedina non può essere mossa qui");
+                return 0;
+            }
+        } else if (get_x_input_coordinate_final() == get_x_input_coordinate() - 2 &&
+                   get_y_input_coordinate_final() == get_y_input_coordinate() + 2) {
+            if (is_cell_empty(cell)) {
+                if (get_cell(board, cell->x == get_x_input_coordinate() - 1, cell->y == get_y_input_coordinate() + 1) !=
+                    NULL)
+                    Eat_DL(cell, board);
+                return 1;
+            } else {
+                printf("la pedina non può essere mossa qui");
+                return 0;
+            }
+        } else if (get_x_input_coordinate_final() == get_x_input_coordinate() + 2 &&
+                   get_y_input_coordinate_final() == get_y_input_coordinate() + 2) {
+            if (is_cell_empty(cell)) {
+                if (get_cell(board, cell->x == get_x_input_coordinate() + 1, cell->y == get_y_input_coordinate() + 1) !=
+                    NULL)
+                    Eat_DR(cell, board);
+                return 1;
+            } else {
+                printf("la pedina non può essere mossa qui");
+                return 0;
             }
         }
     }
