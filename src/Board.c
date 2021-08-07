@@ -30,9 +30,9 @@ Board* create_board(int rows, int columns) {
             set_cell_empty(&board->cells[i * columns + f]);
 
             if ((i * columns + f) % 2 == 0) {
-                board->cells[i * columns + f].color = white;
+                board->cells[i * columns + f].color = WHITE;
             } else {
-                board->cells[i * columns + f].color = black;
+                board->cells[i * columns + f].color = BLACK;
             }
         }
     }
@@ -73,10 +73,10 @@ void init_board(Board* board) {
         for (f = 0; f < board->columns; f++) {
             if (i % 2 == 0) {
                 if (f % 2 == 0) {
-                    init_piece(&board->cells[i * board->columns + f], red);
+                    init_piece(&board->cells[i * board->columns + f], BLACK);
                 }
             } else if (f % 2 != 0) {
-                init_piece(&board->cells[i * board->columns + f], red);
+                init_piece(&board->cells[i * board->columns + f], BLACK);
             }
         }
     }
@@ -85,10 +85,10 @@ void init_board(Board* board) {
         for (f = board->columns; f >= 0; f--) {
             if (i % 2 == 0) {
                 if (f % 2 == 0) {
-                    init_piece(&board->cells[i * board->columns + f], yellow);
+                    init_piece(&board->cells[i * board->columns + f], WHITE);
                 }
             } else if (f % 2 != 0) {
-                init_piece(&board->cells[i * board->columns + f], yellow);
+                init_piece(&board->cells[i * board->columns + f], WHITE);
             }
         }
     }

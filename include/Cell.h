@@ -11,20 +11,15 @@
 #include "Piece.h"
 #include <stdlib.h>
 
-enum CellColor {
-   white = 0,
-   black = 1
-};
 /**
  * Cell represents one of the single cells that make up the board.
  * It contains its coordinates and the piece on it, this way we can access
  * every piece by having the cell.
  */
 typedef struct Cell {
-    int x, y;     /**< The x and y coordinates of the cell in the board. */
-    int color;    /**< The color of the cell. */
-    Piece *piece;/**< Pointer that represents the piece in the cell. */
-
+    int x, y;                /**< The x and y coordinates of the cell in the board. */
+    enum Color color;        /**< The color of the cell. */
+    Tower *tower;            /**< Pointer that represents the piece in the cell. */
 } Cell;
 
 /**
@@ -47,14 +42,14 @@ void set_cell_empty(Cell *cell);
  * @param cell The cell of which the piece has to be printed.
  * @return The piece of the indicated cell.
  */
-Piece* get_piece(Cell *cell);
+Tower *get_piece(Cell *cell);
 
 /**
  * Sets selected piece on the selected cell.
  * @param cell The cell the piece has to be set on.
  * @param piece The piece that has to be changed of cell.
  */
-void set_piece(Cell *cell, Piece* piece);
+void set_piece(Cell *cell, Tower *tower);
 
 /**
  * Checks if the piece in the cell is empty or not.

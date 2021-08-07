@@ -22,20 +22,19 @@ void move_piece(Board *board, int turn) {
     /* Gets data from user input */
     x = get_x_input_coordinate();
     y = get_y_input_coordinate();
-
 }
 
 int check_initial_input(Board* board, int x, int y) {
-    if(get_cell(board, x, y)->piece!=NULL){
-        if(can_piece_move(board,x,y)>0){
+    if (get_cell(board, x, y)->piece!=NULL) {
+        if (can_piece_move(board, x, y) > 0) {
             printf("La pedina selezionata può essere mossa\n");
             return 1;
         }else{
-            printf("questa pedina non può essere mossa, inserisci nuovamente le coordinate\n");
+            printf("Questa pedina non può essere mossa, inserisci nuovamente le coordinate\n");
             return 0;
         }
     }else{
-        printf("questa pedina non fa parte del campo\n");
+        printf("Questa pedina non fa parte del campo\n");
         return 0;
     }
 }
