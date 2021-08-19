@@ -15,7 +15,8 @@
 #define ANSI_COLOR_RESET  "\x1b[0m"
 
 void print_cell_content(Cell *cell) {
-    if (cell->tower->height != 0) {
+    /* The order of the two conditions is important, since if a tower doesn't exist, we can't check for it's height. */
+    if (cell->tower != NULL && cell->tower->height != 0) {
         if (cell->tower->pieces[0].color == BLACK) {
             printf("%s%d%s ", ANSI_COLOR_RED, cell->tower->height, ANSI_COLOR_RESET);
         } else {
@@ -27,11 +28,11 @@ void print_cell_content(Cell *cell) {
 }
 
 void set_cell_empty(Cell* cell) {
-    cell->tower->height = 0;
+    cell->tower = NULL;
 }
 
 int is_cell_empty(Cell *cell) {
-    return !cell->tower->height;
+    return cell->tower == NULL || !cell->tower->height;
 }
 
 void set_piece(Cell *cell, Tower* tower) {
@@ -47,7 +48,8 @@ Tower *get_piece(Cell *cell) {
  * Assigns then the initial settings for a piece to that pointer.
  */
 void init_piece(Cell* cell, int color) {
-    Tower *tower = malloc(sizeof(Piece));
+    Tower *tower = malloc(sizeof(Tower));
+    tower->pieces = malloc(sizeof(Piece));
     cell->tower = tower;
     tower->height = 1;
     tower->pieces[0].color = color;

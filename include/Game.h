@@ -22,7 +22,7 @@
  * @param y The y coordinate of the selected cell.
  * @return 0 if the move is possible, 1 if not.
  */
-int check_initial_input(Board* board, int x, int y);
+int check_initial_input(Board* board, int x, int y, Color turn);
 
 /**
  * Called when the input for the arriving cell during a move has to be checked and checks if:
@@ -63,6 +63,8 @@ int get_y_input_coordinate();
  * @param cell The cell of the selected piece.
  * @return 0 if it can move or eat, 1 if not.
  */
+int possible_moves(Tower *tower, Board *board, int x, int y);
+
 
 int get_x_input_coordinate_final();
 int get_y_input_coordinate_final();

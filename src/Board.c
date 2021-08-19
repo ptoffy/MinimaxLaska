@@ -43,7 +43,7 @@ void destroy_board(Board* board) {
     int i, f;
     for (i = 0; i < board->rows; i++) {
         for (f = 0; f < board->columns; f++) {
-            free(&board->cells[i*board->columns + f].piece);
+            free(&board->cells[i*board->columns + f].tower);
             free(&board->cells[i*board->columns + f]);
         }
     }
@@ -60,6 +60,10 @@ Cell* get_cell(Board *board, int x, int y) {
         }
     }
     return NULL;
+}
+
+int is_cell_in_board(Board *board, int x, int y) {
+    return get_cell(board, x, y) != NULL && ((x % 2 == 0) && (y % 2 == 0) || (x % 2 == 1) && (y % 2 == 1));
 }
 
 /**

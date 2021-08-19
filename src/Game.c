@@ -11,7 +11,6 @@
 #include "Cell.h"
 #include "Board.h"
 #include "Play.h"
-#include "Moves.h"
 
 
 void move_piece(Board *board, int turn) {
@@ -24,26 +23,57 @@ void move_piece(Board *board, int turn) {
     y = get_y_input_coordinate();
 }
 
-int check_initial_input(Board* board, int x, int y) {
-    if (get_cell(board, x, y)->piece!=NULL) {
-        if (can_piece_move(board, x, y) > 0) {
-            printf("La pedina selezionata può essere mossa\n");
-            return 1;
-        }else{
-            printf("Questa pedina non può essere mossa, inserisci nuovamente le coordinate\n");
-            return 0;
-        }
-    }else{
-        printf("Questa pedina non fa parte del campo\n");
+int check_initial_input(Board* board, int x, int y, Color turn) {
+    /* Check if the selected cell is inside the board */
+    if (!is_cell_in_board(board, x, y)) {
+        printf("Questa cella non fa parte del campo\n");
         return 0;
     }
+    /* Check if the selected cell contains something */
+    if (is_cell_empty(get_cell(board, x, y))) {
+        printf("Questa cella non contiene pedine\n");
+        return 0;
+    }
+    /* Check if the piece is of the corresponding color of the player */
+    if (get_cell(board, x, y)->tower->pieces[0].color != turn) {
+        printf("Questa pedina non ti appartiene\n");
+        return 0;
+    }
+    /* Check if a piece can actually move from its position */
+    if (possible_moves(get_cell(board, x, y)->tower, board, x, y) == 0) {
+        printf("Questa pedina non può essere mossa, inserisci nuovamente le coordinate\n");
+        return 0;
+    }
+    /* Finally, if all checks returned true, return true */
+    printf("La pedina selezionata può essere mossa\n");
+    return 1;
 }
 
 int check_final_input(Board* board, int x, int y) {
-
     return 0;
 }
 
+int possible_moves(Tower *tower, Board *board, int x, int y) {
+    int moves_number = 0;
+    if (tower->pieces[0].type == SOLDIER) {
+        if (tower->pieces[0].color == BLACK) {
+            if (is_cell_in_board(board, x + 1, y + 1) && is_cell_empty(get_cell(board, x + 1, y + 1))) {
+                moves_number += 1;
+            }
+            if (is_cell_in_board(board, x - 1, y + 1) && is_cell_empty(get_cell(board, x - 1, y + 1))) {
+                moves_number += 1;
+            }
+        } else {
+            if (is_cell_in_board(board, x + 1, y - 1) && is_cell_empty(get_cell(board, x + 1, y - 1))) {
+                moves_number += 1;
+            }
+            if (is_cell_in_board(board, x - 1, y - 1) && is_cell_empty(get_cell(board, x - 1, y - 1))) {
+                moves_number += 1;
+            }
+        }
+    }
+    return moves_number;
+}
 
 int get_x_input_coordinate() {
     int x;

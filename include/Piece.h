@@ -8,25 +8,25 @@
 #ifndef Piece_h
 #define Piece_h
 
-enum Color {
+typedef enum Color {
     WHITE = 0,
     BLACK = 1
-};
+} Color;
 
 /**
  * The type of the piece.
  */
-enum Type {
+typedef enum Type {
     SOLDIER = 0,  /**< Can only move forwards, if it reaches the other sides it becomes an officer. */
     OFFICER = 1   /**< Can move in every direction, is marked. */
-};
+} Type;
 
 /**
  * Piece represents the pieces that the players play with.
  */
 typedef struct Piece {
-    enum Color color; /**< The color of the piece, indicates the holder of the piece. */
-    enum Type type; /**< The type of the piece, indicated by the Type enum. */
+    Color color; /**< The color of the piece, indicates the holder of the piece. */
+    Type type; /**< The type of the piece, indicated by the Type enum. */
 } Piece;
 
 /**

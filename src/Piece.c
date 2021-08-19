@@ -7,15 +7,14 @@
  */
 #include "Piece.h"
 
-void set_height(Piece *piece, int height) {
-    piece->height = height;
+void set_height(Tower *tower, int height) {
+    tower->height = height;
 }
 
-void increase_height(Piece *piece) {
-    piece->height += 1;
-
+void increase_height(Tower *tower) {
+    tower->height += 1;
 }
 
-void lower_height(Piece *piece) {
-    piece->height -= 1;
+void lower_height(Tower *tower) {
+    tower->height -= 1;
 }
