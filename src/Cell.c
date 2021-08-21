@@ -3,9 +3,8 @@
  * @author Paul Toffoloni
  * @date October 26, 2020
  * @brief File containing the source code for Lasca:
- * Clip stores a reference to a video file and its data within an editing sequence
+ * Cell contains a single cell of the board.
  */
-#include <stdbool.h>
 #include <stdio.h>
 #include "Cell.h"
 #include "Piece.h"
@@ -14,16 +13,28 @@
 #define ANSI_COLOR_YELLOW "\x1b[33m"
 #define ANSI_COLOR_RESET  "\x1b[0m"
 
+const char* get_color_string(Color color) {
+    return color == WHITE ? "Bianco" : "Nero";
+}
+
 void print_cell_content(Cell *cell) {
     /* The order of the two conditions is important, since if a tower doesn't exist, we can't check for it's height. */
     if (cell->tower != NULL && cell->tower->height != 0) {
-        if (cell->tower->pieces[0].color == BLACK) {
-            printf("%s%d%s ", ANSI_COLOR_RED, cell->tower->height, ANSI_COLOR_RESET);
+        if (cell->tower->pieces[0].type == SOLDIER) {
+            if (cell->tower->pieces[0].color == BLACK) {
+                printf("%s%d%s  ", ANSI_COLOR_RED, cell->tower->height, ANSI_COLOR_RESET);
+            } else {
+                printf("%s%d%s  ", ANSI_COLOR_YELLOW, cell->tower->height, ANSI_COLOR_RESET);
+            }
         } else {
-            printf("%s%d%s ", ANSI_COLOR_YELLOW, cell->tower->height, ANSI_COLOR_RESET);
+            if (cell->tower->pieces[0].color == BLACK) {
+                printf("%s%d%s* ", ANSI_COLOR_RED, cell->tower->height, ANSI_COLOR_RESET);
+            } else {
+                printf("%s%d%s* ", ANSI_COLOR_YELLOW, cell->tower->height, ANSI_COLOR_RESET);
+            }
         }
     } else {
-        printf("0 ");
+        printf("0  ");
     }
 }
 
@@ -41,6 +52,10 @@ void set_piece(Cell *cell, Tower* tower) {
 
 Tower *get_piece(Cell *cell) {
     return cell->tower;
+}
+
+int is_cell_in_board(Cell *cell) {
+    return cell != NULL && ((cell->x % 2 == 0) && (cell->y % 2 == 0) || (cell->x % 2 == 1) && (cell->y % 2 == 1));
 }
 
 /**

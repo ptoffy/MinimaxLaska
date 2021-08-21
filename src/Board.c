@@ -39,7 +39,7 @@ Board* create_board(int rows, int columns) {
     return board;
 }
 
-void destroy_board(Board* board) {
+void destroy_board(Board *board) {
     int i, f;
     for (i = 0; i < board->rows; i++) {
         for (f = 0; f < board->columns; f++) {
@@ -60,10 +60,6 @@ Cell* get_cell(Board *board, int x, int y) {
         }
     }
     return NULL;
-}
-
-int is_cell_in_board(Board *board, int x, int y) {
-    return get_cell(board, x, y) != NULL && ((x % 2 == 0) && (y % 2 == 0) || (x % 2 == 1) && (y % 2 == 1));
 }
 
 /**
@@ -100,64 +96,25 @@ void init_board(Board* board) {
 
 void print_field(Board* board) {
     int i, f;
+    printf("\n");
     for (i = 0; i < board->rows; i++) {
-        printf("%d   ", i + 1);
+        printf("%d     ", i + 1);
         for (f = 0; f < board->columns; f++) {
             if (i % 2 == 0) {
                 if (f % 2 == 0) {
                     print_cell_content(&board->cells[i * board->columns + f]);
-                    printf("  ");
+                    printf("   ");
                 }
             } else if (f % 2 != 0) {
-                printf("  ");
+                printf("   ");
                 print_cell_content(&board->cells[i * board->columns + f]);
             }
         }
         printf("\n");
     }
-    printf("\n    ");
+    printf("\n      ");
     for (f = 0; f < board->columns; f++) {
-        printf("%d ", f + 1);
+        printf("%c  ", f + 'a');
     }
     printf("\n\n");
-}
-
-void print_board() {
-    int foo = 0;
-    int i, f;
-    int MAX_X = 36;
-    int MAX_Y = 36;
-    /* Columns loop */
-    for (i = 0; i < MAX_Y; i++) {
-        /* Rows loop */
-        for (f = 0; f < MAX_X; f++) {
-            /* If row is a divider */
-            if (i % 5 == 0) {
-                if (f % (MAX_X - 1) == 0) {
-                    printf("+");
-                } else {
-                    printf("-");
-                }
-            } else {
-                /* If column is a margin */
-                if (f % 5 == 0) {
-                    printf("|");
-                } else {
-                    if (foo == 0) {
-                        printf("#");
-                    } else {
-                        printf(" ");
-                    }
-                }
-            }
-            if (f % 5 == 0) {
-                foo = !foo;
-            }
-        }
-        printf("\n");
-        if (i % 5 == 0) {
-            foo = !foo;
-        }
-    }
-    printf("\n");
 }

@@ -37,8 +37,23 @@ typedef struct Tower {
     Piece *pieces;
 } Tower;
 
-void set_height(Tower *tower, int height);
+
+/**
+ * Increases the height of the tower by one.
+ * @param tower The tower of which the height is getting increased.
+ */
 void increase_height(Tower *tower);
-void lower_height(Tower *tower);
+
+/**
+ * Decreases the height of the tower by one.
+ * @param tower The tower of which the height is getting decreased.
+ */
+void decrease_height(Tower *tower);
+
+/**
+ * Promotes a Soldier Tower to an Officer Tower.
+ * @param tower The Tower to be promoted.
+ */
+void promote(Tower *tower);
 
 #endif /* Piece_h */

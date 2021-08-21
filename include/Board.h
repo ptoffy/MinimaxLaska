@@ -60,13 +60,5 @@ void print_board(void);
  */
 Cell* get_cell(Board *board, int x, int y);
 
-/**
- * Checks if a cell is inside the playboard.
- * @param x The x coordinate of the cell.
- * @param y The y coordinate of the cell.
- * @return true if the cell is inside the board.
- */
-int is_cell_in_board(Board *board, int x, int y);
-
 #endif /* Campo_h */
 

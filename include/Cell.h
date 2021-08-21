@@ -59,6 +59,13 @@ void set_piece(Cell *cell, Tower *tower);
 int is_cell_empty(Cell *cell);
 
 /**
+ * Checks if a cell is inside the playboard.
+ * @param cell The cell to be checked.
+ * @return true if the cell is inside the board.
+ */
+int is_cell_in_board(Cell *cell);
+
+/**
  *
  * @param cell
  * @return
@@ -71,5 +78,12 @@ int is_cell_white(Cell *cell);
  * @param color The color of which the initialized piece has to be.
  */
 void init_piece(Cell* cell, int color);
+
+/**
+ * Returns a string representing a color, in italian.
+ * @param color The color to be represented-
+ * @return The created string.
+ */
+const char* get_color_string(Color color);
 
 #endif /* Cell_h */

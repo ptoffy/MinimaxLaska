@@ -14,4 +14,4 @@ add_executable(Lasca
         src/Cell.c
         main.c
         src/Piece.c
-        Multiplayer.c src/Game.c include/Game.h src/Play.c include/Play.h)
+        Multiplayer.c src/Game.c include/Game.h include/Moves.h include/Bool.h src/Moves.c src/Bool.c)

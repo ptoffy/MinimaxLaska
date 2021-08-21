@@ -7,14 +7,14 @@
  */
 #include "Piece.h"
 
-void set_height(Tower *tower, int height) {
-    tower->height = height;
-}
-
 void increase_height(Tower *tower) {
     tower->height += 1;
 }
 
-void lower_height(Tower *tower) {
+void decrease_height(Tower *tower) {
     tower->height -= 1;
+}
+
+void promote(Tower *tower) {
+    tower->pieces[0].type = OFFICER;
 }
