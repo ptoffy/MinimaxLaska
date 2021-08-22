@@ -46,14 +46,6 @@ int is_cell_empty(Cell *cell) {
     return cell->tower == NULL || !cell->tower->height;
 }
 
-void set_piece(Cell *cell, Tower* tower) {
-    cell->tower = tower;
-}
-
-Tower *get_piece(Cell *cell) {
-    return cell->tower;
-}
-
 int is_cell_in_board(Cell *cell) {
     return cell != NULL && ((cell->x % 2 == 0) && (cell->y % 2 == 0) || (cell->x % 2 == 1) && (cell->y % 2 == 1));
 }
@@ -69,8 +61,4 @@ void init_piece(Cell* cell, int color) {
     tower->height = 1;
     tower->pieces[0].color = color;
     tower->pieces[0].type = SOLDIER;
-}
-
-int is_cell_white(Cell *cell) {
-    return cell->color == WHITE;
 }

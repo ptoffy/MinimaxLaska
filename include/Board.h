@@ -5,6 +5,7 @@
  * @brief File containing the definition and usage for Lasca:
  * Board is the game field that contains every cell and every piece that make up the game.
  */
+
 #ifndef Campo_h
 #define Campo_h
 

@@ -1,6 +1,12 @@
-//
-// Created by Paul Toffoloni on 19/08/21.
-//
+/**
+ * @file Moves.h
+ * @author Paul Toffoloni
+ * @date August 19, 2021
+ * @brief File containing the definition and usage for Lasca:
+ * Move is a move available to a Tower, it contains an origin cell, a destination cell, and,
+ * if the move is a conquer move, an "eaten" cell, which is the cell that gets conquered.
+ * Moves is an array containing a list of moves.
+ */
 
 #ifndef LASCA_MOVES_H
 #define LASCA_MOVES_H
@@ -110,4 +116,4 @@ void add_to_possible_moves(Cell *origin_cell, Cell *destination_cell, Cell *conq
 
 void print_move(Move *move, int i);
 
-#endif //LASCA_MOVES_H
+#endif /* LASCA_MOVES_H */

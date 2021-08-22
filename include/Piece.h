@@ -5,8 +5,9 @@
  * @brief File containing the definition and usage for Lasca:
  * Piece represents the pieces that the players play with.
  */
-#ifndef Piece_h
-#define Piece_h
+
+#ifndef PIECE_H
+#define PIECE_H
 
 typedef enum Color {
     WHITE = 0,
@@ -56,4 +57,4 @@ void decrease_height(Tower *tower);
  */
 void promote(Tower *tower);
 
-#endif /* Piece_h */
+#endif /* PIECE_H */

@@ -5,8 +5,9 @@
  * @brief File containing the definition and usage for Lasca:
  * Cell represents one of the single cells that make up the board.
  */
-#ifndef Cell_h
-#define Cell_h
+
+#ifndef CELL_H
+#define CELL_H
 
 #include "Piece.h"
 #include <stdlib.h>
@@ -38,20 +39,6 @@ void print_cell_content(Cell *cell);
 void set_cell_empty(Cell *cell);
 
 /**
- * Returns the piece of a cell.
- * @param cell The cell of which the piece has to be printed.
- * @return The piece of the indicated cell.
- */
-Tower *get_piece(Cell *cell);
-
-/**
- * Sets selected piece on the selected cell.
- * @param cell The cell the piece has to be set on.
- * @param piece The piece that has to be changed of cell.
- */
-void set_piece(Cell *cell, Tower *tower);
-
-/**
  * Checks if the piece in the cell is empty or not.
  * @param cell The cell that has to be checked.
  * @return 0 if the cell is empty.
@@ -64,13 +51,6 @@ int is_cell_empty(Cell *cell);
  * @return true if the cell is inside the board.
  */
 int is_cell_in_board(Cell *cell);
-
-/**
- *
- * @param cell
- * @return
- */
-int is_cell_white(Cell *cell);
 
 /**
  * Creates a piece assigning memory and attributes.
@@ -86,4 +66,4 @@ void init_piece(Cell* cell, int color);
  */
 const char* get_color_string(Color color);
 
-#endif /* Cell_h */
+#endif /* CELL_H */

@@ -5,6 +5,7 @@
  * @brief File containing the source code for Lasca:
  * Piece represents the pieces that the players play with.
  */
+
 #include "Piece.h"
 
 void increase_height(Tower *tower) {
