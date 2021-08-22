@@ -20,9 +20,12 @@ Moves *calculate_moves(Board *board, Color turn) {
     int x, y, i, f, end = 0;
     Moves *moves = malloc(sizeof(Moves) * 22);     /* This is a bidimensional array, each element contains an array of Moves associated to a piece */
     Moves *all_moves = malloc(sizeof(Moves));           /* This is a normal array containing all possible moves */
+    Moves *all_conquer_moves = malloc(sizeof(Moves));   /* This array contains al possible conquer moves, if this is != NULL, this is returned instead of the normal array of moves*/
     Moves *inital_move = moves;                         /* This is just a placeholder pointer to keep track of the first element of the array, used for iteration. */
     all_moves->size = 0;
     all_moves->moves = malloc(sizeof(Move) * 16);
+    all_conquer_moves->moves = malloc(sizeof(Move) * 16);
+    all_conquer_moves->size = 0;
     /* Here we create the bidimensional array. */
     for (x = 1; x <= board->rows; x++) {
         for (y = 1; y <= board->columns; y++) {
@@ -37,40 +40,33 @@ Moves *calculate_moves(Board *board, Color turn) {
     moves = inital_move;
     for (f = 0; f < end; f++) {
         for (i = 0; i < moves->size; i++) {
-            all_moves->moves[all_moves->size] = moves->moves[i];
-            all_moves->size++;
+            if (moves->moves[i].conquer) {
+                all_conquer_moves->moves[all_conquer_moves->size] = moves->moves[i];
+                all_conquer_moves->size++;
+            } else {
+                all_moves->moves[all_moves->size] = moves->moves[i];
+                all_moves->size++;
+            }
         }
         moves++;
     }
-    return all_moves;
+    return all_conquer_moves->size == 0 ? all_moves : all_conquer_moves;
 }
 
 void move_piece(Moves *moves) {
     int i, selected = 0;
-    bool moved = false, conquer = false;
+    bool moved = false;
     for (i = 0; i < moves->size; i++)
-        if (moves->moves[i].conquer == true) {
-            conquer = true;
-            break;
-        }
-    for (i = 0; i < moves->size; i++)
-        if (conquer) {
-            if (moves->moves[i].conquer)
-                print_move(&moves->moves[i], i);
-        } else {
-            print_move(&moves->moves[i], i);
-        }
-
+        print_move(&moves->moves[i], i);
 
     while (!moved) {
         printf("Inserisci la tua mossa: ");
         scanf("%d", &selected);
-        while (selected > moves->size - 1) {
+        while (selected >= moves->size) {
             printf("Inserisci un numero valido: \n");
             for (i = 0; i < moves->size; i++)
                 print_move(&moves->moves[i], i);
             scanf("%d", &selected);
-
         }
         make_move(&moves->moves[selected], moves->moves[selected].conquer);
         check_for_promotion(&moves->moves[selected]);
