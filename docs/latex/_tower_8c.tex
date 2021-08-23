@@ -1,0 +1,66 @@
+\hypertarget{_tower_8c}{}\doxysection{src/\+Tower.c File Reference}
+\label{_tower_8c}\index{src/Tower.c@{src/Tower.c}}
+
+
+Data types and methods used to handle a \mbox{\hyperlink{struct_tower}{Tower}}.  
+
+
+{\ttfamily \#include \char`\"{}Tower.\+h\char`\"{}}\newline
+Include dependency graph for Tower.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_tower_8c_aa9a622fef3ee0c022d638f7bebb4f23d}{increase\+\_\+height}} (\mbox{\hyperlink{struct_tower}{Tower}} $\ast$tower)
+\item 
+void \mbox{\hyperlink{_tower_8c_ae98439f83e1adb9eea613852f020493a}{decrease\+\_\+height}} (\mbox{\hyperlink{struct_tower}{Tower}} $\ast$tower)
+\item 
+void \mbox{\hyperlink{_tower_8c_a500504f881cf6a3ca16d64b08f0e631c}{promote}} (\mbox{\hyperlink{struct_tower}{Tower}} $\ast$tower)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Data types and methods used to handle a \mbox{\hyperlink{struct_tower}{Tower}}. 
+
+\begin{DoxyAuthor}{Author}
+Paul Toffoloni 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+October 26, 2020
+\end{DoxyDate}
+A tower is what the game is played with and is made up of an array of pieces. This file is in charge of handling everything regarding towers, like increasing or decreasing its height or promoting a soldier. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_tower_8c_ae98439f83e1adb9eea613852f020493a}\label{_tower_8c_ae98439f83e1adb9eea613852f020493a}} 
+\index{Tower.c@{Tower.c}!decrease\_height@{decrease\_height}}
+\index{decrease\_height@{decrease\_height}!Tower.c@{Tower.c}}
+\doxysubsubsection{\texorpdfstring{decrease\_height()}{decrease\_height()}}
+{\footnotesize\ttfamily void decrease\+\_\+height (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_tower}{Tower}} $\ast$}]{tower }\end{DoxyParamCaption})}
+
+Decreases the height of the tower by one. 
+\begin{DoxyParams}{Parameters}
+{\em tower} & The \mbox{\hyperlink{struct_tower}{Tower}} of which the height is getting decreased. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_tower_8c_aa9a622fef3ee0c022d638f7bebb4f23d}\label{_tower_8c_aa9a622fef3ee0c022d638f7bebb4f23d}} 
+\index{Tower.c@{Tower.c}!increase\_height@{increase\_height}}
+\index{increase\_height@{increase\_height}!Tower.c@{Tower.c}}
+\doxysubsubsection{\texorpdfstring{increase\_height()}{increase\_height()}}
+{\footnotesize\ttfamily void increase\+\_\+height (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_tower}{Tower}} $\ast$}]{tower }\end{DoxyParamCaption})}
+
+Increases the height of the tower by one. 
+\begin{DoxyParams}{Parameters}
+{\em tower} & The \mbox{\hyperlink{struct_tower}{Tower}} of which the height is getting increased. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_tower_8c_a500504f881cf6a3ca16d64b08f0e631c}\label{_tower_8c_a500504f881cf6a3ca16d64b08f0e631c}} 
+\index{Tower.c@{Tower.c}!promote@{promote}}
+\index{promote@{promote}!Tower.c@{Tower.c}}
+\doxysubsubsection{\texorpdfstring{promote()}{promote()}}
+{\footnotesize\ttfamily void promote (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_tower}{Tower}} $\ast$}]{tower }\end{DoxyParamCaption})}
+
+Promotes a Soldier \mbox{\hyperlink{struct_tower}{Tower}} to an Officer \mbox{\hyperlink{struct_tower}{Tower}}. 
+\begin{DoxyParams}{Parameters}
+{\em tower} & The \mbox{\hyperlink{struct_tower}{Tower}} to be promoted. \\
+\hline
+\end{DoxyParams}

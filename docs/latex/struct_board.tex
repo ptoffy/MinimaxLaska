@@ -1,0 +1,55 @@
+\hypertarget{struct_board}{}\doxysection{Board Struct Reference}
+\label{struct_board}\index{Board@{Board}}
+
+
+Game field.  
+
+
+
+
+{\ttfamily \#include $<$Board.\+h$>$}
+
+
+
+Collaboration diagram for Board\+:
+% FIG 0
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_board_ab0678710e0cb026be902dbb6a8ad8c40}{rows}}
+\item 
+int \mbox{\hyperlink{struct_board_abd6db5048c565a2236812ae739f12638}{columns}}
+\item 
+\mbox{\hyperlink{struct_cell}{Cell}} $\ast$ \mbox{\hyperlink{struct_board_abe9ce78efd9a0683d15965b2993efab8}{cells}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Game field. 
+
+\mbox{\hyperlink{struct_board}{Board}} is the game field that contains every \mbox{\hyperlink{struct_cell}{Cell}} and every \mbox{\hyperlink{struct_tower}{Tower}} that make up the game. The cells pointer is an array that contains all the \mbox{\hyperlink{struct_cell}{Cell}} of the board, with the size of rows $\ast$ columns, in classic Lasca it is 7 $\ast$ 7, meaning there are 49 cells. Lasca is played only on white cells, in fact the actually used cells are just 25. 
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{struct_board_abe9ce78efd9a0683d15965b2993efab8}\label{struct_board_abe9ce78efd9a0683d15965b2993efab8}} 
+\index{Board@{Board}!cells@{cells}}
+\index{cells@{cells}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{cells}{cells}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_cell}{Cell}}$\ast$ Board\+::cells}
+
+A matrix of cells. \mbox{\Hypertarget{struct_board_abd6db5048c565a2236812ae739f12638}\label{struct_board_abd6db5048c565a2236812ae739f12638}} 
+\index{Board@{Board}!columns@{columns}}
+\index{columns@{columns}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{columns}{columns}}
+{\footnotesize\ttfamily int Board\+::columns}
+
+The number of columns. \mbox{\Hypertarget{struct_board_ab0678710e0cb026be902dbb6a8ad8c40}\label{struct_board_ab0678710e0cb026be902dbb6a8ad8c40}} 
+\index{Board@{Board}!rows@{rows}}
+\index{rows@{rows}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{rows}{rows}}
+{\footnotesize\ttfamily int Board\+::rows}
+
+The number of rows. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_board_8h}{Board.\+h}}\end{DoxyCompactItemize}

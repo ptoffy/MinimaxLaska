@@ -1,0 +1,21 @@
+digraph "include/Multiplayer.h"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="include/Multiplayer.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Multiplayer mode handler."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Moves.h",height=0.2,width=0.4,color="black",URL="$_moves_8h.html",tooltip="Moves contains all the data types and methods used to handle moves."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Cell.h",height=0.2,width=0.4,color="black",URL="$_cell_8h.html",tooltip="Cell struct and methods to handle cells and their towers."];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Tower.h",height=0.2,width=0.4,color="black",URL="$_tower_8h.html",tooltip="Data types and methods used to handle a Tower."];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="stdlib.h",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="Bool.h",height=0.2,width=0.4,color="black",URL="$_bool_8h.html",tooltip="Boolean enum."];
+  Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="Board.h",height=0.2,width=0.4,color="black",URL="$_board_8h.html",tooltip="Board struct and methods to handle the board."];
+  Node7 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+}

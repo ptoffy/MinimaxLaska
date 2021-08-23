@@ -1,0 +1,318 @@
+\hypertarget{_moves_8c}{}\doxysection{src/\+Moves.c File Reference}
+\label{_moves_8c}\index{src/Moves.c@{src/Moves.c}}
+
+
+\mbox{\hyperlink{struct_moves}{Moves}} contains all the data types and methods used to handle moves.  
+
+
+{\ttfamily \#include \char`\"{}Moves.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for Moves.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_moves}{Moves}} \mbox{\hyperlink{_moves_8c_a5b20bd7e3fd88aaa95fa954ba8f39350}{new\+\_\+moves}} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new \mbox{\hyperlink{struct_moves}{Moves}} array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_move}{Move}} \mbox{\hyperlink{_moves_8c_a587b03cf247c8636ed59eba1396686a3}{new\+\_\+move}} (\mbox{\hyperlink{struct_cell}{Cell}} $\ast$origin, \mbox{\hyperlink{struct_cell}{Cell}} $\ast$destination)
+\begin{DoxyCompactList}\small\item\em Creates a new move. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_move}{Move}} \mbox{\hyperlink{_moves_8c_a202adffd011173e27c0ee55a13ecbaad}{new\+\_\+conquer\+\_\+move}} (\mbox{\hyperlink{struct_cell}{Cell}} $\ast$origin, \mbox{\hyperlink{struct_cell}{Cell}} $\ast$destination, \mbox{\hyperlink{struct_cell}{Cell}} $\ast$eaten)
+\begin{DoxyCompactList}\small\item\em Creates a new conquer move. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_moves_8c_a7990b3cef4fb68aec87f7c3f178727c0}{add\+\_\+move}} (\mbox{\hyperlink{struct_move}{Move}} move, \mbox{\hyperlink{struct_moves}{Moves}} $\ast$moves)
+\begin{DoxyCompactList}\small\item\em Adds a new \mbox{\hyperlink{struct_move}{Move}} to a \mbox{\hyperlink{struct_moves}{Moves}} array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_moves_8c_af4e7efd7818aabb39534b9bf2a883c1d}{make\+\_\+move}} (\mbox{\hyperlink{struct_move}{Move}} $\ast$move, \mbox{\hyperlink{_bool_8h_af6a258d8f3ee5206d682d799316314b1}{bool}} conquer)
+\begin{DoxyCompactList}\small\item\em Performs a \mbox{\hyperlink{struct_move}{Move}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_moves_8c_aa8f7fae69b256a6b7d42d960f16ec392}{conquer\+\_\+tower}} (\mbox{\hyperlink{struct_move}{Move}} $\ast$move)
+\begin{DoxyCompactList}\small\item\em Conquers a \mbox{\hyperlink{struct_tower}{Tower}} from a \mbox{\hyperlink{struct_move}{Move}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_moves_8c_aac0f06409d70fad432a0e976bb2df42d}{check\+\_\+for\+\_\+promotion}} (\mbox{\hyperlink{struct_move}{Move}} $\ast$move)
+\begin{DoxyCompactList}\small\item\em Promotes a \mbox{\hyperlink{struct_tower}{Tower}} if necessary. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_moves_8c_ab7a32c469122741545633b2d7b6870ee}{add\+\_\+to\+\_\+possible\+\_\+moves}} (\mbox{\hyperlink{struct_cell}{Cell}} $\ast$origin\+\_\+cell, \mbox{\hyperlink{struct_cell}{Cell}} $\ast$destination\+\_\+cell, \mbox{\hyperlink{struct_cell}{Cell}} $\ast$conquer\+\_\+destination\+\_\+cell, \mbox{\hyperlink{_tower_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}} color, \mbox{\hyperlink{struct_moves}{Moves}} $\ast$moves)
+\begin{DoxyCompactList}\small\item\em Adds a \mbox{\hyperlink{struct_move}{Move}} to a \mbox{\hyperlink{struct_moves}{Moves}} array depending on its type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_moves}{Moves}} \mbox{\hyperlink{_moves_8c_aea789482b86f2656473137db1ed9acaf}{tower\+\_\+possible\+\_\+moves}} (\mbox{\hyperlink{struct_tower}{Tower}} $\ast$tower, \mbox{\hyperlink{struct_board}{Board}} $\ast$board, int x, int y)
+\begin{DoxyCompactList}\small\item\em Returns all possible moves for the indicated {\ttfamily tower}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_moves}{Moves}} \mbox{\hyperlink{_moves_8c_a72732e55737e01ab48af1670fd82543c}{soldier\+\_\+possible\+\_\+moves}} (\mbox{\hyperlink{struct_tower}{Tower}} $\ast$tower, \mbox{\hyperlink{struct_board}{Board}} $\ast$board, int x, int y)
+\begin{DoxyCompactList}\small\item\em Returns all possible moves for the indicated soldier {\ttfamily tower}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_moves}{Moves}} \mbox{\hyperlink{_moves_8c_a0b1e07f7bb3a432643643923d9a661c3}{officer\+\_\+possible\+\_\+moves}} (\mbox{\hyperlink{struct_tower}{Tower}} $\ast$tower, \mbox{\hyperlink{struct_board}{Board}} $\ast$board, int x, int y)
+\begin{DoxyCompactList}\small\item\em Returns all possible moves for the indicated officer {\ttfamily tower}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_moves_8c_a219b393e8de668651378d51cf6ef4160}{print\+\_\+move}} (\mbox{\hyperlink{struct_move}{Move}} $\ast$move, int i)
+\begin{DoxyCompactList}\small\item\em Prints a \mbox{\hyperlink{struct_move}{Move}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{struct_moves}{Moves}} contains all the data types and methods used to handle moves. 
+
+\begin{DoxyAuthor}{Author}
+Paul Toffoloni 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+August 19, 2021
+\end{DoxyDate}
+\mbox{\hyperlink{struct_move}{Move}} is a move available to a \mbox{\hyperlink{struct_tower}{Tower}}, it contains an origin cell, a destination cell, and, if the move is a conquer move, an \char`\"{}eaten\char`\"{} cell, which is the cell that gets conquered. \mbox{\hyperlink{struct_moves}{Moves}} is an array containing a list of moves. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_moves_8c_a7990b3cef4fb68aec87f7c3f178727c0}\label{_moves_8c_a7990b3cef4fb68aec87f7c3f178727c0}} 
+\index{Moves.c@{Moves.c}!add\_move@{add\_move}}
+\index{add\_move@{add\_move}!Moves.c@{Moves.c}}
+\doxysubsubsection{\texorpdfstring{add\_move()}{add\_move()}}
+{\footnotesize\ttfamily void add\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_move}{Move}}}]{move,  }\item[{\mbox{\hyperlink{struct_moves}{Moves}} $\ast$}]{moves }\end{DoxyParamCaption})}
+
+
+
+Adds a new \mbox{\hyperlink{struct_move}{Move}} to a \mbox{\hyperlink{struct_moves}{Moves}} array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em move} & The \mbox{\hyperlink{struct_move}{Move}} to be added. \\
+\hline
+{\em moves} & The array to which we add a \mbox{\hyperlink{struct_move}{Move}} to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_moves_8c_ab7a32c469122741545633b2d7b6870ee}\label{_moves_8c_ab7a32c469122741545633b2d7b6870ee}} 
+\index{Moves.c@{Moves.c}!add\_to\_possible\_moves@{add\_to\_possible\_moves}}
+\index{add\_to\_possible\_moves@{add\_to\_possible\_moves}!Moves.c@{Moves.c}}
+\doxysubsubsection{\texorpdfstring{add\_to\_possible\_moves()}{add\_to\_possible\_moves()}}
+{\footnotesize\ttfamily void add\+\_\+to\+\_\+possible\+\_\+moves (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cell}{Cell}} $\ast$}]{origin\+\_\+cell,  }\item[{\mbox{\hyperlink{struct_cell}{Cell}} $\ast$}]{destination\+\_\+cell,  }\item[{\mbox{\hyperlink{struct_cell}{Cell}} $\ast$}]{conquer\+\_\+destination\+\_\+cell,  }\item[{\mbox{\hyperlink{_tower_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}}}]{color,  }\item[{\mbox{\hyperlink{struct_moves}{Moves}} $\ast$}]{moves }\end{DoxyParamCaption})}
+
+
+
+Adds a \mbox{\hyperlink{struct_move}{Move}} to a \mbox{\hyperlink{struct_moves}{Moves}} array depending on its type. 
+
+Checks if a \mbox{\hyperlink{struct_move}{Move}} is a conquer move or not inspecting the cells around the {\ttfamily destination\+\_\+cell}, according to this adds the move either to a normal moves array or a conquer moves array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin\+\_\+cell} & The cell where the piece currently is and where it has to be moved from. \\
+\hline
+{\em destination\+\_\+cell} & The cell where the piece has to be moved to. \\
+\hline
+{\em conquer\+\_\+destination\+\_\+cell} & The cell where the piece has to be moved to if the move is a conquer move. \\
+\hline
+{\em color} & The color of the cell to be eatenm if it\textquotesingle{}s a conquer move. \\
+\hline
+{\em moves} & The moves array to be added the created \mbox{\hyperlink{struct_move}{Move}} to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_moves_8c_aac0f06409d70fad432a0e976bb2df42d}\label{_moves_8c_aac0f06409d70fad432a0e976bb2df42d}} 
+\index{Moves.c@{Moves.c}!check\_for\_promotion@{check\_for\_promotion}}
+\index{check\_for\_promotion@{check\_for\_promotion}!Moves.c@{Moves.c}}
+\doxysubsubsection{\texorpdfstring{check\_for\_promotion()}{check\_for\_promotion()}}
+{\footnotesize\ttfamily void check\+\_\+for\+\_\+promotion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_move}{Move}} $\ast$}]{move }\end{DoxyParamCaption})}
+
+
+
+Promotes a \mbox{\hyperlink{struct_tower}{Tower}} if necessary. 
+
+Checks if a piece reached the end of the board and if so promotes it.
+
+\begin{DoxySeeAlso}{See also}
+Piece\+::promote
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em move} & The \mbox{\hyperlink{struct_move}{Move}} that contains the tower we are checking promotion for. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_moves_8c_aa8f7fae69b256a6b7d42d960f16ec392}\label{_moves_8c_aa8f7fae69b256a6b7d42d960f16ec392}} 
+\index{Moves.c@{Moves.c}!conquer\_tower@{conquer\_tower}}
+\index{conquer\_tower@{conquer\_tower}!Moves.c@{Moves.c}}
+\doxysubsubsection{\texorpdfstring{conquer\_tower()}{conquer\_tower()}}
+{\footnotesize\ttfamily void conquer\+\_\+tower (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_move}{Move}} $\ast$}]{move }\end{DoxyParamCaption})}
+
+
+
+Conquers a \mbox{\hyperlink{struct_tower}{Tower}} from a \mbox{\hyperlink{struct_move}{Move}}. 
+
+Called when a conquest has to be performed, removes the first element of the tower to be conquered and places it on the top of the conqueror tower, then rearranges the pieces of the remaining conquered tower, if there are any left, otherwise, removes it from the cell setting its pointer to NULL.
+
+
+\begin{DoxyParams}{Parameters}
+{\em move} & The \mbox{\hyperlink{struct_move}{Move}} we are using to conquer the tower. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_moves_8c_af4e7efd7818aabb39534b9bf2a883c1d}\label{_moves_8c_af4e7efd7818aabb39534b9bf2a883c1d}} 
+\index{Moves.c@{Moves.c}!make\_move@{make\_move}}
+\index{make\_move@{make\_move}!Moves.c@{Moves.c}}
+\doxysubsubsection{\texorpdfstring{make\_move()}{make\_move()}}
+{\footnotesize\ttfamily void make\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_move}{Move}} $\ast$}]{move,  }\item[{\mbox{\hyperlink{_bool_8h_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{conquer }\end{DoxyParamCaption})}
+
+
+
+Performs a \mbox{\hyperlink{struct_move}{Move}}. 
+
+Assigns the tower pointer of the destination cell contained in the {\ttfamily move} pointer to the origin one, then removes the tower from the origin cell. If the move is a conquer move, also performs the conquest.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_moves_8h_aa8f7fae69b256a6b7d42d960f16ec392}{conquer\+\_\+tower}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em move} & Pointer to the \mbox{\hyperlink{struct_move}{Move}} to be performed. \\
+\hline
+{\em conquer} & Bool value indicating if the passed move is a conquer move. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_moves_8c_a202adffd011173e27c0ee55a13ecbaad}\label{_moves_8c_a202adffd011173e27c0ee55a13ecbaad}} 
+\index{Moves.c@{Moves.c}!new\_conquer\_move@{new\_conquer\_move}}
+\index{new\_conquer\_move@{new\_conquer\_move}!Moves.c@{Moves.c}}
+\doxysubsubsection{\texorpdfstring{new\_conquer\_move()}{new\_conquer\_move()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_move}{Move}} new\+\_\+conquer\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cell}{Cell}} $\ast$}]{origin,  }\item[{\mbox{\hyperlink{struct_cell}{Cell}} $\ast$}]{destination,  }\item[{\mbox{\hyperlink{struct_cell}{Cell}} $\ast$}]{eaten }\end{DoxyParamCaption})}
+
+
+
+Creates a new conquer move. 
+
+Returns a new conquer move containing the origin cell, the destination cell and the eaten cell of the pieces to be moved and conquered.
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & \mbox{\hyperlink{struct_cell}{Cell}} pointer where the tower currently is and where it has to be moved from. \\
+\hline
+{\em destination} & \mbox{\hyperlink{struct_cell}{Cell}} pointer where the piece has to be moved to. \\
+\hline
+{\em eaten} & \mbox{\hyperlink{struct_cell}{Cell}} pointer where the piece to be conquered is. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created move. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_moves_8c_a587b03cf247c8636ed59eba1396686a3}\label{_moves_8c_a587b03cf247c8636ed59eba1396686a3}} 
+\index{Moves.c@{Moves.c}!new\_move@{new\_move}}
+\index{new\_move@{new\_move}!Moves.c@{Moves.c}}
+\doxysubsubsection{\texorpdfstring{new\_move()}{new\_move()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_move}{Move}} new\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cell}{Cell}} $\ast$}]{origin,  }\item[{\mbox{\hyperlink{struct_cell}{Cell}} $\ast$}]{destination }\end{DoxyParamCaption})}
+
+
+
+Creates a new move. 
+
+Returns a new normal move containing the origin cell and the destination cell of the tower to be moved.
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & The cell where the piece currently is and where it has to be moved from. \\
+\hline
+{\em destination} & The cell where the piece has to be moved to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created move. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_moves_8c_a5b20bd7e3fd88aaa95fa954ba8f39350}\label{_moves_8c_a5b20bd7e3fd88aaa95fa954ba8f39350}} 
+\index{Moves.c@{Moves.c}!new\_moves@{new\_moves}}
+\index{new\_moves@{new\_moves}!Moves.c@{Moves.c}}
+\doxysubsubsection{\texorpdfstring{new\_moves()}{new\_moves()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_moves}{Moves}} new\+\_\+moves (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes a new \mbox{\hyperlink{struct_moves}{Moves}} array. 
+
+Constructor for the \mbox{\hyperlink{struct_moves}{Moves}} struct that creates a new moves array assigning memory to it and returns it, empty.
+
+\begin{DoxyReturn}{Returns}
+A new \mbox{\hyperlink{struct_moves}{Moves}} struct with an empty array. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_moves_8c_a0b1e07f7bb3a432643643923d9a661c3}\label{_moves_8c_a0b1e07f7bb3a432643643923d9a661c3}} 
+\index{Moves.c@{Moves.c}!officer\_possible\_moves@{officer\_possible\_moves}}
+\index{officer\_possible\_moves@{officer\_possible\_moves}!Moves.c@{Moves.c}}
+\doxysubsubsection{\texorpdfstring{officer\_possible\_moves()}{officer\_possible\_moves()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_moves}{Moves}} officer\+\_\+possible\+\_\+moves (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_tower}{Tower}} $\ast$}]{tower,  }\item[{\mbox{\hyperlink{struct_board}{Board}} $\ast$}]{board,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Returns all possible moves for the indicated officer {\ttfamily tower}. 
+
+Creates a \mbox{\hyperlink{struct_moves}{Moves}} object containing every possible move for the selected officer, with a Bool value if the move is a conquest move or not.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tower} & The tower that has to be moved. \\
+\hline
+{\em board} & The board we are using. \\
+\hline
+{\em x} & The x coordinate of the starter cell. \\
+\hline
+{\em y} & The y coordinate of the starter cell. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An array containing all the moves an officer can make. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_moves_8h_a72732e55737e01ab48af1670fd82543c}{soldier\+\_\+possible\+\_\+moves}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_moves_8c_a219b393e8de668651378d51cf6ef4160}\label{_moves_8c_a219b393e8de668651378d51cf6ef4160}} 
+\index{Moves.c@{Moves.c}!print\_move@{print\_move}}
+\index{print\_move@{print\_move}!Moves.c@{Moves.c}}
+\doxysubsubsection{\texorpdfstring{print\_move()}{print\_move()}}
+{\footnotesize\ttfamily void print\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_move}{Move}} $\ast$}]{move,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Prints a \mbox{\hyperlink{struct_move}{Move}}. 
+
+Prints the data from a \mbox{\hyperlink{struct_move}{Move}}, more precisely the coordinates of it, enabling the user to choose one, indicating an id passed from a loop.
+
+
+\begin{DoxyParams}{Parameters}
+{\em move} & The \mbox{\hyperlink{struct_move}{Move}} to be printed. \\
+\hline
+{\em i} & The id of the move. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_game_8c_aba676c220be1114c939c33f4046f739c}{user\+\_\+move\+\_\+piece}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_moves_8c_a72732e55737e01ab48af1670fd82543c}\label{_moves_8c_a72732e55737e01ab48af1670fd82543c}} 
+\index{Moves.c@{Moves.c}!soldier\_possible\_moves@{soldier\_possible\_moves}}
+\index{soldier\_possible\_moves@{soldier\_possible\_moves}!Moves.c@{Moves.c}}
+\doxysubsubsection{\texorpdfstring{soldier\_possible\_moves()}{soldier\_possible\_moves()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_moves}{Moves}} soldier\+\_\+possible\+\_\+moves (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_tower}{Tower}} $\ast$}]{tower,  }\item[{\mbox{\hyperlink{struct_board}{Board}} $\ast$}]{board,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Returns all possible moves for the indicated soldier {\ttfamily tower}. 
+
+Creates a \mbox{\hyperlink{struct_moves}{Moves}} object containing every possible move for the selected soldier, with a Bool value if the move is a conquest move or not.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tower} & The tower that has to be moved. \\
+\hline
+{\em board} & The board we are using. \\
+\hline
+{\em x} & The x coordinate of the starter cell. \\
+\hline
+{\em y} & The y coordinate of the starter cell. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An array containing all the moves a piece can make. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_moves_8c_aea789482b86f2656473137db1ed9acaf}\label{_moves_8c_aea789482b86f2656473137db1ed9acaf}} 
+\index{Moves.c@{Moves.c}!tower\_possible\_moves@{tower\_possible\_moves}}
+\index{tower\_possible\_moves@{tower\_possible\_moves}!Moves.c@{Moves.c}}
+\doxysubsubsection{\texorpdfstring{tower\_possible\_moves()}{tower\_possible\_moves()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_moves}{Moves}} tower\+\_\+possible\+\_\+moves (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_tower}{Tower}} $\ast$}]{tower,  }\item[{\mbox{\hyperlink{struct_board}{Board}} $\ast$}]{board,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Returns all possible moves for the indicated {\ttfamily tower}. 
+
+Creates a \mbox{\hyperlink{struct_moves}{Moves}} object containing every possible move for the selected tower, using the soldier\+\_\+possible\+\_\+moves and officer\+\_\+possible\+\_\+moves methods.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tower} & The tower that has to be moved. \\
+\hline
+{\em board} & The board we are using. \\
+\hline
+{\em x} & The x coordinate of the starter cell. \\
+\hline
+{\em y} & The y coordinate of the starter cell. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An array containing all the moves a piece can make. 
+\end{DoxyReturn}

@@ -1,0 +1,99 @@
+\hypertarget{_game_8h}{}\doxysection{include/\+Game.h File Reference}
+\label{_game_8h}\index{include/Game.h@{include/Game.h}}
+
+
+Methods to handle a game.  
+
+
+{\ttfamily \#include \char`\"{}Board.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Moves.\+h\char`\"{}}\newline
+Include dependency graph for Game.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_bool_8h_af6a258d8f3ee5206d682d799316314b1}{bool}} \mbox{\hyperlink{_game_8h_a93dd6e567bbaf74069580033ccc4ed95}{can\+\_\+tower\+\_\+move}} (\mbox{\hyperlink{struct_board}{Board}} $\ast$board, int x, int y, \mbox{\hyperlink{_tower_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}} turn)
+\begin{DoxyCompactList}\small\item\em Checks if any moves can be performed on a determined cell. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_moves}{Moves}} $\ast$ \mbox{\hyperlink{_game_8h_a0fef4a103ee64f344eb154375cbf93f5}{calculate\+\_\+moves}} (\mbox{\hyperlink{struct_board}{Board}} $\ast$board, \mbox{\hyperlink{_tower_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}} turn)
+\begin{DoxyCompactList}\small\item\em Calculates all moves that can be made during a turn. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_game_8h_aba676c220be1114c939c33f4046f739c}{user\+\_\+move\+\_\+piece}} (\mbox{\hyperlink{struct_moves}{Moves}} $\ast$moves)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_moves}{Moves}} a \mbox{\hyperlink{struct_tower}{Tower}} selected by the user to another \mbox{\hyperlink{struct_cell}{Cell}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Methods to handle a game. 
+
+\begin{DoxyAuthor}{Author}
+Paul Toffoloni 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+October 31, 2020
+\end{DoxyDate}
+This file is in charge of handling the game, calculating all possible moves inside the board and checking if a move can be made. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_game_8h_a0fef4a103ee64f344eb154375cbf93f5}\label{_game_8h_a0fef4a103ee64f344eb154375cbf93f5}} 
+\index{Game.h@{Game.h}!calculate\_moves@{calculate\_moves}}
+\index{calculate\_moves@{calculate\_moves}!Game.h@{Game.h}}
+\doxysubsubsection{\texorpdfstring{calculate\_moves()}{calculate\_moves()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_moves}{Moves}}$\ast$ calculate\+\_\+moves (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} $\ast$}]{board,  }\item[{\mbox{\hyperlink{_tower_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}}}]{turn }\end{DoxyParamCaption})}
+
+
+
+Calculates all moves that can be made during a turn. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & The board that is being played on. \\
+\hline
+{\em turn} & Color indicating who is playing. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An array containing all possible moves. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_game_8h_a93dd6e567bbaf74069580033ccc4ed95}\label{_game_8h_a93dd6e567bbaf74069580033ccc4ed95}} 
+\index{Game.h@{Game.h}!can\_tower\_move@{can\_tower\_move}}
+\index{can\_tower\_move@{can\_tower\_move}!Game.h@{Game.h}}
+\doxysubsubsection{\texorpdfstring{can\_tower\_move()}{can\_tower\_move()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_bool_8h_af6a258d8f3ee5206d682d799316314b1}{bool}} can\+\_\+tower\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} $\ast$}]{board,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{\mbox{\hyperlink{_tower_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}}}]{turn }\end{DoxyParamCaption})}
+
+
+
+Checks if any moves can be performed on a determined cell. 
+
+Called when the input for the initial cell during a move has to be checked and checks if\+: the cell is white, meaning if it\textquotesingle{}s part of the board, the cell is empty, so there is a piece in that cell, the piece in the selected cell can move somewhere. If the move is not possible, prints the reason.
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & The board on which the move is being made on. \\
+\hline
+{\em x} & The x coordinate of the selected cell. \\
+\hline
+{\em y} & The y coordinate of the selected cell. \\
+\hline
+{\em turn} & The turn that is being played. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the move is possible, 1 if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_game_8h_aba676c220be1114c939c33f4046f739c}\label{_game_8h_aba676c220be1114c939c33f4046f739c}} 
+\index{Game.h@{Game.h}!user\_move\_piece@{user\_move\_piece}}
+\index{user\_move\_piece@{user\_move\_piece}!Game.h@{Game.h}}
+\doxysubsubsection{\texorpdfstring{user\_move\_piece()}{user\_move\_piece()}}
+{\footnotesize\ttfamily void user\+\_\+move\+\_\+piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_moves}{Moves}} $\ast$}]{moves }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{struct_moves}{Moves}} a \mbox{\hyperlink{struct_tower}{Tower}} selected by the user to another \mbox{\hyperlink{struct_cell}{Cell}}. 
+
+Lets the user select a \mbox{\hyperlink{struct_move}{Move}} from an array of \mbox{\hyperlink{struct_moves}{Moves}} and then performs that move.
+
+
+\begin{DoxyParams}{Parameters}
+{\em moves} & The \mbox{\hyperlink{struct_moves}{Moves}} array from which the user select a \mbox{\hyperlink{struct_move}{Move}}. \\
+\hline
+\end{DoxyParams}

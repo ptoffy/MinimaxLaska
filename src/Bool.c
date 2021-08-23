@@ -2,8 +2,10 @@
  * @file Bool.c
  * @author Paul Toffoloni
  * @date August 19, 2021
- * @brief File containing the definition and usage for Lasca:
+ * @brief Boolean enum.
+ *
  * Bool represents a boolean value enum.
+ *
  */
 
 #include "Bool.h"

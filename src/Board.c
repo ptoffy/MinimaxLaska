@@ -2,21 +2,19 @@
  * @file Board.c
  * @author Paul Toffoloni
  * @date October 26, 2020
- * @brief File containing the source code for Lasca:
- * Board is the game field that contains every cell and every piece that make up the game.
+ * @brief Board struct and methods to handle the board.
+ *
+ * This contains the play board, made up of every cell and every piece that make up the game,
+ * and all the methods used to manage the board: memory allocation and destruction of all cells
+ * and console handling of the board: showing the board.
  */
 #include <stdlib.h>
 #include <stdio.h>
 
 #include "Board.h"
 #include "Cell.h"
-#include "Piece.h"
+#include "Tower.h"
 
-/**
- * Assigns memory to a board pointer and assigns rows and columns to it.
- * Creates then a matrix of cells and assigns coordinates to each one of them.
- * Finally assigns NULL to the piece pointer in every cell, so that the board is empty.
- */
 Board* create_board(int rows, int columns) {
     int i, f;
     Board *board = malloc(sizeof(Board));
@@ -28,12 +26,6 @@ Board* create_board(int rows, int columns) {
             board->cells[i * columns + f].x = f + 1;
             board->cells[i * columns + f].y = i + 1;
             set_cell_empty(&board->cells[i * columns + f]);
-
-            if ((i * columns + f) % 2 == 0) {
-                board->cells[i * columns + f].color = WHITE;
-            } else {
-                board->cells[i * columns + f].color = BLACK;
-            }
         }
     }
     return board;
@@ -73,10 +65,10 @@ void init_board(Board* board) {
         for (f = 0; f < board->columns; f++) {
             if (i % 2 == 0) {
                 if (f % 2 == 0) {
-                    init_piece(&board->cells[i * board->columns + f], BLACK);
+                    init_tower(&board->cells[i * board->columns + f], BLACK);
                 }
             } else if (f % 2 != 0) {
-                init_piece(&board->cells[i * board->columns + f], BLACK);
+                init_tower(&board->cells[i * board->columns + f], BLACK);
             }
         }
     }
@@ -85,16 +77,16 @@ void init_board(Board* board) {
         for (f = board->columns; f >= 0; f--) {
             if (i % 2 == 0) {
                 if (f % 2 == 0) {
-                    init_piece(&board->cells[i * board->columns + f], WHITE);
+                    init_tower(&board->cells[i * board->columns + f], WHITE);
                 }
             } else if (f % 2 != 0) {
-                init_piece(&board->cells[i * board->columns + f], WHITE);
+                init_tower(&board->cells[i * board->columns + f], WHITE);
             }
         }
     }
 }
 
-void print_field(Board* board) {
+void print_board(Board* board) {
     int i, f;
     printf("\n");
     for (i = 0; i < board->rows; i++) {
@@ -117,4 +109,12 @@ void print_field(Board* board) {
         printf("%c  ", f + 'a');
     }
     printf("\n\n");
+}
+
+int board_get_rows(Board *board) {
+    return board->rows;
+}
+
+int board_get_columns(Board *board) {
+    return board->columns;
 }

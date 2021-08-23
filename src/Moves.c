@@ -1,8 +1,9 @@
 /**
- * @file Moves.h
+ * @file Moves.c
  * @author Paul Toffoloni
  * @date August 19, 2021
- * @brief File containing the definition and usage for Lasca:
+ * @brief Moves contains all the data types and methods used to handle moves.
+ *
  * Move is a move available to a Tower, it contains an origin cell, a destination cell, and,
  * if the move is a conquer move, an "eaten" cell, which is the cell that gets conquered.
  * Moves is an array containing a list of moves.
@@ -55,7 +56,7 @@ void make_move(Move *move, bool conquer) {
 void conquer_tower(Move *move) {
     int i;
     /* Place the controlling piece of the conquered tower on top of the conqueror tower */
-    increase_height(move->origin->tower);
+    increase_height(get_tower(move->origin));
     move->destination->tower = move->origin->tower;
     move->destination->tower->pieces[move->destination->tower->height - 1] = move->eaten->tower->pieces[0];
     /* Remove the controlling piece of the conquered tower and lower the tower's height by one */
@@ -82,16 +83,20 @@ void add_to_possible_moves(Cell *origin_cell, Cell *destination_cell, Cell *conq
         if (is_cell_empty(destination_cell)) {
             add_move(new_move(origin_cell, destination_cell), moves);
         } else {
-            if (is_cell_in_board(conquer_destination_cell) && destination_cell->tower->pieces[0].color == color && is_cell_empty(conquer_destination_cell)) {
+            if (is_cell_in_board(conquer_destination_cell) && get_tower_color(get_tower(destination_cell))  == color && is_cell_empty(conquer_destination_cell)) {
                 add_move(new_conquer_move(origin_cell, conquer_destination_cell, destination_cell), moves);
             }
         }
     }
 }
 
+Moves tower_possible_moves(Tower *tower, Board *board, int x, int y) {
+    return get_tower_type(tower) == SOLDIER ? soldier_possible_moves(tower, board, x, y) : officer_possible_moves(tower, board, x, y);
+}
+
 Moves soldier_possible_moves(Tower *tower, Board *board, int x, int y) {
     Moves moves = new_moves();
-    if (tower->pieces[0].color == BLACK) {
+    if (get_tower_color(tower) == BLACK) {
         add_to_possible_moves(get_cell(board, x, y),
                               get_cell(board, x + 1, y + 1),
                               get_cell(board, x + 2, y + 2),
@@ -115,9 +120,8 @@ Moves soldier_possible_moves(Tower *tower, Board *board, int x, int y) {
 
 Moves officer_possible_moves(Tower *tower, Board *board, int x, int y) {
     Moves moves = soldier_possible_moves(tower, board, x, y);
-    Cell *cell;
     /* For every cell around the selected cell, check if it exists and if we can move or eventually conquer there */
-    if (tower->pieces[0].color == BLACK) {
+    if (get_tower_color(tower) == BLACK) {
         add_to_possible_moves(get_cell(board, x, y),
                               get_cell(board, x + 1, y - 1),
                               get_cell(board, x + 2, y - 2),
@@ -140,11 +144,37 @@ Moves officer_possible_moves(Tower *tower, Board *board, int x, int y) {
 }
 
 void print_move(Move *move, int i) {
-    if (move->conquer)
-        printf("%d) %c%d - %c%d - %c%d\n", i, move->origin->x + 'a' - 1, move->origin->y,
-               move->eaten->x + 'a' - 1, move->eaten->y,
-               move->destination->x + 'a' - 1, move->destination->y);
+    if (move_get_conquer(move))
+        printf("%d) %c%d - %c%d - %c%d\n", i,
+               move_get_origin_cell(move)->x + 'a' - 1, move_get_origin_cell(move)->y,
+               move_get_eaten_cell(move)->x + 'a' - 1, move_get_eaten_cell(move)->y,
+               move_get_destination_cell(move)->x + 'a' - 1, move_get_destination_cell(move)->y);
     else
-        printf("%d) %c%d - %c%d\n", i, move->origin->x + 'a' - 1, move->origin->y,
-               move->destination->x + 'a' - 1, move->destination->y);
+        printf("%d) %c%d - %c%d\n", i,
+               move_get_origin_cell(move)->x + 'a' - 1, move_get_origin_cell(move)->y,
+               move_get_destination_cell(move)->x + 'a' - 1, move_get_destination_cell(move)->y);
+}
+
+size_t moves_get_size(Moves *moves) {
+    return moves->size;
+}
+
+Move *moves_get_moves(Moves *moves) {
+    return moves->moves;
+}
+
+Cell *move_get_origin_cell(Move *move) {
+    return move->origin;
+}
+
+Cell *move_get_destination_cell(Move *move) {
+    return move->destination;
+}
+
+Cell *move_get_eaten_cell(Move *move) {
+    return move->eaten;
+}
+
+bool move_get_conquer(Move *move) {
+    return move->conquer;
 }

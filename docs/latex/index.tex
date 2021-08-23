@@ -1,0 +1,11 @@
+\hypertarget{index_intro_sec}{}\doxysection{Introduzione}\label{index_intro_sec}
+Il gioco è una variante della Dama, ideata dallo scacchista tedesco Emanuel Lasker nel 1911; è noto anche come Laska o semplicemente come Lasker, o anche Laskers. Si gioca con le stesse regole della Dama, ma su un campo di sole 49 caselle (7 per lato). I pezzi catturati non vengono rimossi dal campo, ma trascinati e sormontati dal pezzo catturante.\hypertarget{index_Struttura}{}\doxysection{Struttura}\label{index_Struttura}
+Il programma è strutturato in diversi Abstract Data Types (ADT). Di seguito la lista\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{struct_board}{Board}}\+: Il campo da gioco, contenente una matrice fissa di \mbox{\hyperlink{struct_cell}{Cell}}
+\item \mbox{\hyperlink{struct_cell}{Cell}}\+: Una singola cella del campo da gioco, contenente eventualmente una \mbox{\hyperlink{struct_tower}{Tower}}
+\item \mbox{\hyperlink{struct_piece}{Piece}}\+: Un singolo pezzo di gioco
+\item \mbox{\hyperlink{struct_tower}{Tower}}\+: Una torre, ovvero un array di \mbox{\hyperlink{struct_piece}{Piece}}, ciò che viene usato in realtà giocando
+\item \mbox{\hyperlink{struct_move}{Move}}\+: Una singola mossa, contenente le \mbox{\hyperlink{struct_cell}{Cell}} di origine e destinazione ed eventualmente una \mbox{\hyperlink{struct_cell}{Cell}} da mangiare
+\item \mbox{\hyperlink{struct_moves}{Moves}}\+: Una raccolta di \mbox{\hyperlink{struct_move}{Move}} che serve nel momento in cui dobbiamo calcolarci le possibili mosse 
+\end{DoxyItemize}
