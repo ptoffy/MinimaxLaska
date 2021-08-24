@@ -5,7 +5,7 @@
  * @mainpage Lasca
  * @section intro_sec Introduzione
  *
- * Il gioco è una variante della Dama, ideata dallo scacchista tedesco Emanuel Lasker nel 1911;
+ * Il gioco è una variante della Dama, ideato dallo scacchista tedesco Emanuel Lasker nel 1911;
  * è noto anche come Laska o semplicemente come Lasker, o anche Laskers.
  * Si gioca con le stesse regole della Dama, ma su un campo di sole 49 caselle (7 per lato).
  * I pezzi catturati non vengono rimossi dal campo, ma trascinati e sormontati dal pezzo catturante.
@@ -27,6 +27,9 @@
  * proposta è anche estremamente estendibile ed è molto semplice implementare nuove funzionalità senza dover ne
  * modificare ne conoscere per filo e per segno ogni riga del codice già scritto.
  *
+ * All'interno della documentazione di Doxygen si possono trovare degli schemi che mostrano
+ * la struttura del progetto a livello grafico in modo da facilitare la lettura.
+ *
  * @section Funzionalità
  *
  * Il progetto funziona con le regole di Lasca normale, tuttavia non è ancora possibile svolgere più mangiate
@@ -38,7 +41,7 @@
  * il programma che proporrà all'utente quali mosse sono disponibili e gliene farà scegliere una. Ovviamente l'inserimento
  * della scelta da parte dell'utente è controllata e non permette l'inserimento errato di mosse.
  *
- *
+ * Il gioco finisce nel momento in cui non ci sono più mosse disponibili per colui che deve giocare il turno.
  */
 
 #include <stdio.h>
@@ -53,6 +56,8 @@ int main() {
            "2) Giocatore Singolo\n"
            "3) Esci\n");
     scanf("%d", &choice);
+
+    fflush(stdin);
 
     switch (choice) {
         case 1: run_multiplayer(); break;
