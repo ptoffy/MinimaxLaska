@@ -35,22 +35,18 @@ void destroy_board(Board *board) {
     int i, f;
     for (i = 0; i < board->rows; i++) {
         for (f = 0; f < board->columns; f++) {
-            free(&board->cells[i*board->columns + f].tower);
-            free(&board->cells[i*board->columns + f]);
+            free(&board->cells[i * board->columns + f]);
         }
     }
     free(board);
 }
 
-Cell* get_cell(Board *board, int x, int y) {
+Cell* board_get_cell(Board *board, int x, int y) {
     int i, f;
-    for (i = 0; i < board->rows; i++) {
-        for (f = 0; f < board->columns; f++) {
-            if (board->cells[i * board->columns + f].x == x && board->cells[i * board->columns + f].y == y) {
+    for (i = 0; i < board->rows; i++)
+        for (f = 0; f < board->columns; f++)
+            if (board->cells[i * board->columns + f].x == x && board->cells[i * board->columns + f].y == y)
                 return &board->cells[i * board->columns + f];
-            }
-        }
-    }
     return NULL;
 }
 
@@ -65,10 +61,10 @@ void init_board(Board* board) {
         for (f = 0; f < board->columns; f++) {
             if (i % 2 == 0) {
                 if (f % 2 == 0) {
-                    init_tower(&board->cells[i * board->columns + f], BLACK);
+                    init_cell(&board->cells[i * board->columns + f], BLACK);
                 }
             } else if (f % 2 != 0) {
-                init_tower(&board->cells[i * board->columns + f], BLACK);
+                init_cell(&board->cells[i * board->columns + f], BLACK);
             }
         }
     }
@@ -77,10 +73,10 @@ void init_board(Board* board) {
         for (f = board->columns; f >= 0; f--) {
             if (i % 2 == 0) {
                 if (f % 2 == 0) {
-                    init_tower(&board->cells[i * board->columns + f], WHITE);
+                    init_cell(&board->cells[i * board->columns + f], WHITE);
                 }
             } else if (f % 2 != 0) {
-                init_tower(&board->cells[i * board->columns + f], WHITE);
+                init_cell(&board->cells[i * board->columns + f], WHITE);
             }
         }
     }
@@ -105,9 +101,8 @@ void print_board(Board* board) {
         printf("\n");
     }
     printf("\n      ");
-    for (f = 0; f < board->columns; f++) {
+    for (f = 0; f < board->columns; f++)
         printf("%c  ", f + 'a');
-    }
     printf("\n\n");
 }
 

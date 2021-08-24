@@ -23,7 +23,7 @@ void run_multiplayer() {
         printf("Turno: %s\n", get_color_string(turn));
         print_board(board);
         possible_moves = calculate_moves(board, turn);
-        if (possible_moves->size == 0) {
+        if (moves_get_size(possible_moves) == 0) {
             printf("Partita finita, %s vince!", get_color_string(!turn));
             break;
         }

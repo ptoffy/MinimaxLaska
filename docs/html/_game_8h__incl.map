@@ -1,0 +1,9 @@
+<map id="include/Game.h" name="include/Game.h">
+<area shape="rect" id="node1" title="Methods to handle a game." alt="" coords="27,5,143,32"/>
+<area shape="rect" id="node2" href="$_board_8h.html" title="Board struct and methods to handle the board." alt="" coords="14,155,83,181"/>
+<area shape="rect" id="node6" href="$_moves_8h.html" title="Moves contains all the data types and methods used to handle moves." alt="" coords="86,80,158,107"/>
+<area shape="rect" id="node3" href="$_cell_8h.html" title="Cell struct and methods to handle cells and their towers." alt="" coords="57,229,113,256"/>
+<area shape="rect" id="node4" href="$_tower_8h.html" title="Data types and methods used to handle a Tower." alt="" coords="5,304,73,331"/>
+<area shape="rect" id="node5" title=" " alt="" coords="98,304,162,331"/>
+<area shape="rect" id="node7" href="$_bool_8h.html" title="Boolean enum." alt="" coords="159,155,219,181"/>
+</map>

@@ -38,33 +38,29 @@ void user_move_piece(Moves *moves) {
         check_for_promotion(&moves_get_moves(moves)[selected - 1]);
         moved = true;
     }
+    free(moves);
 }
 
 Moves *calculate_moves(Board *board, Color turn) {
     /* Creates an array of struct Moves, with each struct containing all Moves a piece can make.
      * Only pieces that can move are added to the array. */
     int x, y, i;
-    Moves moves;                                             /* This is a two-dimensional array, each element contains an array of Moves associated to a piece */
-    Moves *all_moves = malloc(sizeof(Moves) * 16);      /* This is a normal array containing all possible moves */
-    Moves *all_conquer_moves = malloc(sizeof(Moves));        /* This array contains all possible conquer moves, if this is not empty, this is returned instead of the normal array of moves*/
-
-    all_moves->size = 0;
-    all_moves->moves = malloc(sizeof(Move) * 44);
-    all_conquer_moves->size = 0;
-    all_conquer_moves->moves = malloc(sizeof(Move) * 44);
+    Moves *moves;                                             /* This is a two-dimensional array, each element contains an array of Moves associated to a piece */
+    Moves *all_moves = new_moves(44);               /* This is a normal array containing all possible moves */
+    Moves *all_conquer_moves = new_moves(44);        /* This array contains all possible conquer moves, if this is not empty, this is returned instead of the normal array of moves*/
 
     for (x = 1; x <= board_get_rows(board); x++) {
         for (y = 1; y <= board_get_columns(board); y++) {
             if (!can_tower_move(board, x, y, turn))
                 continue;
-            moves = tower_possible_moves(get_tower(get_cell(board, x, y)), board, x, y);
-            for (i = 0; i < moves_get_size(&moves); i++) {
-                if (move_get_conquer(&moves_get_moves(&moves)[i])) {
-                    all_conquer_moves->moves[all_conquer_moves->size] = moves.moves[i];
-                    all_conquer_moves->size++;
+            moves = tower_possible_moves(cell_get_tower(board_get_cell(board, x, y)), board, x, y);
+            for (i = 0; i < moves_get_size(moves); i++) {
+                if (move_get_conquer(&moves_get_moves(moves)[i])) {
+                    all_conquer_moves->moves[moves_get_size(all_conquer_moves)] = *moves_get_move(moves, i);
+                    moves_set_size(all_conquer_moves, moves_get_size(all_conquer_moves) + 1);
                 } else {
-                    all_moves->moves[all_moves->size] = moves.moves[i];
-                    all_moves->size++;
+                    all_moves->moves[moves_get_size(all_moves)] = *moves_get_move(moves, i);
+                    moves_set_size(all_moves, moves_get_size(all_moves) + 1);
                 }
             }
         }
@@ -73,7 +69,7 @@ Moves *calculate_moves(Board *board, Color turn) {
 }
 
 bool can_tower_move(Board* board, int x, int y, Color turn) {
-    Cell *cell = get_cell(board, x, y);
+    Cell *cell = board_get_cell(board, x, y);
     /* Check if the selected cell is inside the board */
     if (!is_cell_in_board(cell))
         return false;
@@ -83,9 +79,9 @@ bool can_tower_move(Board* board, int x, int y, Color turn) {
         return false;
 
     /* Check if the piece is of the corresponding color of the player */
-    if (get_tower_color(get_tower(cell)) != turn)
+    if (tower_get_color(cell_get_tower(cell)) != turn)
         return false;
 
     /* Check if a piece can actually move from its position */
-    return tower_possible_moves(get_tower(cell), board, x, y).size == 0 ? false : true;
+    return moves_get_size(tower_possible_moves(cell_get_tower(cell), board, x, y)) == 0 ? false : true;
 }

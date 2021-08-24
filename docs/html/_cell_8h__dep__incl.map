@@ -1,0 +1,14 @@
+<map id="include/Cell.h" name="include/Cell.h">
+<area shape="rect" id="node1" title="Cell struct and methods to handle cells and their towers." alt="" coords="562,5,664,32"/>
+<area shape="rect" id="node2" href="$_board_8h.html" title="Board struct and methods to handle the board." alt="" coords="556,80,670,107"/>
+<area shape="rect" id="node4" href="$_game_8c.html" title="Methods to handle a game." alt="" coords="197,304,288,331"/>
+<area shape="rect" id="node7" href="$_moves_8h.html" title="Moves contains all the data types and methods used to handle moves." alt="" coords="343,155,462,181"/>
+<area shape="rect" id="node11" href="$_board_8c.html" title="Board struct and methods to handle the board." alt="" coords="798,155,887,181"/>
+<area shape="rect" id="node12" href="$_cell_8c.html" title="Cell struct and methods to handle cells and their towers." alt="" coords="745,80,822,107"/>
+<area shape="rect" id="node3" href="$_game_8h.html" title="Methods to handle a game." alt="" coords="555,229,671,256"/>
+<area shape="rect" id="node5" href="$_multiplayer_8c.html" title="Multiplayer mode handler." alt="" coords="701,304,818,331"/>
+<area shape="rect" id="node6" href="$_single_player_8c.html" title="SinglePlayer mode handler." alt="" coords="549,304,677,331"/>
+<area shape="rect" id="node8" href="$_multiplayer_8h.html" title="Multiplayer mode handler." alt="" coords="159,229,302,256"/>
+<area shape="rect" id="node9" href="$_single_player_8h.html" title="SinglePlayer mode handler." alt="" coords="326,229,479,256"/>
+<area shape="rect" id="node10" href="$_moves_8c.html" title="Moves contains all the data types and methods used to handle moves." alt="" coords="41,229,134,256"/>
+</map>

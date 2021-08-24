@@ -69,14 +69,38 @@ is_cell_in_board(Cell *cell);
  * @param color The Color of which the initialized piece has to be.
  */
 void
-init_tower(Cell* cell, int color);
+init_cell(Cell* cell, int color);
 
 /**
- * Returns the tower contained by the cell.
- * @param cell The selected cell.
- * @return The tower contained by the cell.
+ * Returns the tower contained by the Cell.
+ * @param cell The selected Cell.
+ * @return The tower contained by the Cell.
  */
 Tower *
-get_tower(Cell *cell);
+cell_get_tower(Cell *cell);
+
+/**
+ * Returns the x coordinate of the Cell.
+ * @param cell The selected cell.
+ * @return The coordinate by the Cell.
+ */
+int
+get_x_coordinate(Cell *cell);
+
+/**
+ * Returns the y coordinate of the Cell.
+ * @param cell The selected cell.
+ * @return The coordinate by the Cell.
+ */
+int
+get_y_coordinate(Cell *cell);
+
+/**
+ * @brief Setter for the Cell's Tower.
+ * @param cell The Cell we are setting a new Tower on.
+ * @param tower The new Tower.
+ */
+void
+cell_set_tower(Cell *cell, Tower *tower);
 
 #endif /* CELL_H */

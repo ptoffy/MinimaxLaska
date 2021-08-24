@@ -76,8 +76,8 @@ new_conquer_move(Cell *origin, Cell *destination, Cell *eaten);
  *
  * @return A new Moves struct with an empty array.
  */
-Moves
-new_moves();
+Moves*
+new_moves(size_t moves_size);
 
 /**
  * @brief Adds a new Move to a Moves array.
@@ -141,7 +141,7 @@ conquer_tower(Move *move);
  * @param y The y coordinate of the starter cell.
  * @return An array containing all the moves a piece can make.
  */
-Moves
+Moves *
 tower_possible_moves(Tower *tower, Board *board, int x, int y);
 
 /**
@@ -156,7 +156,7 @@ tower_possible_moves(Tower *tower, Board *board, int x, int y);
  * @param y The y coordinate of the starter cell.
  * @return An array containing all the moves a piece can make.
  */
-Moves
+Moves *
 soldier_possible_moves(Tower *tower, Board *board, int x, int y);
 
 /**
@@ -172,7 +172,7 @@ soldier_possible_moves(Tower *tower, Board *board, int x, int y);
  * @return An array containing all the moves an officer can make.
  * @see soldier_possible_moves
  */
-Moves
+Moves *
 officer_possible_moves(Tower *tower, Board *board, int x, int y);
 
 /**
@@ -227,7 +227,7 @@ moves_get_moves(Moves *moves);
  * @brief Getter for the origin Cell.
  *
  * Returns the origin Cell pointer for the selected Move.
- * @param moves The selected Move.
+ * @param move The selected Move.
  * @return The origin Cell for the selected Move.
  */
 Cell *
@@ -237,7 +237,7 @@ move_get_origin_cell(Move *move);
  * @brief Getter for the destination Cell.
  *
  * Returns the destination Cell pointer for the selected Move.
- * @param moves The selected Move.
+ * @param move The selected Move.
  * @return The destination Cell for the selected Move.
  */
 Cell *
@@ -247,7 +247,7 @@ move_get_destination_cell(Move *move);
  * @brief Getter for the eaten Cell.
  *
  * Returns the eaten Cell pointer for the selected Move.
- * @param moves The selected Move.
+ * @param move The selected Move.
  * @return The eaten Cell for the selected Move.
  */
 Cell *
@@ -257,13 +257,32 @@ move_get_eaten_cell(Move *move);
  * @brief Getter for the conquer bool.
  *
  * Returns the eaten Cell pointer for the selected Move.
- * @param moves The selected Move.
+ * @param move The selected Move.
  * @return The eaten Cell for the selected Move.
  */
 bool
 move_get_conquer(Move *move);
 
+/**
+ * @brief Getter for a Move from an array.
+ *
+ * Returns a Move from a Moves array in the @p i position.
+ * @param moves The array from which to take the Move from.
+ * @param i The position of the Move.
+ * @return The Move in that position.
+ */
+Move *
+moves_get_move(Moves *moves, int i);
 
+/**
+ * @brief Setter for the Moves size.
+ *
+ * Sets the Moves size according to the parameter.
+ * @param moves The Moves we set the size of.
+ * @param size THe size to be set.
+ */
+void
+moves_set_size(Moves *moves, size_t size);
 
 
 #endif /* LASCA_MOVES_H */

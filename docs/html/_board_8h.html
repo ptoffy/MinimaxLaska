@@ -99,13 +99,13 @@ $(document).ready(function(){initNavTree('_board_8h.html',''); initResizable(); 
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Board.h:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 0 -->
+<div class="center"><iframe scrolling="no" frameborder="0" src="_board_8h__incl.svg" width="168" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 1 -->
+<div class="center"><iframe scrolling="no" frameborder="0" src="_board_8h__dep__incl.svg" width="848" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -137,9 +137,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a2d3fcb5e323919bfaeda8c9e0f7e6be8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_board_8h.html#a2d3fcb5e323919bfaeda8c9e0f7e6be8">print_board</a> (<a class="el" href="struct_board.html">Board</a> *board)</td></tr>
 <tr class="memdesc:a2d3fcb5e323919bfaeda8c9e0f7e6be8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the board with its pieces.  <a href="_board_8h.html#a2d3fcb5e323919bfaeda8c9e0f7e6be8">More...</a><br /></td></tr>
 <tr class="separator:a2d3fcb5e323919bfaeda8c9e0f7e6be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af86d6df7fe483a6418f728591f987673"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_cell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_board_8h.html#af86d6df7fe483a6418f728591f987673">get_cell</a> (<a class="el" href="struct_board.html">Board</a> *board, int x, int y)</td></tr>
-<tr class="memdesc:af86d6df7fe483a6418f728591f987673"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the cell that has the indicated coordinates.  <a href="_board_8h.html#af86d6df7fe483a6418f728591f987673">More...</a><br /></td></tr>
-<tr class="separator:af86d6df7fe483a6418f728591f987673"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad64608c65b192daa48eecf39e0e91ca6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_cell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_board_8h.html#ad64608c65b192daa48eecf39e0e91ca6">board_get_cell</a> (<a class="el" href="struct_board.html">Board</a> *board, int x, int y)</td></tr>
+<tr class="memdesc:ad64608c65b192daa48eecf39e0e91ca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the cell that has the indicated coordinates.  <a href="_board_8h.html#ad64608c65b192daa48eecf39e0e91ca6">More...</a><br /></td></tr>
+<tr class="separator:ad64608c65b192daa48eecf39e0e91ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47f35ca9baf6024d1caa18bf98336828"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_board_8h.html#a47f35ca9baf6024d1caa18bf98336828">board_get_columns</a> (<a class="el" href="struct_board.html">Board</a> *board)</td></tr>
+<tr class="memdesc:a47f35ca9baf6024d1caa18bf98336828"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the boards columns number.  <a href="_board_8h.html#a47f35ca9baf6024d1caa18bf98336828">More...</a><br /></td></tr>
+<tr class="separator:a47f35ca9baf6024d1caa18bf98336828"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade6bdb85cc444dc7fde4b53b2732b051"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_board_8h.html#ade6bdb85cc444dc7fde4b53b2732b051">board_get_rows</a> (<a class="el" href="struct_board.html">Board</a> *board)</td></tr>
+<tr class="memdesc:ade6bdb85cc444dc7fde4b53b2732b051"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the boards rows number.  <a href="_board_8h.html#ade6bdb85cc444dc7fde4b53b2732b051">More...</a><br /></td></tr>
+<tr class="separator:ade6bdb85cc444dc7fde4b53b2732b051"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="struct_board.html" title="Game field.">Board</a> struct and methods to handle the board. </p>
@@ -165,6 +171,106 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ad64608c65b192daa48eecf39e0e91ca6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad64608c65b192daa48eecf39e0e91ca6">&#9670;&nbsp;</a></span>board_get_cell()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_cell.html">Cell</a>* board_get_cell </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_board.html">Board</a> *&#160;</td>
+          <td class="paramname"><em>board</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the cell that has the indicated coordinates. </p>
+<p>Searches for a cell inside of the indicated board that has x and y coordinates corresponding to the argument ones and returns a pointer to it.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">board</td><td>The board in which to search the cell for. </td></tr>
+    <tr><td class="paramname">x</td><td>The x coordinate of the cell. </td></tr>
+    <tr><td class="paramname">y</td><td>The y coordinate of the cell. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the cell if it exists, NULL if it doesn't. </dd></dl>
+
+</div>
+</div>
+<a id="a47f35ca9baf6024d1caa18bf98336828"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47f35ca9baf6024d1caa18bf98336828">&#9670;&nbsp;</a></span>board_get_columns()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int board_get_columns </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_board.html">Board</a> *&#160;</td>
+          <td class="paramname"><em>board</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter for the boards columns number. </p>
+<p>Returns the columns number for the given board. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">board</td><td>The given board. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The columns number. </dd></dl>
+
+</div>
+</div>
+<a id="ade6bdb85cc444dc7fde4b53b2732b051"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade6bdb85cc444dc7fde4b53b2732b051">&#9670;&nbsp;</a></span>board_get_rows()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int board_get_rows </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_board.html">Board</a> *&#160;</td>
+          <td class="paramname"><em>board</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter for the boards rows number. </p>
+<p>Returns the rows number for the given board. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">board</td><td>The given board. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The rows number. </dd></dl>
+
+</div>
+</div>
 <a id="a2f378cdc7b4bbc047df12af4bfedbb34"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2f378cdc7b4bbc047df12af4bfedbb34">&#9670;&nbsp;</a></span>create_board()</h2>
 
@@ -228,52 +334,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="af86d6df7fe483a6418f728591f987673"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af86d6df7fe483a6418f728591f987673">&#9670;&nbsp;</a></span>get_cell()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="struct_cell.html">Cell</a>* get_cell </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_board.html">Board</a> *&#160;</td>
-          <td class="paramname"><em>board</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the cell that has the indicated coordinates. </p>
-<p>Searches for a cell inside of the indicated board that has x and y coordinates corresponding to the argument ones and returns a pointer to it.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">board</td><td>The board in which to search the cell for. </td></tr>
-    <tr><td class="paramname">x</td><td>The x coordinate of the cell. </td></tr>
-    <tr><td class="paramname">y</td><td>The y coordinate of the cell. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A pointer to the cell if it exists, NULL if it doesn't. </dd></dl>
 
 </div>
 </div>

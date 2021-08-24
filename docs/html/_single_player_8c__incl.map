@@ -1,0 +1,13 @@
+<map id="src/SinglePlayer.c" name="src/SinglePlayer.c">
+<area shape="rect" id="node1" title="SinglePlayer mode handler." alt="" coords="161,5,289,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="93,379,157,405"/>
+<area shape="rect" id="node3" title=" " alt="" coords="43,80,102,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="126,80,187,107"/>
+<area shape="rect" id="node5" href="$_single_player_8h.html" title="SinglePlayer mode handler." alt="" coords="262,80,369,107"/>
+<area shape="rect" id="node9" href="$_bool_8h.html" title="Boolean enum." alt="" coords="216,229,276,256"/>
+<area shape="rect" id="node10" href="$_board_8h.html" title="Board struct and methods to handle the board." alt="" coords="369,229,438,256"/>
+<area shape="rect" id="node11" href="$_game_8h.html" title="Methods to handle a game." alt="" coords="393,80,462,107"/>
+<area shape="rect" id="node6" href="$_moves_8h.html" title="Moves contains all the data types and methods used to handle moves." alt="" coords="289,155,361,181"/>
+<area shape="rect" id="node7" href="$_cell_8h.html" title="Cell struct and methods to handle cells and their towers." alt="" coords="297,304,353,331"/>
+<area shape="rect" id="node8" href="$_tower_8h.html" title="Data types and methods used to handle a Tower." alt="" coords="291,379,359,405"/>
+</map>

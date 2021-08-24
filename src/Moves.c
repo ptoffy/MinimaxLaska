@@ -9,14 +9,15 @@
  * Moves is an array containing a list of moves.
  */
 
-#include "Moves.h"
 #include <stdio.h>
 #include <string.h>
+#include "Moves.h"
 
-Moves new_moves() {
-    Moves moves;
-    moves.moves = malloc(sizeof(Move) * 16);
-    moves.size = 0;
+
+Moves *new_moves(size_t moves_size) {
+    Moves *moves = malloc(sizeof (Moves));
+    moves->moves = malloc(sizeof (Move) * moves_size);
+    moves->size = 0;
     return moves;
 }
 
@@ -44,101 +45,94 @@ void add_move(Move move, Moves *moves) {
 }
 
 void make_move(Move *move, bool conquer) {
-    if (conquer) {
-        conquer_tower(move);
-        move->origin->tower = NULL;
-    } else {
-        move->destination->tower = move->origin->tower;
-        move->origin->tower = NULL;
-    }
+    conquer ? conquer_tower(move) : cell_set_tower(move->destination, cell_get_tower(move->origin));
+    cell_set_tower(move->origin, NULL);
 }
 
 void conquer_tower(Move *move) {
     int i;
     /* Place the controlling piece of the conquered tower on top of the conqueror tower */
-    increase_height(get_tower(move->origin));
-    move->destination->tower = move->origin->tower;
-    move->destination->tower->pieces[move->destination->tower->height - 1] = move->eaten->tower->pieces[0];
+    increase_height(cell_get_tower(move->origin));
+    cell_set_tower(move->destination, cell_get_tower(move->origin));
+    move->destination->tower->pieces[tower_get_height(cell_get_tower(move->destination)) - 1] = tower_get_piece(cell_get_tower(move->eaten), 0);
     /* Remove the controlling piece of the conquered tower and lower the tower's height by one */
-    if (move->eaten->tower->height == 1)
-        move->eaten->tower = NULL;
+    if (tower_get_height(cell_get_tower(move->eaten)) == 1)
+        cell_set_tower(move->eaten, NULL);
     else {
-        for (i = 1; i < move->eaten->tower->height; i++) {
-            move->eaten->tower->pieces[i-1] = move->eaten->tower->pieces[i];
-        }
-        decrease_height(move->eaten->tower);
+        for (i = 1; i < tower_get_height(cell_get_tower(move->eaten)); i++)
+            move->eaten->tower->pieces[i - 1] = tower_get_piece(cell_get_tower(move->eaten), i);
+        decrease_height(cell_get_tower(move->eaten));
     }
 }
 
 void check_for_promotion(Move *move) {
-    if (move->destination->tower->pieces[0].color == WHITE) {
-        if (move->destination->y == 1)
-            promote(move->destination->tower);
-    } else if (move->destination->y == 7)
-        promote(move->destination->tower);
+    Tower *tower = cell_get_tower(move->destination);
+    if (tower_get_color(tower) == WHITE) {
+        if (get_y_coordinate(move->destination) == 1)
+            promote(tower);
+    } else if (get_y_coordinate(move->destination) == 7)
+        promote(tower);
 }
 
 void add_to_possible_moves(Cell *origin_cell, Cell *destination_cell, Cell *conquer_destination_cell, Color color, Moves *moves) {
     if (is_cell_in_board(destination_cell)) {
         if (is_cell_empty(destination_cell)) {
             add_move(new_move(origin_cell, destination_cell), moves);
-        } else {
-            if (is_cell_in_board(conquer_destination_cell) && get_tower_color(get_tower(destination_cell))  == color && is_cell_empty(conquer_destination_cell)) {
-                add_move(new_conquer_move(origin_cell, conquer_destination_cell, destination_cell), moves);
-            }
+        } else if (is_cell_in_board(conquer_destination_cell) && tower_get_color(cell_get_tower(destination_cell)) == color && is_cell_empty(conquer_destination_cell)) {
+            add_move(new_conquer_move(origin_cell, conquer_destination_cell, destination_cell), moves);
         }
     }
 }
 
-Moves tower_possible_moves(Tower *tower, Board *board, int x, int y) {
-    return get_tower_type(tower) == SOLDIER ? soldier_possible_moves(tower, board, x, y) : officer_possible_moves(tower, board, x, y);
+Moves *tower_possible_moves(Tower *tower, Board *board, int x, int y) {
+    return tower_get_type(tower) == SOLDIER ? soldier_possible_moves(tower, board, x, y) : officer_possible_moves(tower, board, x, y);
 }
 
-Moves soldier_possible_moves(Tower *tower, Board *board, int x, int y) {
-    Moves moves = new_moves();
-    if (get_tower_color(tower) == BLACK) {
-        add_to_possible_moves(get_cell(board, x, y),
-                              get_cell(board, x + 1, y + 1),
-                              get_cell(board, x + 2, y + 2),
-                              WHITE, &moves);
-        add_to_possible_moves(get_cell(board, x, y),
-                              get_cell(board, x - 1, y + 1),
-                              get_cell(board, x - 2, y + 2),
-                              WHITE, &moves);
+Moves *soldier_possible_moves(Tower *tower, Board *board, int x, int y) {
+    Moves *moves = new_moves(16);
+    if (tower_get_color(tower) == BLACK) {
+        add_to_possible_moves(board_get_cell(board, x, y),
+                              board_get_cell(board, x + 1, y + 1),
+                              board_get_cell(board, x + 2, y + 2),
+                              WHITE, moves);
+        add_to_possible_moves(board_get_cell(board, x, y),
+                              board_get_cell(board, x - 1, y + 1),
+                              board_get_cell(board, x - 2, y + 2),
+                              WHITE, moves);
     } else {
-        add_to_possible_moves(get_cell(board, x, y),
-                              get_cell(board, x + 1, y - 1),
-                              get_cell(board, x + 2, y - 2),
-                              BLACK, &moves);
-        add_to_possible_moves(get_cell(board, x, y),
-                              get_cell(board, x - 1, y - 1),
-                              get_cell(board, x - 2, y - 2),
-                              BLACK, &moves);
+        add_to_possible_moves(board_get_cell(board, x, y),
+                              board_get_cell(board, x + 1, y - 1),
+                              board_get_cell(board, x + 2, y - 2),
+                              BLACK, moves);
+        add_to_possible_moves(board_get_cell(board, x, y),
+                              board_get_cell(board, x - 1, y - 1),
+                              board_get_cell(board, x - 2, y - 2),
+                              BLACK, moves);
     }
     return moves;
 }
 
-Moves officer_possible_moves(Tower *tower, Board *board, int x, int y) {
-    Moves moves = soldier_possible_moves(tower, board, x, y);
+Moves *officer_possible_moves(Tower *tower, Board *board, int x, int y) {
+    Moves *moves = soldier_possible_moves(tower, board, x, y);
     /* For every cell around the selected cell, check if it exists and if we can move or eventually conquer there */
-    if (get_tower_color(tower) == BLACK) {
-        add_to_possible_moves(get_cell(board, x, y),
-                              get_cell(board, x + 1, y - 1),
-                              get_cell(board, x + 2, y - 2),
-                              WHITE, &moves);
-        add_to_possible_moves(get_cell(board, x, y),
-                              get_cell(board, x - 1, y - 1),
-                              get_cell(board, x - 2, y - 2),
-                              WHITE, &moves);
+    if (tower_get_color(tower) == BLACK) {
+        add_to_possible_moves(board_get_cell(board, x, y),
+                              board_get_cell(board, x + 1, y - 1),
+                              board_get_cell(board, x + 2, y - 2),
+                              WHITE, moves);
+        add_to_possible_moves(board_get_cell(board, x, y),
+                              board_get_cell(board, x - 1, y - 1),
+                              board_get_cell(board, x - 2, y - 2),
+                              WHITE, moves);
     } else {
-        add_to_possible_moves(get_cell(board, x, y),
-                              get_cell(board, x + 1, y + 1),
-                              get_cell(board, x + 2, y + 2),
-                              BLACK, &moves);
-        add_to_possible_moves(get_cell(board, x, y),
-                              get_cell(board, x - 1, y + 1),
-                              get_cell(board, x - 2, y + 2),
-                              BLACK, &moves);
+        add_to_possible_moves(board_get_cell(board, x, y),
+                              board_get_cell(board, x + 1, y + 1),
+                              board_get_cell(board, x + 2, y + 2),
+                              BLACK, moves);
+        add_to_possible_moves(board_get_cell(board, x, y),
+                              board_get_cell(board, x - 1, y + 1),
+                              board_get_cell(board, x - 2, y + 2),
+                              BLACK, moves);
     }
     return moves;
 }
@@ -146,17 +140,25 @@ Moves officer_possible_moves(Tower *tower, Board *board, int x, int y) {
 void print_move(Move *move, int i) {
     if (move_get_conquer(move))
         printf("%d) %c%d - %c%d - %c%d\n", i,
-               move_get_origin_cell(move)->x + 'a' - 1, move_get_origin_cell(move)->y,
-               move_get_eaten_cell(move)->x + 'a' - 1, move_get_eaten_cell(move)->y,
-               move_get_destination_cell(move)->x + 'a' - 1, move_get_destination_cell(move)->y);
+               get_x_coordinate(move_get_origin_cell(move)) + 'a' - 1, get_y_coordinate(move_get_origin_cell(move)),
+               get_x_coordinate(move_get_eaten_cell(move)) + 'a' - 1, get_y_coordinate(move_get_eaten_cell(move)),
+               get_x_coordinate(move_get_destination_cell(move)) + 'a' - 1,  get_y_coordinate(move_get_destination_cell(move)));
     else
         printf("%d) %c%d - %c%d\n", i,
-               move_get_origin_cell(move)->x + 'a' - 1, move_get_origin_cell(move)->y,
-               move_get_destination_cell(move)->x + 'a' - 1, move_get_destination_cell(move)->y);
+               get_x_coordinate(move_get_origin_cell(move))+ 'a' - 1, get_y_coordinate(move_get_origin_cell(move)),
+               get_x_coordinate(move_get_destination_cell(move)) + 'a' - 1, get_y_coordinate(move_get_destination_cell(move)));
 }
 
 size_t moves_get_size(Moves *moves) {
     return moves->size;
+}
+
+void moves_set_size(Moves *moves, size_t size) {
+    moves->size = size;
+}
+
+Move *moves_get_move(Moves *moves, int i) {
+    return &moves->moves[i];
 }
 
 Move *moves_get_moves(Moves *moves) {

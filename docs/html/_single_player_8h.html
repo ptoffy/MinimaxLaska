@@ -93,10 +93,17 @@ $(document).ready(function(){initNavTree('_single_player_8h.html',''); initResiz
 
 <p>SinglePlayer mode handler.  
 <a href="#details">More...</a></p>
-<div class="textblock"><div class="dynheader">
+<div class="textblock"><code>#include &quot;<a class="el" href="_moves_8h_source.html">Moves.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for SinglePlayer.h:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="_single_player_8h__incl.svg" width="212" height="336"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 0 -->
+<div class="center"><iframe scrolling="no" frameborder="0" src="_single_player_8h__dep__incl.svg" width="164" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -106,6 +113,9 @@ This graph shows which files directly or indirectly include this file:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a7a33428aac88adfec0d7c3ae7ad29d86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_single_player_8h.html#a7a33428aac88adfec0d7c3ae7ad29d86">run_single_player</a> ()</td></tr>
 <tr class="separator:a7a33428aac88adfec0d7c3ae7ad29d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3c92507d3bf6f4adb2db3cdbf75878f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_single_player_8h.html#af3c92507d3bf6f4adb2db3cdbf75878f">random_cpu</a> (<a class="el" href="struct_moves.html">Moves</a> *moves)</td></tr>
+<tr class="memdesc:af3c92507d3bf6f4adb2db3cdbf75878f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Random CPU player.  <a href="_single_player_8h.html#af3c92507d3bf6f4adb2db3cdbf75878f">More...</a><br /></td></tr>
+<tr class="separator:af3c92507d3bf6f4adb2db3cdbf75878f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>SinglePlayer mode handler. </p>
@@ -113,6 +123,32 @@ Functions</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>August 19, 2021</dd></dl>
 <p>This file contains all methods needed to play a player vs CPU game. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="af3c92507d3bf6f4adb2db3cdbf75878f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3c92507d3bf6f4adb2db3cdbf75878f">&#9670;&nbsp;</a></span>random_cpu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void random_cpu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_moves.html">Moves</a> *&#160;</td>
+          <td class="paramname"><em>moves</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Random CPU player. </p>
+<p>Lets the CPU choose a <a class="el" href="struct_move.html" title="Represents a possible move for a Tower.">Move</a> randomly to make against the opponent. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">moves</td><td>The <a class="el" href="struct_moves.html" title="Array of Move.">Moves</a> array from which the CPU chooses a <a class="el" href="struct_move.html" title="Represents a possible move for a Tower.">Move</a> from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a7a33428aac88adfec0d7c3ae7ad29d86"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a33428aac88adfec0d7c3ae7ad29d86">&#9670;&nbsp;</a></span>run_single_player()</h2>
 

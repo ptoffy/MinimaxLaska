@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['set_5fcell_5fempty_128',['set_cell_empty',['../_cell_8h.html#aa499c7fd81fb530db63da2c7446db3f9',1,'set_cell_empty(Cell *cell):&#160;Cell.c'],['../_cell_8c.html#aa499c7fd81fb530db63da2c7446db3f9',1,'set_cell_empty(Cell *cell):&#160;Cell.c']]],
-  ['soldier_5fpossible_5fmoves_129',['soldier_possible_moves',['../_moves_8h.html#a72732e55737e01ab48af1670fd82543c',1,'soldier_possible_moves(Tower *tower, Board *board, int x, int y):&#160;Moves.c'],['../_moves_8c.html#a72732e55737e01ab48af1670fd82543c',1,'soldier_possible_moves(Tower *tower, Board *board, int x, int y):&#160;Moves.c']]]
+  ['random_5fcpu_159',['random_cpu',['../_single_player_8h.html#af3c92507d3bf6f4adb2db3cdbf75878f',1,'random_cpu(Moves *moves):&#160;SinglePlayer.c'],['../_single_player_8c.html#af3c92507d3bf6f4adb2db3cdbf75878f',1,'random_cpu(Moves *moves):&#160;SinglePlayer.c']]],
+  ['run_5fmultiplayer_160',['run_multiplayer',['../_multiplayer_8h.html#aeccc6af04a94288b46069da446622f5a',1,'run_multiplayer():&#160;Multiplayer.c'],['../_multiplayer_8c.html#aeccc6af04a94288b46069da446622f5a',1,'run_multiplayer():&#160;Multiplayer.c']]],
+  ['run_5fsingle_5fplayer_161',['run_single_player',['../_single_player_8h.html#a7a33428aac88adfec0d7c3ae7ad29d86',1,'run_single_player():&#160;SinglePlayer.c'],['../_single_player_8c.html#a7a33428aac88adfec0d7c3ae7ad29d86',1,'run_single_player():&#160;SinglePlayer.c']]]
 ];

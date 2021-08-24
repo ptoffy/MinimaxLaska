@@ -99,8 +99,13 @@ Struttura</h1>
 <li><a class="el" href="struct_piece.html" title="Single piece of a Tower.">Piece</a>: Un singolo pezzo di gioco</li>
 <li><a class="el" href="struct_tower.html" title="Array of Piece.">Tower</a>: Una torre, ovvero un array di <a class="el" href="struct_piece.html" title="Single piece of a Tower.">Piece</a>, ciò che viene usato in realtà giocando</li>
 <li><a class="el" href="struct_move.html" title="Represents a possible move for a Tower.">Move</a>: Una singola mossa, contenente le <a class="el" href="struct_cell.html" title="Single cell of the play board.">Cell</a> di origine e destinazione ed eventualmente una <a class="el" href="struct_cell.html" title="Single cell of the play board.">Cell</a> da mangiare</li>
-<li><a class="el" href="struct_moves.html" title="Array of Move.">Moves</a>: Una raccolta di <a class="el" href="struct_move.html" title="Represents a possible move for a Tower.">Move</a> che serve nel momento in cui dobbiamo calcolarci le possibili mosse </li>
+<li><a class="el" href="struct_moves.html" title="Array of Move.">Moves</a>: Una raccolta di <a class="el" href="struct_move.html" title="Represents a possible move for a Tower.">Move</a> che serve nel momento in cui dobbiamo calcolarci le possibili mosse</li>
 </ul>
+<p>Ogni struttura è a conoscenza esclusivamente dei suoi parametri e non conosce dati di altre strutture, per accederci utilizza metodi come getter e setter, creati all'interno di ogni struttura. Ogni funzione è il più possibile astratta con l'obiettivo del riuso del codice, di conseguenza la struttura proposta è anche estremamente estendibile ed è molto semplice implementare nuove funzionalità senza dover ne modificare ne conoscere per filo e per segno ogni riga del codice già scritto.</p>
+<h1><a class="anchor" id="Funzionalità"></a>
+Funzionalità</h1>
+<p>Il progetto funziona con le regole di Lasca normale, tuttavia non è ancora possibile svolgere più mangiate in una mossa sola. Per implementare ciò servirebbe semplicemente aggiungere un ciclo o addirittura una ricorsione nella funzione che si occupa di controllare la mossa e di svolgere la mangiata.</p>
+<p>Per giocare, il codice è estremamente user friendly e allo stesso tempo non permette all'utente di fare scelte sbagliate che potrebbero andare a creare problemi nel codice, come per esempio immissione di coordinate sbagliate, siccome sarà il programma che proporrà all'utente quali mosse sono disponibili e gliene farà scegliere una. Ovviamente l'inserimento della scelta da parte dell'utente è controllata e non permette l'inserimento errato di mosse. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->

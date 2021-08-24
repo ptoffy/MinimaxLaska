@@ -21,6 +21,24 @@
  * - Move: Una singola mossa, contenente le Cell di origine e destinazione ed eventualmente una Cell da mangiare
  * - Moves: Una raccolta di Move che serve nel momento in cui dobbiamo calcolarci le possibili mosse
  *
+ * Ogni struttura è a conoscenza esclusivamente dei suoi parametri e non conosce dati di altre strutture,
+ * per accederci utilizza metodi come getter e setter, creati all'interno di ogni struttura.
+ * Ogni funzione è il più possibile astratta con l'obiettivo del riuso del codice, di conseguenza la struttura
+ * proposta è anche estremamente estendibile ed è molto semplice implementare nuove funzionalità senza dover ne
+ * modificare ne conoscere per filo e per segno ogni riga del codice già scritto.
+ *
+ * @section Funzionalità
+ *
+ * Il progetto funziona con le regole di Lasca normale, tuttavia non è ancora possibile svolgere più mangiate
+ * in una mossa sola. Per implementare ciò servirebbe semplicemente aggiungere un ciclo o addirittura una ricorsione nella funzione
+ * che si occupa di controllare la mossa e di svolgere la mangiata.
+ *
+ * Per giocare, il codice è estremamente user friendly e allo stesso tempo non permette all'utente di fare scelte sbagliate
+ * che potrebbero andare a creare problemi nel codice, come per esempio immissione di coordinate sbagliate: sarà
+ * il programma che proporrà all'utente quali mosse sono disponibili e gliene farà scegliere una. Ovviamente l'inserimento
+ * della scelta da parte dell'utente è controllata e non permette l'inserimento errato di mosse.
+ *
+ *
  */
 
 #include <stdio.h>
@@ -35,7 +53,6 @@ int main() {
            "2) Giocatore Singolo\n"
            "3) Esci\n");
     scanf("%d", &choice);
-
 
     switch (choice) {
         case 1: run_multiplayer(); break;

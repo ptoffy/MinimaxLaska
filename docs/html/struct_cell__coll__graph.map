@@ -1,0 +1,5 @@
+<map id="Cell" name="Cell">
+<area shape="rect" id="node1" title="Single cell of the play board." alt="" coords="11,184,57,211"/>
+<area shape="rect" id="node2" href="$struct_tower.html" title="Array of Piece." alt="" coords="5,95,63,121"/>
+<area shape="rect" id="node3" href="$struct_piece.html" title="Single piece of a Tower." alt="" coords="6,5,62,32"/>
+</map>

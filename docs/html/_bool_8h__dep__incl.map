@@ -1,0 +1,12 @@
+<map id="include/Bool.h" name="include/Bool.h">
+<area shape="rect" id="node1" title="Boolean enum." alt="" coords="568,5,674,32"/>
+<area shape="rect" id="node2" href="$_moves_8h.html" title="Moves contains all the data types and methods used to handle moves." alt="" coords="423,80,542,107"/>
+<area shape="rect" id="node4" href="$_game_8c.html" title="Methods to handle a game." alt="" coords="594,229,685,256"/>
+<area shape="rect" id="node6" href="$_single_player_8c.html" title="SinglePlayer mode handler." alt="" coords="37,229,165,256"/>
+<area shape="rect" id="node10" href="$_bool_8c.html" title="Boolean enum." alt="" coords="728,80,808,107"/>
+<area shape="rect" id="node3" href="$_game_8h.html" title="Methods to handle a game." alt="" coords="202,155,318,181"/>
+<area shape="rect" id="node7" href="$_multiplayer_8h.html" title="Multiplayer mode handler." alt="" coords="342,155,484,181"/>
+<area shape="rect" id="node8" href="$_single_player_8h.html" title="SinglePlayer mode handler." alt="" coords="24,155,178,181"/>
+<area shape="rect" id="node9" href="$_moves_8c.html" title="Moves contains all the data types and methods used to handle moves." alt="" coords="509,155,602,181"/>
+<area shape="rect" id="node5" href="$_multiplayer_8c.html" title="Multiplayer mode handler." alt="" coords="201,229,318,256"/>
+</map>

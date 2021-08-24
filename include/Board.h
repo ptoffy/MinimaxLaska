@@ -87,7 +87,7 @@ print_board(Board* board);
  * @return A pointer to the cell if it exists, NULL if it doesn't.
  */
 Cell *
-get_cell(Board *board, int x, int y);
+board_get_cell(Board *board, int x, int y);
 
 /**
  * @brief Getter for the boards columns number.

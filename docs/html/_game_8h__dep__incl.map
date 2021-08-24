@@ -1,0 +1,6 @@
+<map id="include/Game.h" name="include/Game.h">
+<area shape="rect" id="node1" title="Methods to handle a game." alt="" coords="121,5,237,32"/>
+<area shape="rect" id="node2" href="$_game_8c.html" title="Methods to handle a game." alt="" coords="5,80,96,107"/>
+<area shape="rect" id="node3" href="$_multiplayer_8c.html" title="Multiplayer mode handler." alt="" coords="120,80,237,107"/>
+<area shape="rect" id="node4" href="$_single_player_8c.html" title="SinglePlayer mode handler." alt="" coords="261,80,389,107"/>
+</map>

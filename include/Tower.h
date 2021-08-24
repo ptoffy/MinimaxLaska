@@ -83,27 +83,74 @@ const char*
 get_color_string(Color color);
 
 /**
+ * @brief Getter for the Tower pieces array.
+ *
  * Returns the pieces array for the selected Tower.
  * @param tower The selected Tower.
  * @return The Piece array for the selected Tower
  */
 Piece *
-get_tower_pieces(Tower *tower);
+tower_get_pieces(Tower *tower);
 
 /**
+ * @brief Getter for a Piece of the Tower.
+ *
+ * Returns the Piece of the selected Tower.
+ * @param tower The tower we need a Piece from.
+ * @param i The index of the Piece.
+ * @return The Piece of the Tower.
+ */
+Piece
+tower_get_piece(Tower *tower, int i);
+
+/**
+ * @brief Getter for the Tower Type.
+ *
  * Returns the Type for the selected Tower.
  * @param tower The selected Tower.
  * @return The Type for the selected Tower
  */
 Type
-get_tower_type(Tower *tower);
+tower_get_type(Tower *tower);
 
 /**
+ * @brief Getter for the Tower Color.
+ *
  * Returns the Color for the selected Tower.
  * @param tower The selected Tower.
  * @return The Color for the selected Tower
  */
 Color
-get_tower_color(Tower *tower);
+tower_get_color(Tower *tower);
+
+/**
+ * @brief Getter for the Tower height.
+ *
+ * Returns the Color for the selected Tower.
+ * @param tower The selected Tower.
+ * @return The Color for the selected Tower
+ */
+int
+tower_get_height(Tower *tower);
+
+/**
+ * @brief Setter fot the Tower Type.
+ *
+ * Sets the Type of the Tower according to the parameter.
+ * @param tower The Tower of which the Type has to be set.
+ * @param type The Type to be set.
+ */
+void
+tower_set_type(Tower *tower, Type type);
+
+/**
+ * @brief Tower constructor.
+ *
+ * Creates a new Tower pointer.
+ * @param color The Color of the new Tower.
+ * @return A new Tower.
+ */
+Tower *
+init_tower(Color color);
 
 #endif /* PIECE_H */

@@ -98,6 +98,22 @@ $(document).ready(function(){initNavTree('globals_func.html',''); initResizable(
 </ul>
 
 
+<h3><a id="index_b"></a>- b -</h3><ul>
+<li>board_get_cell()
+: <a class="el" href="_board_8h.html#ad64608c65b192daa48eecf39e0e91ca6">Board.h</a>
+, <a class="el" href="_board_8c.html#ad64608c65b192daa48eecf39e0e91ca6">Board.c</a>
+</li>
+<li>board_get_columns()
+: <a class="el" href="_board_8h.html#a47f35ca9baf6024d1caa18bf98336828">Board.h</a>
+, <a class="el" href="_board_8c.html#a47f35ca9baf6024d1caa18bf98336828">Board.c</a>
+</li>
+<li>board_get_rows()
+: <a class="el" href="_board_8h.html#ade6bdb85cc444dc7fde4b53b2732b051">Board.h</a>
+, <a class="el" href="_board_8c.html#ade6bdb85cc444dc7fde4b53b2732b051">Board.c</a>
+</li>
+</ul>
+
+
 <h3><a id="index_c"></a>- c -</h3><ul>
 <li>calculate_moves()
 : <a class="el" href="_game_8h.html#a0fef4a103ee64f344eb154375cbf93f5">Game.h</a>
@@ -106,6 +122,10 @@ $(document).ready(function(){initNavTree('globals_func.html',''); initResizable(
 <li>can_tower_move()
 : <a class="el" href="_game_8h.html#a93dd6e567bbaf74069580033ccc4ed95">Game.h</a>
 , <a class="el" href="_game_8c.html#a93dd6e567bbaf74069580033ccc4ed95">Game.c</a>
+</li>
+<li>cell_get_tower()
+: <a class="el" href="_cell_8h.html#ae65f2d8415c5de793063fa4a1abbc008">Cell.h</a>
+, <a class="el" href="_cell_8c.html#ae65f2d8415c5de793063fa4a1abbc008">Cell.c</a>
 </li>
 <li>check_for_promotion()
 : <a class="el" href="_moves_8h.html#aac0f06409d70fad432a0e976bb2df42d">Moves.h</a>
@@ -139,13 +159,17 @@ $(document).ready(function(){initNavTree('globals_func.html',''); initResizable(
 : <a class="el" href="_bool_8h.html#a2c8caad5f511f8aebff96a9f9b6b0822">Bool.h</a>
 , <a class="el" href="_bool_8c.html#a2c8caad5f511f8aebff96a9f9b6b0822">Bool.c</a>
 </li>
-<li>get_cell()
-: <a class="el" href="_board_8h.html#af86d6df7fe483a6418f728591f987673">Board.h</a>
-, <a class="el" href="_board_8c.html#af86d6df7fe483a6418f728591f987673">Board.c</a>
-</li>
 <li>get_color_string()
-: <a class="el" href="_cell_8h.html#a73aaeecc84fa769f73fb56c51c328f89">Cell.h</a>
+: <a class="el" href="_tower_8h.html#a73aaeecc84fa769f73fb56c51c328f89">Tower.h</a>
 , <a class="el" href="_cell_8c.html#a73aaeecc84fa769f73fb56c51c328f89">Cell.c</a>
+</li>
+<li>get_x_coordinate()
+: <a class="el" href="_cell_8h.html#adc90b49f9b56c6fadfb572376b54a036">Cell.h</a>
+, <a class="el" href="_cell_8c.html#adc90b49f9b56c6fadfb572376b54a036">Cell.c</a>
+</li>
+<li>get_y_coordinate()
+: <a class="el" href="_cell_8h.html#a2cfb3fa2ca32842d0a50640ae70ba2d5">Cell.h</a>
+, <a class="el" href="_cell_8c.html#a2cfb3fa2ca32842d0a50640ae70ba2d5">Cell.c</a>
 </li>
 </ul>
 
@@ -159,7 +183,7 @@ $(document).ready(function(){initNavTree('globals_func.html',''); initResizable(
 : <a class="el" href="_board_8h.html#a203bda7049952e3770cc95832506de67">Board.h</a>
 , <a class="el" href="_board_8c.html#a203bda7049952e3770cc95832506de67">Board.c</a>
 </li>
-<li>init_tower()
+<li>init_cell()
 : <a class="el" href="_cell_8h.html#ac35ff6e245db9b66a870a5f0aa71fc6a">Cell.h</a>
 , <a class="el" href="_cell_8c.html#ac35ff6e245db9b66a870a5f0aa71fc6a">Cell.c</a>
 </li>
@@ -179,6 +203,34 @@ $(document).ready(function(){initNavTree('globals_func.html',''); initResizable(
 : <a class="el" href="_moves_8h.html#af4e7efd7818aabb39534b9bf2a883c1d">Moves.h</a>
 , <a class="el" href="_moves_8c.html#af4e7efd7818aabb39534b9bf2a883c1d">Moves.c</a>
 </li>
+<li>move_get_conquer()
+: <a class="el" href="_moves_8h.html#a2160ee9c7ae10f0ae70ea4b600ca9bad">Moves.h</a>
+, <a class="el" href="_moves_8c.html#a2160ee9c7ae10f0ae70ea4b600ca9bad">Moves.c</a>
+</li>
+<li>move_get_destination_cell()
+: <a class="el" href="_moves_8h.html#a573ac7ffcfc1e30b5435cae79f01447f">Moves.h</a>
+, <a class="el" href="_moves_8c.html#a573ac7ffcfc1e30b5435cae79f01447f">Moves.c</a>
+</li>
+<li>move_get_eaten_cell()
+: <a class="el" href="_moves_8h.html#a598b7593be4879439e674e1685ac352c">Moves.h</a>
+, <a class="el" href="_moves_8c.html#a598b7593be4879439e674e1685ac352c">Moves.c</a>
+</li>
+<li>move_get_origin_cell()
+: <a class="el" href="_moves_8h.html#a22da0cdc46d8efc3875446f60f7b1d10">Moves.h</a>
+, <a class="el" href="_moves_8c.html#a22da0cdc46d8efc3875446f60f7b1d10">Moves.c</a>
+</li>
+<li>moves_get_move()
+: <a class="el" href="_moves_8h.html#a23ee276e2776a31a6a23f61ddc150900">Moves.h</a>
+, <a class="el" href="_moves_8c.html#a23ee276e2776a31a6a23f61ddc150900">Moves.c</a>
+</li>
+<li>moves_get_moves()
+: <a class="el" href="_moves_8h.html#ad6d10cf3f7c198e1d2b684a5259fa6a4">Moves.h</a>
+, <a class="el" href="_moves_8c.html#ad6d10cf3f7c198e1d2b684a5259fa6a4">Moves.c</a>
+</li>
+<li>moves_get_size()
+: <a class="el" href="_moves_8h.html#aafd0ba1b4b3014b411456e3d66283df7">Moves.h</a>
+, <a class="el" href="_moves_8c.html#aafd0ba1b4b3014b411456e3d66283df7">Moves.c</a>
+</li>
 </ul>
 
 
@@ -192,16 +244,16 @@ $(document).ready(function(){initNavTree('globals_func.html',''); initResizable(
 , <a class="el" href="_moves_8c.html#a587b03cf247c8636ed59eba1396686a3">Moves.c</a>
 </li>
 <li>new_moves()
-: <a class="el" href="_moves_8h.html#a5b20bd7e3fd88aaa95fa954ba8f39350">Moves.h</a>
-, <a class="el" href="_moves_8c.html#a5b20bd7e3fd88aaa95fa954ba8f39350">Moves.c</a>
+: <a class="el" href="_moves_8h.html#aa8c26bb83494190c38c422b58c84e909">Moves.h</a>
+, <a class="el" href="_moves_8c.html#aa8c26bb83494190c38c422b58c84e909">Moves.c</a>
 </li>
 </ul>
 
 
 <h3><a id="index_o"></a>- o -</h3><ul>
 <li>officer_possible_moves()
-: <a class="el" href="_moves_8h.html#a0b1e07f7bb3a432643643923d9a661c3">Moves.h</a>
-, <a class="el" href="_moves_8c.html#a0b1e07f7bb3a432643643923d9a661c3">Moves.c</a>
+: <a class="el" href="_moves_8h.html#a43e76213802959bddd2a187a3da531fc">Moves.h</a>
+, <a class="el" href="_moves_8c.html#a43e76213802959bddd2a187a3da531fc">Moves.c</a>
 </li>
 </ul>
 
@@ -227,6 +279,10 @@ $(document).ready(function(){initNavTree('globals_func.html',''); initResizable(
 
 
 <h3><a id="index_r"></a>- r -</h3><ul>
+<li>random_cpu()
+: <a class="el" href="_single_player_8h.html#af3c92507d3bf6f4adb2db3cdbf75878f">SinglePlayer.h</a>
+, <a class="el" href="_single_player_8c.html#af3c92507d3bf6f4adb2db3cdbf75878f">SinglePlayer.c</a>
+</li>
 <li>run_multiplayer()
 : <a class="el" href="_multiplayer_8h.html#aeccc6af04a94288b46069da446622f5a">Multiplayer.h</a>
 , <a class="el" href="_multiplayer_8c.html#aeccc6af04a94288b46069da446622f5a">Multiplayer.c</a>
@@ -244,16 +300,36 @@ $(document).ready(function(){initNavTree('globals_func.html',''); initResizable(
 , <a class="el" href="_cell_8c.html#aa499c7fd81fb530db63da2c7446db3f9">Cell.c</a>
 </li>
 <li>soldier_possible_moves()
-: <a class="el" href="_moves_8h.html#a72732e55737e01ab48af1670fd82543c">Moves.h</a>
-, <a class="el" href="_moves_8c.html#a72732e55737e01ab48af1670fd82543c">Moves.c</a>
+: <a class="el" href="_moves_8h.html#a75feae2c98db5ef44b89ffacbc55d8b2">Moves.h</a>
+, <a class="el" href="_moves_8c.html#a75feae2c98db5ef44b89ffacbc55d8b2">Moves.c</a>
 </li>
 </ul>
 
 
 <h3><a id="index_t"></a>- t -</h3><ul>
+<li>tower_get_color()
+: <a class="el" href="_tower_8h.html#af20d484a3a1c15994ce1bdd1cb0e5fc6">Tower.h</a>
+, <a class="el" href="_tower_8c.html#af20d484a3a1c15994ce1bdd1cb0e5fc6">Tower.c</a>
+</li>
+<li>tower_get_height()
+: <a class="el" href="_tower_8h.html#ac4a59c0f0fee0277cd66ab68aadb646a">Tower.h</a>
+, <a class="el" href="_tower_8c.html#ac4a59c0f0fee0277cd66ab68aadb646a">Tower.c</a>
+</li>
+<li>tower_get_piece()
+: <a class="el" href="_tower_8h.html#a17e78f7aa28d140759d4714234ac5618">Tower.h</a>
+, <a class="el" href="_tower_8c.html#a17e78f7aa28d140759d4714234ac5618">Tower.c</a>
+</li>
+<li>tower_get_pieces()
+: <a class="el" href="_tower_8h.html#a4f9664f6c272e23e6ecf95fc6c341307">Tower.h</a>
+, <a class="el" href="_tower_8c.html#a4f9664f6c272e23e6ecf95fc6c341307">Tower.c</a>
+</li>
+<li>tower_get_type()
+: <a class="el" href="_tower_8h.html#a393cdb50a92f139ceb4db8afbec1caf2">Tower.h</a>
+, <a class="el" href="_tower_8c.html#a393cdb50a92f139ceb4db8afbec1caf2">Tower.c</a>
+</li>
 <li>tower_possible_moves()
-: <a class="el" href="_moves_8h.html#aea789482b86f2656473137db1ed9acaf">Moves.h</a>
-, <a class="el" href="_moves_8c.html#aea789482b86f2656473137db1ed9acaf">Moves.c</a>
+: <a class="el" href="_moves_8h.html#a8d8b32fd0399fb94fb4d6471121a3ca5">Moves.h</a>
+, <a class="el" href="_moves_8c.html#a8d8b32fd0399fb94fb4d6471121a3ca5">Moves.c</a>
 </li>
 </ul>
 

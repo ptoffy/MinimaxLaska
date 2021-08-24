@@ -35,12 +35,15 @@
 }*/
 
 void random_cpu(Moves *moves) {
-    int move;
+    int index;
+    Move *move;
     time_t t;
     srand((unsigned) time(&t));
-    move = rand() % moves_get_size(moves);
-    make_move(&moves->moves[move], moves->moves[move].conquer);
-    check_for_promotion(&moves->moves[move]);
+    index = rand() % moves_get_size(moves);
+    move = moves_get_move(moves, index);
+    make_move(move, move_get_conquer(move));
+    check_for_promotion(move);
+    free(moves);
 }
 
 void run_single_player() {
@@ -54,7 +57,7 @@ void run_single_player() {
         printf("Turno: %s\n", get_color_string(turn));
         print_board(board);
         possible_moves = calculate_moves(board, turn);
-        if (possible_moves->size == 0) {
+        if (moves_get_size(possible_moves)) {
             printf("Partita finita, %s vince!", get_color_string(!turn));
             break;
         }

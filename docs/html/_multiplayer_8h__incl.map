@@ -1,0 +1,9 @@
+<map id="include/Multiplayer.h" name="include/Multiplayer.h">
+<area shape="rect" id="node1" title="Multiplayer mode handler." alt="" coords="5,5,148,32"/>
+<area shape="rect" id="node2" href="$_moves_8h.html" title="Moves contains all the data types and methods used to handle moves." alt="" coords="41,80,113,107"/>
+<area shape="rect" id="node3" href="$_cell_8h.html" title="Cell struct and methods to handle cells and their towers." alt="" coords="59,229,115,256"/>
+<area shape="rect" id="node6" href="$_bool_8h.html" title="Boolean enum." alt="" coords="47,155,107,181"/>
+<area shape="rect" id="node7" href="$_board_8h.html" title="Board struct and methods to handle the board." alt="" coords="131,155,201,181"/>
+<area shape="rect" id="node4" href="$_tower_8h.html" title="Data types and methods used to handle a Tower." alt="" coords="8,304,76,331"/>
+<area shape="rect" id="node5" title=" " alt="" coords="101,304,165,331"/>
+</map>

@@ -27,7 +27,7 @@ var NAVTREE =
   [ "Lasca", "index.html", [
     [ "Introduzione", "index.html#intro_sec", null ],
     [ "Struttura", "index.html#Struttura", null ],
-    [ "Lasca", "md__r_e_a_d_m_e.html", null ],
+    [ "Funzionalità", "index.html#Funzionalità", null ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
@@ -43,7 +43,8 @@ var NAVTREE =
         [ "Functions", "globals_func.html", null ],
         [ "Typedefs", "globals_type.html", null ],
         [ "Enumerations", "globals_enum.html", null ],
-        [ "Enumerator", "globals_eval.html", null ]
+        [ "Enumerator", "globals_eval.html", null ],
+        [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
   ] ]

@@ -100,13 +100,13 @@ $(document).ready(function(){initNavTree('_cell_8h.html',''); initResizable(); }
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Cell.h:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 0 -->
+<div class="center"><iframe scrolling="no" frameborder="0" src="_cell_8h__incl.svg" width="168" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 1 -->
+<div class="center"><iframe scrolling="no" frameborder="0" src="_cell_8h__dep__incl.svg" width="892" height="336"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -135,10 +135,14 @@ Functions</h2></td></tr>
 <tr class="separator:ac6de7af1935626b1e01bcba693efa271"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b2ce781180093fc4fd7a9f374250268"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cell_8h.html#a1b2ce781180093fc4fd7a9f374250268">is_cell_in_board</a> (<a class="el" href="struct_cell.html">Cell</a> *cell)</td></tr>
 <tr class="separator:a1b2ce781180093fc4fd7a9f374250268"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac35ff6e245db9b66a870a5f0aa71fc6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cell_8h.html#ac35ff6e245db9b66a870a5f0aa71fc6a">init_tower</a> (<a class="el" href="struct_cell.html">Cell</a> *cell, int color)</td></tr>
+<tr class="memitem:ac35ff6e245db9b66a870a5f0aa71fc6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cell_8h.html#ac35ff6e245db9b66a870a5f0aa71fc6a">init_cell</a> (<a class="el" href="struct_cell.html">Cell</a> *cell, int color)</td></tr>
 <tr class="separator:ac35ff6e245db9b66a870a5f0aa71fc6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73aaeecc84fa769f73fb56c51c328f89"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cell_8h.html#a73aaeecc84fa769f73fb56c51c328f89">get_color_string</a> (<a class="el" href="_tower_8h.html#ab87bacfdad76e61b9412d7124be44c1c">Color</a> color)</td></tr>
-<tr class="separator:a73aaeecc84fa769f73fb56c51c328f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae65f2d8415c5de793063fa4a1abbc008"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_tower.html">Tower</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cell_8h.html#ae65f2d8415c5de793063fa4a1abbc008">cell_get_tower</a> (<a class="el" href="struct_cell.html">Cell</a> *cell)</td></tr>
+<tr class="separator:ae65f2d8415c5de793063fa4a1abbc008"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc90b49f9b56c6fadfb572376b54a036"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cell_8h.html#adc90b49f9b56c6fadfb572376b54a036">get_x_coordinate</a> (<a class="el" href="struct_cell.html">Cell</a> *cell)</td></tr>
+<tr class="separator:adc90b49f9b56c6fadfb572376b54a036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cfb3fa2ca32842d0a50640ae70ba2d5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cell_8h.html#a2cfb3fa2ca32842d0a50640ae70ba2d5">get_y_coordinate</a> (<a class="el" href="struct_cell.html">Cell</a> *cell)</td></tr>
+<tr class="separator:a2cfb3fa2ca32842d0a50640ae70ba2d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="struct_cell.html" title="Single cell of the play board.">Cell</a> struct and methods to handle cells and their towers. </p>
@@ -164,39 +168,89 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a73aaeecc84fa769f73fb56c51c328f89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73aaeecc84fa769f73fb56c51c328f89">&#9670;&nbsp;</a></span>get_color_string()</h2>
+<a id="ae65f2d8415c5de793063fa4a1abbc008"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae65f2d8415c5de793063fa4a1abbc008">&#9670;&nbsp;</a></span>cell_get_tower()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char* get_color_string </td>
+          <td class="memname"><a class="el" href="struct_tower.html">Tower</a>* cell_get_tower </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="_tower_8h.html#ab87bacfdad76e61b9412d7124be44c1c">Color</a>&#160;</td>
-          <td class="paramname"><em>color</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="struct_cell.html">Cell</a> *&#160;</td>
+          <td class="paramname"><em>cell</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns a string representing a Color, in italian. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Returns the tower contained by the <a class="el" href="struct_cell.html" title="Single cell of the play board.">Cell</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">color</td><td>The color to be represented. </td></tr>
+    <tr><td class="paramname">cell</td><td>The selected <a class="el" href="struct_cell.html" title="Single cell of the play board.">Cell</a>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The created string. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The tower contained by the <a class="el" href="struct_cell.html" title="Single cell of the play board.">Cell</a>. </dd></dl>
 
 </div>
 </div>
-<a id="ac35ff6e245db9b66a870a5f0aa71fc6a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac35ff6e245db9b66a870a5f0aa71fc6a">&#9670;&nbsp;</a></span>init_tower()</h2>
+<a id="adc90b49f9b56c6fadfb572376b54a036"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc90b49f9b56c6fadfb572376b54a036">&#9670;&nbsp;</a></span>get_x_coordinate()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void init_tower </td>
+          <td class="memname">int get_x_coordinate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cell.html">Cell</a> *&#160;</td>
+          <td class="paramname"><em>cell</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the x coordinate of the <a class="el" href="struct_cell.html" title="Single cell of the play board.">Cell</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cell</td><td>The selected cell. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The coordinate by the <a class="el" href="struct_cell.html" title="Single cell of the play board.">Cell</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a2cfb3fa2ca32842d0a50640ae70ba2d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cfb3fa2ca32842d0a50640ae70ba2d5">&#9670;&nbsp;</a></span>get_y_coordinate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int get_y_coordinate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cell.html">Cell</a> *&#160;</td>
+          <td class="paramname"><em>cell</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the y coordinate of the <a class="el" href="struct_cell.html" title="Single cell of the play board.">Cell</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cell</td><td>The selected cell. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The coordinate by the <a class="el" href="struct_cell.html" title="Single cell of the play board.">Cell</a>. </dd></dl>
+
+</div>
+</div>
+<a id="ac35ff6e245db9b66a870a5f0aa71fc6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac35ff6e245db9b66a870a5f0aa71fc6a">&#9670;&nbsp;</a></span>init_cell()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init_cell </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct_cell.html">Cell</a> *&#160;</td>
           <td class="paramname"><em>cell</em>, </td>

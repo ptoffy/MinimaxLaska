@@ -97,44 +97,49 @@ $(document).ready(function(){initNavTree('_cell_8h_source.html',''); initResizab
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="struct_cell.html">   26</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_cell.html">Cell</a> {</div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="struct_cell.html#ac008158796a0bfdf37be2f26eff651ef">   27</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_cell.html#ac008158796a0bfdf37be2f26eff651ef">x</a>;                   </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="struct_cell.html#a30e53122c49689729b66230dbfdab28e">   28</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_cell.html#ab99a0cead05c6b8129ddf3231b11c1ad">y</a>;                   </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">enum</span> <a class="code" href="_tower_8h.html#ab87bacfdad76e61b9412d7124be44c1c">Color</a> <a class="code" href="struct_cell.html#a30e53122c49689729b66230dbfdab28e">color</a>;        </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="struct_cell.html#ad86e4a22f090e48f97828a3d610daf4e">   30</a></span>&#160;    <a class="code" href="struct_tower.html">Tower</a> *<a class="code" href="struct_cell.html#ad86e4a22f090e48f97828a3d610daf4e">tower</a>;            </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="_cell_8h.html#a60bf09598e66928bf67a21a22bc17814">   31</a></span>&#160;} <a class="code" href="_cell_8h.html#a60bf09598e66928bf67a21a22bc17814">Cell</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<a class="code" href="_cell_8h.html#a6432826cc519ce12e15b977c193b1577">print_cell_content</a>(<a class="code" href="struct_cell.html">Cell</a> *cell);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<a class="code" href="_cell_8h.html#aa499c7fd81fb530db63da2c7446db3f9">set_cell_empty</a>(<a class="code" href="struct_cell.html">Cell</a> *cell);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">int</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<a class="code" href="_cell_8h.html#ac6de7af1935626b1e01bcba693efa271">is_cell_empty</a>(<a class="code" href="struct_cell.html">Cell</a> *cell);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">int</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<a class="code" href="_cell_8h.html#a1b2ce781180093fc4fd7a9f374250268">is_cell_in_board</a>(<a class="code" href="struct_cell.html">Cell</a> *cell);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<a class="code" href="_cell_8h.html#ac35ff6e245db9b66a870a5f0aa71fc6a">init_tower</a>(<a class="code" href="struct_cell.html">Cell</a>* cell, <span class="keywordtype">int</span> color);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>*</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<a class="code" href="_cell_8h.html#a73aaeecc84fa769f73fb56c51c328f89">get_color_string</a>(<a class="code" href="_tower_8h.html#ab87bacfdad76e61b9412d7124be44c1c">Color</a> color);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* CELL_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="a_cell_8h_html_a1b2ce781180093fc4fd7a9f374250268"><div class="ttname"><a href="_cell_8h.html#a1b2ce781180093fc4fd7a9f374250268">is_cell_in_board</a></div><div class="ttdeci">int is_cell_in_board(Cell *cell)</div><div class="ttdef"><b>Definition:</b> Cell.c:54</div></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="struct_cell.html#ab99a0cead05c6b8129ddf3231b11c1ad">   28</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_cell.html#ab99a0cead05c6b8129ddf3231b11c1ad">y</a>;                   </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="struct_cell.html#ad86e4a22f090e48f97828a3d610daf4e">   29</a></span>&#160;    <a class="code" href="struct_tower.html">Tower</a> *<a class="code" href="struct_cell.html#ad86e4a22f090e48f97828a3d610daf4e">tower</a>;            </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="_cell_8h.html#a60bf09598e66928bf67a21a22bc17814">   30</a></span>&#160;} <a class="code" href="_cell_8h.html#a60bf09598e66928bf67a21a22bc17814">Cell</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<a class="code" href="_cell_8h.html#a6432826cc519ce12e15b977c193b1577">print_cell_content</a>(<a class="code" href="struct_cell.html">Cell</a> *cell);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<a class="code" href="_cell_8h.html#aa499c7fd81fb530db63da2c7446db3f9">set_cell_empty</a>(<a class="code" href="struct_cell.html">Cell</a> *cell);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">int</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<a class="code" href="_cell_8h.html#ac6de7af1935626b1e01bcba693efa271">is_cell_empty</a>(<a class="code" href="struct_cell.html">Cell</a> *cell);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keywordtype">int</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<a class="code" href="_cell_8h.html#a1b2ce781180093fc4fd7a9f374250268">is_cell_in_board</a>(<a class="code" href="struct_cell.html">Cell</a> *cell);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<a class="code" href="_cell_8h.html#ac35ff6e245db9b66a870a5f0aa71fc6a">init_cell</a>(<a class="code" href="struct_cell.html">Cell</a>* cell, <span class="keywordtype">int</span> color);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<a class="code" href="struct_tower.html">Tower</a> *</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<a class="code" href="_cell_8h.html#ae65f2d8415c5de793063fa4a1abbc008">cell_get_tower</a>(<a class="code" href="struct_cell.html">Cell</a> *cell);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordtype">int</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<a class="code" href="_cell_8h.html#adc90b49f9b56c6fadfb572376b54a036">get_x_coordinate</a>(<a class="code" href="struct_cell.html">Cell</a> *cell);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keywordtype">int</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<a class="code" href="_cell_8h.html#a2cfb3fa2ca32842d0a50640ae70ba2d5">get_y_coordinate</a>(<a class="code" href="struct_cell.html">Cell</a> *cell);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* CELL_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a_cell_8h_html_a1b2ce781180093fc4fd7a9f374250268"><div class="ttname"><a href="_cell_8h.html#a1b2ce781180093fc4fd7a9f374250268">is_cell_in_board</a></div><div class="ttdeci">int is_cell_in_board(Cell *cell)</div><div class="ttdef"><b>Definition:</b> Cell.c:57</div></div>
+<div class="ttc" id="a_cell_8h_html_a2cfb3fa2ca32842d0a50640ae70ba2d5"><div class="ttname"><a href="_cell_8h.html#a2cfb3fa2ca32842d0a50640ae70ba2d5">get_y_coordinate</a></div><div class="ttdeci">int get_y_coordinate(Cell *cell)</div><div class="ttdef"><b>Definition:</b> Cell.c:82</div></div>
 <div class="ttc" id="a_cell_8h_html_a60bf09598e66928bf67a21a22bc17814"><div class="ttname"><a href="_cell_8h.html#a60bf09598e66928bf67a21a22bc17814">Cell</a></div><div class="ttdeci">struct Cell Cell</div><div class="ttdoc">Single cell of the play board.</div></div>
-<div class="ttc" id="a_cell_8h_html_a6432826cc519ce12e15b977c193b1577"><div class="ttname"><a href="_cell_8h.html#a6432826cc519ce12e15b977c193b1577">print_cell_content</a></div><div class="ttdeci">void print_cell_content(Cell *cell)</div><div class="ttdoc">Prints the piece of a cell.</div><div class="ttdef"><b>Definition:</b> Cell.c:25</div></div>
-<div class="ttc" id="a_cell_8h_html_a73aaeecc84fa769f73fb56c51c328f89"><div class="ttname"><a href="_cell_8h.html#a73aaeecc84fa769f73fb56c51c328f89">get_color_string</a></div><div class="ttdeci">const char * get_color_string(Color color)</div><div class="ttdef"><b>Definition:</b> Cell.c:21</div></div>
-<div class="ttc" id="a_cell_8h_html_aa499c7fd81fb530db63da2c7446db3f9"><div class="ttname"><a href="_cell_8h.html#aa499c7fd81fb530db63da2c7446db3f9">set_cell_empty</a></div><div class="ttdeci">void set_cell_empty(Cell *cell)</div><div class="ttdef"><b>Definition:</b> Cell.c:46</div></div>
-<div class="ttc" id="a_cell_8h_html_ac35ff6e245db9b66a870a5f0aa71fc6a"><div class="ttname"><a href="_cell_8h.html#ac35ff6e245db9b66a870a5f0aa71fc6a">init_tower</a></div><div class="ttdeci">void init_tower(Cell *cell, int color)</div><div class="ttdef"><b>Definition:</b> Cell.c:62</div></div>
-<div class="ttc" id="a_cell_8h_html_ac6de7af1935626b1e01bcba693efa271"><div class="ttname"><a href="_cell_8h.html#ac6de7af1935626b1e01bcba693efa271">is_cell_empty</a></div><div class="ttdeci">int is_cell_empty(Cell *cell)</div><div class="ttdef"><b>Definition:</b> Cell.c:50</div></div>
+<div class="ttc" id="a_cell_8h_html_a6432826cc519ce12e15b977c193b1577"><div class="ttname"><a href="_cell_8h.html#a6432826cc519ce12e15b977c193b1577">print_cell_content</a></div><div class="ttdeci">void print_cell_content(Cell *cell)</div><div class="ttdoc">Prints the piece of a cell.</div><div class="ttdef"><b>Definition:</b> Cell.c:28</div></div>
+<div class="ttc" id="a_cell_8h_html_aa499c7fd81fb530db63da2c7446db3f9"><div class="ttname"><a href="_cell_8h.html#aa499c7fd81fb530db63da2c7446db3f9">set_cell_empty</a></div><div class="ttdeci">void set_cell_empty(Cell *cell)</div><div class="ttdef"><b>Definition:</b> Cell.c:49</div></div>
+<div class="ttc" id="a_cell_8h_html_ac35ff6e245db9b66a870a5f0aa71fc6a"><div class="ttname"><a href="_cell_8h.html#ac35ff6e245db9b66a870a5f0aa71fc6a">init_cell</a></div><div class="ttdeci">void init_cell(Cell *cell, int color)</div><div class="ttdef"><b>Definition:</b> Cell.c:65</div></div>
+<div class="ttc" id="a_cell_8h_html_ac6de7af1935626b1e01bcba693efa271"><div class="ttname"><a href="_cell_8h.html#ac6de7af1935626b1e01bcba693efa271">is_cell_empty</a></div><div class="ttdeci">int is_cell_empty(Cell *cell)</div><div class="ttdef"><b>Definition:</b> Cell.c:53</div></div>
+<div class="ttc" id="a_cell_8h_html_adc90b49f9b56c6fadfb572376b54a036"><div class="ttname"><a href="_cell_8h.html#adc90b49f9b56c6fadfb572376b54a036">get_x_coordinate</a></div><div class="ttdeci">int get_x_coordinate(Cell *cell)</div><div class="ttdef"><b>Definition:</b> Cell.c:78</div></div>
+<div class="ttc" id="a_cell_8h_html_ae65f2d8415c5de793063fa4a1abbc008"><div class="ttname"><a href="_cell_8h.html#ae65f2d8415c5de793063fa4a1abbc008">cell_get_tower</a></div><div class="ttdeci">Tower * cell_get_tower(Cell *cell)</div><div class="ttdef"><b>Definition:</b> Cell.c:74</div></div>
 <div class="ttc" id="a_tower_8h_html"><div class="ttname"><a href="_tower_8h.html">Tower.h</a></div><div class="ttdoc">Data types and methods used to handle a Tower.</div></div>
-<div class="ttc" id="a_tower_8h_html_ab87bacfdad76e61b9412d7124be44c1c"><div class="ttname"><a href="_tower_8h.html#ab87bacfdad76e61b9412d7124be44c1c">Color</a></div><div class="ttdeci">Color</div><div class="ttdef"><b>Definition:</b> Tower.h:18</div></div>
 <div class="ttc" id="astruct_cell_html"><div class="ttname"><a href="struct_cell.html">Cell</a></div><div class="ttdoc">Single cell of the play board.</div><div class="ttdef"><b>Definition:</b> Cell.h:26</div></div>
-<div class="ttc" id="astruct_cell_html_a30e53122c49689729b66230dbfdab28e"><div class="ttname"><a href="struct_cell.html#a30e53122c49689729b66230dbfdab28e">Cell::color</a></div><div class="ttdeci">enum Color color</div><div class="ttdef"><b>Definition:</b> Cell.h:29</div></div>
 <div class="ttc" id="astruct_cell_html_ab99a0cead05c6b8129ddf3231b11c1ad"><div class="ttname"><a href="struct_cell.html#ab99a0cead05c6b8129ddf3231b11c1ad">Cell::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definition:</b> Cell.h:28</div></div>
 <div class="ttc" id="astruct_cell_html_ac008158796a0bfdf37be2f26eff651ef"><div class="ttname"><a href="struct_cell.html#ac008158796a0bfdf37be2f26eff651ef">Cell::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definition:</b> Cell.h:27</div></div>
-<div class="ttc" id="astruct_cell_html_ad86e4a22f090e48f97828a3d610daf4e"><div class="ttname"><a href="struct_cell.html#ad86e4a22f090e48f97828a3d610daf4e">Cell::tower</a></div><div class="ttdeci">Tower * tower</div><div class="ttdef"><b>Definition:</b> Cell.h:30</div></div>
+<div class="ttc" id="astruct_cell_html_ad86e4a22f090e48f97828a3d610daf4e"><div class="ttname"><a href="struct_cell.html#ad86e4a22f090e48f97828a3d610daf4e">Cell::tower</a></div><div class="ttdeci">Tower * tower</div><div class="ttdef"><b>Definition:</b> Cell.h:29</div></div>
 <div class="ttc" id="astruct_tower_html"><div class="ttname"><a href="struct_tower.html">Tower</a></div><div class="ttdoc">Array of Piece.</div><div class="ttdef"><b>Definition:</b> Tower.h:53</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
