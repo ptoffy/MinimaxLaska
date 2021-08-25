@@ -42,6 +42,29 @@
  * della scelta da parte dell'utente è controllata e non permette l'inserimento errato di mosse.
  *
  * Il gioco finisce nel momento in cui non ci sono più mosse disponibili per colui che deve giocare il turno.
+ *
+ * Per il giocatore singolo, è stato implementato l'algoritmo Minimax in modo che la CPU possa fare delle scelte
+ * con un certo criterio.
+ *
+ * @section Minimax
+ *
+ * 1. Crea un albero sulla base delle mosse disponibili, ogni livello di questo albero conterrà le mosse che un
+ *       giocatore (sia CPU sia utente) può svolgere.
+ * 2. Attraversa ricorsivamente l'albero creato, assegnando ad ogni mossa un valore, valutato sulla base del vantaggio
+ *       che può portare alla CPU. Il valore è calcolato nella funzione `evaluate(Board *board)` e si basa sul numero di pezzi
+ *       presenti sul campo da gioco dopo aver simulato una mossa, quindi indica se ci sono state delle mangiate o no
+ *       e a favore di chi. Inoltre, tarato con meno importanza, c'è anche la quantità di pedine `Officer` presenti, quindi
+ *       anche la possibilità di promuovere una pedina ha ruolo nella valutazione. Più il numero è alto, più e vantaggioso
+ *       per il giocatore.
+ * 3. Sceglie, per ogni livello, la mossa più conveniente comparando i valori delle varie mosse, a seconda del turno che
+ *       si sta controllando si sceglierà il numero più alto (se il turno è lo stesso della CPU) oppure il numero più basso se
+ *       il turno controllato è dell'utente.
+ *
+ * ![image](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Minimax.svg/400px-Minimax.svg.png)
+ *
+ * Più la depth della AI è alta, quindi il numero di turni e di conseguenza il numero di mosse controllati, più l'AI
+ * ci metterà a trovare un risultato. La complessità computazionale è **O(b^m)**, dove b è il numero di mosse possibili
+ * per ogni turno ed m è il numero massimo di profondità (depth).
  */
 
 #include <stdio.h>

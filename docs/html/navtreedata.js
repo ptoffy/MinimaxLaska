@@ -28,6 +28,7 @@ var NAVTREE =
     [ "Introduzione", "index.html#intro_sec", null ],
     [ "Struttura", "index.html#Struttura", null ],
     [ "Funzionalità", "index.html#Funzionalità", null ],
+    [ "Minimax", "index.html#Minimax", null ],
     [ "Progetto Lasca", "md__relazione.html", [
       [ "Introduzione", "md__relazione.html#autotoc_md1", null ],
       [ "Struttura", "md__relazione.html#autotoc_md2", [
