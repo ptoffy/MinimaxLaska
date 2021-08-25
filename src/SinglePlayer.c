@@ -37,15 +37,15 @@ double evaluate(Board *board) {
     return white_left - black_left + (white_officers * 0.5 - black_officers * 0.5);
 }
 
-double minimax(Move *move, int depth, Color turn, Board *board) {
+double minimax(Move *move, int depth, Color maximizing_player, Board *board) {
     double max_eval, min_eval, eval;
     int i;
     Moves *moves;
     if (depth == 0)
         return evaluate(board);
-    moves = calculate_moves(board, turn);
-    if (turn == WHITE) {
-        max_eval = (int) -INFINITY;
+    moves = calculate_moves(board, maximizing_player);
+    if (maximizing_player == BLACK) {
+        max_eval = -INFINITY;
         for (i = 0; i < moves_get_size(moves); i++) {
             eval = minimax(move, depth - 1, BLACK, board);
             if (max_eval < eval) {
@@ -55,7 +55,7 @@ double minimax(Move *move, int depth, Color turn, Board *board) {
         }
         return max_eval;
     } else {
-        min_eval = INFINITY;
+        min_eval = WHITE;
         for (i = 0; i < moves_get_size(moves); i++) {
             eval = minimax(move, depth - 1, WHITE, board);
             if (min_eval > eval) {
@@ -84,7 +84,6 @@ void run_single_player() {
     Moves *possible_moves;
     Move *move = malloc(sizeof (Move));
     Color turn = WHITE;
-    int i = 0;
     init_board(board);
     *simulation_board = *board;
 
@@ -104,7 +103,6 @@ void run_single_player() {
             print_move(move, 0);
         }
         turn = !turn;
-        i++;
     }
     destroy_board(simulation_board);
     destroy_board(board);

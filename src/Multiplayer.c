@@ -19,7 +19,7 @@ void run_multiplayer() {
 
     init_board(board);
 
-    while (true) {
+    while (false) {
         printf("Turno: %s\n", get_color_string(turn));
         print_board(board);
         possible_moves = calculate_moves(board, turn);
