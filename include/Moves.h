@@ -284,5 +284,9 @@ moves_get_move(Moves *moves, int i);
 void
 moves_set_size(Moves *moves, size_t size);
 
+void
+move_set_move(Move *first, Move *second);
+
+
 
 #endif /* LASCA_MOVES_H */

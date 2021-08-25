@@ -35,7 +35,6 @@ void user_move_piece(Moves *moves) {
             input = scanf("%d", &selected);
         }
         make_move(&moves_get_moves(moves)[selected - 1], move_get_conquer(&moves_get_moves(moves)[selected - 1]));
-        check_for_promotion(&moves_get_moves(moves)[selected - 1]);
         moved = true;
     }
     free(moves);

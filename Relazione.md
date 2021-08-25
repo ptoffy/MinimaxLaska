@@ -52,15 +52,35 @@ Una volta scelta la mossa, sarà il sistema a preoccuparsi del resto, muovendo l
 mangiando, se è una mossa di conquista. Anche per quanto riguarda queste ultime, sarà il sistema ad accorgersi
 se è possibile mangiare, e presenterà all'utente solo tali mosse. Infine, il gioco continuerà e cambierà turno,
 a me no che non ci siano più mosse disponibili per colui che deve giocare il turno, in quel caso la partita finirà.
-  
+
+### MiniMax
+Per il giocatore singolo, è stato implementato l'algoritmo Minimax in modo che la CPU possa fare delle scelte
+con un certo criterio. L'algoritmo Minimax funziona così:
+ 1. Crea un albero sulla base delle mosse disponibili, ogni livello di questo albero conterrà le mosse che un 
+    giocatore (sia CPU sia utente) può svolgere.
+ 2. Attraversa ricorsivamente l'albero creato, assegnando ad ogni mossa un valore, valutato sulla base del vantaggio 
+    che può portare alla CPU. Il valore è calcolato nella funzione `evaluate(Board *board)` e si basa sul numero di pezzi 
+    presenti sul campo da gioco dopo aver simulato una mossa, quindi indica se ci sono state delle mangiate o no
+    e a favore di chi. Inoltre, tarato con meno importanza, c'è anche la quantità di pedine `Officer` presenti, quindi
+    anche la possibilità di promuovere una pedina ha ruolo nella valutazione. Più il numero è alto, più e vantaggioso
+    per il giocatore.
+ 3. Sceglie, per ogni livello, la mossa più conveniente comparando i valori delle varie mosse, a seconda del turno che 
+    si sta controllando si sceglierà il numero più alto (se il turno è lo stesso della CPU) oppure il numero più basso se 
+    il turno controllato è dell'utente.
+    
+![image](Minimax.png)
+
+Più la depth della AI è alta, quindi il numero di turni e di conseguenza il numero di mosse controllati, più l'AI
+ci metterà a trovare un risultato. La complessità computazionale è **O(b^m)**, dove b è il numero di mosse possibili 
+per ogni turno ed m è il numero massimo di profondità (depth).
+
 ## Possibili miglioramenti
  - **Multi-mangiata**: Non è ancora possibile svolgere più mangiate in una mossa sola. Per implementare ciò servirebbe 
    semplicemente aggiungere un ciclo o addirittura una ricorsione nella funzione che si occupa di controllare la mossa 
-   e di svolgere la mangiata; 
- - **MiniMax**: L'algoritmo con il quale la CPU sceglie la sua prossima mossa non è ancora sviluppato, bisogna implementare 
-   un algoritmo (per esempio [MiniMax](https://towardsdatascience.com/how-a-chess-playing-computer-thinks-about-its-next-move-8f028bd0e7b1));
+   e di svolgere la mangiata;
  - **GUI**: attraverso librerie grafiche come GTK oppure SDL si può aggiungere una interfaccia grafica molto più piacevole 
    per l'utente.
+ - **Alpha-Beta Pruning**: Tecnica che permette di diminuire la complessità computazionale dell'algoritmo Minimax.
   
 ## Difficoltà incontrate
 Personalmente la difficoltà più grande è stata quella di abituarsi ad un linguaggio di programmazione
@@ -68,3 +88,4 @@ di basso livello come C, essendo normalmente abituato ad usare Java, Swift e alt
 gestione della memoria manuale. In più, C non è neanche un linguaggio ad oggetti, di conseguenza strutturare un progetto
 del genere senza usare gli oggetti, ha allungato di molto i tempi, siccome ho cercato comunque 
 di seguire le best practices di incapsulamento, astrazione ed information hiding.
+La cosa più interessante è stata senza dubbio l'implementazione dell'algoritmo Minimax per giocare contro la CPU.

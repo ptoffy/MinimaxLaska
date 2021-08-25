@@ -47,6 +47,7 @@ void add_move(Move move, Moves *moves) {
 void make_move(Move *move, bool conquer) {
     conquer ? conquer_tower(move) : cell_set_tower(move->destination, cell_get_tower(move->origin));
     cell_set_tower(move->origin, NULL);
+    check_for_promotion(move);
 }
 
 void conquer_tower(Move *move) {
@@ -147,6 +148,13 @@ void print_move(Move *move, int i) {
         printf("%d) %c%d - %c%d\n", i,
                get_x_coordinate(move_get_origin_cell(move))+ 'a' - 1, get_y_coordinate(move_get_origin_cell(move)),
                get_x_coordinate(move_get_destination_cell(move)) + 'a' - 1, get_y_coordinate(move_get_destination_cell(move)));
+}
+
+void move_set_move(Move *first, Move *second) {
+    first->conquer = second->conquer;
+    first->eaten = second->eaten;
+    first->origin = second->origin;
+    first->destination = second->destination;
 }
 
 size_t moves_get_size(Moves *moves) {
