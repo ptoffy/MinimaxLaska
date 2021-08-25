@@ -47,7 +47,7 @@ int evaluate(Board *board);
  * better it is for the @p maximizing_player. Then, it chooses between Moves
  * of the same level comparing these values, if the turn that is being checked is the @p maximizing_player's
  * one, chooses the highest value, if not it chooses the lowest, since it is the worst decision to make
- * for the opponent. Finally, it copies the best Move into the @move so that we can use it to perform that move.
+ * for the opponent. Finally, it copies the best Move into the @p move so that we can use it to perform that move.
  * @param move The Move that is being checked.
  * @param depth How many turns the AI is checking to choose the Move, the higher this number is, the higher
  * the computing power is needed to search the Move. The computational complexity is @b O(b^m),

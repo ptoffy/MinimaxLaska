@@ -28,6 +28,18 @@ var NAVTREE =
     [ "Introduzione", "index.html#intro_sec", null ],
     [ "Struttura", "index.html#Struttura", null ],
     [ "Funzionalità", "index.html#Funzionalità", null ],
+    [ "Progetto Lasca", "md__relazione.html", [
+      [ "Introduzione", "md__relazione.html#autotoc_md1", null ],
+      [ "Struttura", "md__relazione.html#autotoc_md2", [
+        [ "struct", "md__relazione.html#autotoc_md3", null ],
+        [ "enum", "md__relazione.html#autotoc_md4", null ]
+      ] ],
+      [ "Funzionalità", "md__relazione.html#autotoc_md5", [
+        [ "MiniMax", "md__relazione.html#autotoc_md6", null ]
+      ] ],
+      [ "Possibili miglioramenti", "md__relazione.html#autotoc_md7", null ],
+      [ "Difficoltà incontrate", "md__relazione.html#autotoc_md8", null ]
+    ] ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],

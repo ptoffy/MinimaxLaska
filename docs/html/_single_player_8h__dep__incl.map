@@ -1,4 +1,6 @@
 <map id="include/SinglePlayer.h" name="include/SinglePlayer.h">
-<area shape="rect" id="node1" title="SinglePlayer mode handler." alt="" coords="5,5,159,32"/>
-<area shape="rect" id="node2" href="$_single_player_8c.html" title="SinglePlayer mode handler." alt="" coords="18,80,146,107"/>
+<area shape="rect" id="node1" title="SinglePlayer mode handler." alt="" coords="103,5,256,32"/>
+<area shape="rect" id="node2" href="$_minimax_a_i_8h.html" title="Minimax algorithm." alt="" coords="55,80,197,107"/>
+<area shape="rect" id="node4" href="$_single_player_8c.html" title="SinglePlayer mode handler." alt="" coords="170,155,298,181"/>
+<area shape="rect" id="node3" href="$_minimax_a_i_8c.html" title="Minimax algorithm." alt="" coords="5,155,145,181"/>
 </map>

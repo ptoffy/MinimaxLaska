@@ -99,8 +99,7 @@ $(document).ready(function(){initNavTree('_tower_8h.html',''); initResizable(); 
 <div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="_tower_8h__dep__incl.svg" width="1002" height="411"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="_tower_8h__dep__incl.svg" width="1223" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="_tower_8h_source.html">Go to the source code of this file.</a></p>
@@ -163,6 +162,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ac4a59c0f0fee0277cd66ab68aadb646a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tower_8h.html#ac4a59c0f0fee0277cd66ab68aadb646a">tower_get_height</a> (<a class="el" href="struct_tower.html">Tower</a> *tower)</td></tr>
 <tr class="memdesc:ac4a59c0f0fee0277cd66ab68aadb646a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the <a class="el" href="struct_tower.html" title="Array of Piece.">Tower</a> height.  <a href="_tower_8h.html#ac4a59c0f0fee0277cd66ab68aadb646a">More...</a><br /></td></tr>
 <tr class="separator:ac4a59c0f0fee0277cd66ab68aadb646a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85d99c6843f5f12ef43387faffddb96b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tower_8h.html#a85d99c6843f5f12ef43387faffddb96b">tower_set_type</a> (<a class="el" href="struct_tower.html">Tower</a> *tower, <a class="el" href="_tower_8h.html#a1d1cfd8ffb84e947f82999c682b666a7">Type</a> type)</td></tr>
+<tr class="memdesc:a85d99c6843f5f12ef43387faffddb96b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter fot the <a class="el" href="struct_tower.html" title="Array of Piece.">Tower</a> Type.  <a href="_tower_8h.html#a85d99c6843f5f12ef43387faffddb96b">More...</a><br /></td></tr>
+<tr class="separator:a85d99c6843f5f12ef43387faffddb96b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ba27295d4c01edf432d20267867a15c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_tower.html">Tower</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tower_8h.html#a1ba27295d4c01edf432d20267867a15c">init_tower</a> (<a class="el" href="_tower_8h.html#ab87bacfdad76e61b9412d7124be44c1c">Color</a> color)</td></tr>
+<tr class="memdesc:a1ba27295d4c01edf432d20267867a15c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_tower.html" title="Array of Piece.">Tower</a> constructor.  <a href="_tower_8h.html#a1ba27295d4c01edf432d20267867a15c">More...</a><br /></td></tr>
+<tr class="separator:a1ba27295d4c01edf432d20267867a15c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Data types and methods used to handle a <a class="el" href="struct_tower.html" title="Array of Piece.">Tower</a>. </p>
@@ -345,6 +350,33 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a1ba27295d4c01edf432d20267867a15c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ba27295d4c01edf432d20267867a15c">&#9670;&nbsp;</a></span>init_tower()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_tower.html">Tower</a>* init_tower </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_tower_8h.html#ab87bacfdad76e61b9412d7124be44c1c">Color</a>&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="struct_tower.html" title="Array of Piece.">Tower</a> constructor. </p>
+<p>Creates a new <a class="el" href="struct_tower.html" title="Array of Piece.">Tower</a> pointer. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>The Color of the new <a class="el" href="struct_tower.html" title="Array of Piece.">Tower</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="struct_tower.html" title="Array of Piece.">Tower</a>. </dd></dl>
+
+</div>
+</div>
 <a id="a500504f881cf6a3ca16d64b08f0e631c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a500504f881cf6a3ca16d64b08f0e631c">&#9670;&nbsp;</a></span>promote()</h2>
 
@@ -512,6 +544,43 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The Type for the selected <a class="el" href="struct_tower.html" title="Array of Piece.">Tower</a> </dd></dl>
+
+</div>
+</div>
+<a id="a85d99c6843f5f12ef43387faffddb96b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85d99c6843f5f12ef43387faffddb96b">&#9670;&nbsp;</a></span>tower_set_type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tower_set_type </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_tower.html">Tower</a> *&#160;</td>
+          <td class="paramname"><em>tower</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_tower_8h.html#a1d1cfd8ffb84e947f82999c682b666a7">Type</a>&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setter fot the <a class="el" href="struct_tower.html" title="Array of Piece.">Tower</a> Type. </p>
+<p>Sets the Type of the <a class="el" href="struct_tower.html" title="Array of Piece.">Tower</a> according to the parameter. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tower</td><td>The <a class="el" href="struct_tower.html" title="Array of Piece.">Tower</a> of which the Type has to be set. </td></tr>
+    <tr><td class="paramname">type</td><td>The Type to be set. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
