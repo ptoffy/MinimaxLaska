@@ -168,16 +168,17 @@ $(document).ready(function(){initNavTree('_moves_8h_source.html',''); initResiza
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="keywordtype">void</span></div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<a class="code" href="_moves_8h.html#a7131fdc7ddd5a7fccd98877d63fefc81">moves_set_size</a>(<a class="code" href="struct_moves.html">Moves</a> *moves, <span class="keywordtype">size_t</span> size);</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;move_set_move(<a class="code" href="struct_move.html">Move</a> *first, <a class="code" href="struct_move.html">Move</a> *second);</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* LASCA_MOVES_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<a class="code" href="_moves_8h.html#a18da48cae501c56c2ab7ab015d62dd84">move_set_move</a>(<a class="code" href="struct_move.html">Move</a> *first, <a class="code" href="struct_move.html">Move</a> *second);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* LASCA_MOVES_H */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="a_board_8h_html"><div class="ttname"><a href="_board_8h.html">Board.h</a></div><div class="ttdoc">Board struct and methods to handle the board.</div></div>
 <div class="ttc" id="a_bool_8h_html"><div class="ttname"><a href="_bool_8h.html">Bool.h</a></div><div class="ttdoc">Boolean enum.</div></div>
 <div class="ttc" id="a_cell_8h_html"><div class="ttname"><a href="_cell_8h.html">Cell.h</a></div><div class="ttdoc">Cell struct and methods to handle cells and their towers.</div></div>
 <div class="ttc" id="a_moves_8h_html_a12b95c1b8027c2e1c476d536568c9362"><div class="ttname"><a href="_moves_8h.html#a12b95c1b8027c2e1c476d536568c9362">moves_get_move</a></div><div class="ttdeci">Move * moves_get_move(Moves *moves, int i)</div><div class="ttdoc">Getter for a Move from an array.</div><div class="ttdef"><b>Definition:</b> Moves.c:168</div></div>
+<div class="ttc" id="a_moves_8h_html_a18da48cae501c56c2ab7ab015d62dd84"><div class="ttname"><a href="_moves_8h.html#a18da48cae501c56c2ab7ab015d62dd84">move_set_move</a></div><div class="ttdeci">void move_set_move(Move *first, Move *second)</div><div class="ttdoc">Setter for the Move.</div><div class="ttdef"><b>Definition:</b> Moves.c:153</div></div>
 <div class="ttc" id="a_moves_8h_html_a202adffd011173e27c0ee55a13ecbaad"><div class="ttname"><a href="_moves_8h.html#a202adffd011173e27c0ee55a13ecbaad">new_conquer_move</a></div><div class="ttdeci">Move new_conquer_move(Cell *origin, Cell *destination, Cell *eaten)</div><div class="ttdoc">Creates a new conquer move.</div><div class="ttdef"><b>Definition:</b> Moves.c:33</div></div>
 <div class="ttc" id="a_moves_8h_html_a2160ee9c7ae10f0ae70ea4b600ca9bad"><div class="ttname"><a href="_moves_8h.html#a2160ee9c7ae10f0ae70ea4b600ca9bad">move_get_conquer</a></div><div class="ttdeci">bool move_get_conquer(Move *move)</div><div class="ttdoc">Getter for the conquer bool.</div><div class="ttdef"><b>Definition:</b> Moves.c:188</div></div>
 <div class="ttc" id="a_moves_8h_html_a219b393e8de668651378d51cf6ef4160"><div class="ttname"><a href="_moves_8h.html#a219b393e8de668651378d51cf6ef4160">print_move</a></div><div class="ttdeci">void print_move(Move *move, int i)</div><div class="ttdoc">Prints a Move.</div><div class="ttdef"><b>Definition:</b> Moves.c:141</div></div>

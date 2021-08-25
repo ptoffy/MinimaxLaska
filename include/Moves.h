@@ -284,6 +284,13 @@ moves_get_move(Moves *moves, int i);
 void
 moves_set_size(Moves *moves, size_t size);
 
+/**
+ * @brief Setter for the Move.
+ *
+ * Assigns a new Move to the first one.
+ * @param first The move to set.
+ * @param second The move be set.
+ */
 void
 move_set_move(Move *first, Move *second);
 

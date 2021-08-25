@@ -94,7 +94,9 @@ Introduzione</h1>
 <p>Lasca è una variante della Dama, ideato dallo scacchista tedesco Emanuel Lasker nel 1911; è noto anche come Laska o semplicemente come Lasker, o anche Laskers. Si gioca con le stesse regole della Dama, ma su un campo di sole 49 caselle (7 per lato). I pezzi catturati non vengono rimossi dal campo, ma trascinati e sormontati dal pezzo catturante.</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Struttura</h1>
-<p>&gt;All'interno della documentazione di Doxygen si possono trovare degli schemi che mostrano la struttura del progetto a livello grafico in modo da facilitare la lettura.</p>
+<blockquote class="doxtable">
+<p>All'interno della documentazione di Doxygen si possono trovare degli schemi che mostrano la struttura del progetto a livello grafico in modo da facilitare la lettura. </p>
+</blockquote>
 <p>Il programma è strutturato in diversi Abstract Data Types (ADT). </p>
 <h2><a class="anchor" id="autotoc_md3"></a>
 struct</h2>
@@ -126,7 +128,7 @@ MiniMax</h2>
 <li>Attraversa ricorsivamente l'albero creato, assegnando ad ogni mossa un valore, valutato sulla base del vantaggio che può portare alla CPU. Il valore è calcolato nella funzione <code><a class="el" href="_minimax_a_i_8h.html#a55ebb5616c55567b2202b9e1e08125a4" title="Evaluates a Move using the Board.">evaluate(Board *board)</a></code> e si basa sul numero di pezzi presenti sul campo da gioco dopo aver simulato una mossa, quindi indica se ci sono state delle mangiate o no e a favore di chi. Inoltre, tarato con meno importanza, c'è anche la quantità di pedine <code>Officer</code> presenti, quindi anche la possibilità di promuovere una pedina ha ruolo nella valutazione. Più il numero è alto, più e vantaggioso per il giocatore.</li>
 <li>Sceglie, per ogni livello, la mossa più conveniente comparando i valori delle varie mosse, a seconda del turno che si sta controllando si sceglierà il numero più alto (se il turno è lo stesso della CPU) oppure il numero più basso se il turno controllato è dell'utente.</li>
 </ol>
-<p><img src="Minimax.png" alt="image" class="inline"/></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Minimax.svg/400px-Minimax.svg.png" alt="image" class="inline"/></p>
 <p>Più la depth della AI è alta, quindi il numero di turni e di conseguenza il numero di mosse controllati, più l'AI ci metterà a trovare un risultato. La complessità computazionale è <b>O(b^m)</b>, dove b è il numero di mosse possibili per ogni turno ed m è il numero massimo di profondità (depth).</p>
 <h1><a class="anchor" id="autotoc_md7"></a>
 Possibili miglioramenti</h1>

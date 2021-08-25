@@ -9,8 +9,8 @@ Si gioca con le stesse regole della Dama, ma su un campo di sole 49 caselle (7 p
 I pezzi catturati non vengono rimossi dal campo, ma trascinati e sormontati dal pezzo catturante.
 
 ## Struttura
->All'interno della documentazione di Doxygen si possono trovare degli schemi che mostrano
-la struttura del progetto a livello grafico in modo da facilitare la lettura.
+> All'interno della documentazione di Doxygen si possono trovare degli schemi che mostrano
+> la struttura del progetto a livello grafico in modo da facilitare la lettura.
 
 Il programma è strutturato in diversi Abstract Data Types (ADT).
 ### struct
@@ -53,9 +53,11 @@ mangiando, se è una mossa di conquista. Anche per quanto riguarda queste ultime
 se è possibile mangiare, e presenterà all'utente solo tali mosse. Infine, il gioco continuerà e cambierà turno,
 a me no che non ci siano più mosse disponibili per colui che deve giocare il turno, in quel caso la partita finirà.
 
-### MiniMax
 Per il giocatore singolo, è stato implementato l'algoritmo Minimax in modo che la CPU possa fare delle scelte
-con un certo criterio. L'algoritmo Minimax funziona così:
+con un certo criterio.
+
+### MiniMax
+
  1. Crea un albero sulla base delle mosse disponibili, ogni livello di questo albero conterrà le mosse che un 
     giocatore (sia CPU sia utente) può svolgere.
  2. Attraversa ricorsivamente l'albero creato, assegnando ad ogni mossa un valore, valutato sulla base del vantaggio 
@@ -68,7 +70,7 @@ con un certo criterio. L'algoritmo Minimax funziona così:
     si sta controllando si sceglierà il numero più alto (se il turno è lo stesso della CPU) oppure il numero più basso se 
     il turno controllato è dell'utente.
     
-![image](Minimax.png)
+![image](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Minimax.svg/400px-Minimax.svg.png)
 
 Più la depth della AI è alta, quindi il numero di turni e di conseguenza il numero di mosse controllati, più l'AI
 ci metterà a trovare un risultato. La complessità computazionale è **O(b^m)**, dove b è il numero di mosse possibili 
