@@ -96,19 +96,26 @@ $(document).ready(function(){initNavTree('_single_player_8c.html',''); initResiz
 <div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;time.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="_single_player_8h_source.html">SinglePlayer.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_board_8h_source.html">Board.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_bool_8h_source.html">Bool.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_game_8h_source.html">Game.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_minimax_a_i_8h_source.html">MinimaxAI.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for SinglePlayer.c:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="_single_player_8c__incl.svg" width="731" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="_single_player_8c__incl.svg" width="580" height="411"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a5307f0fc5295602df1d60825c863b66a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_single_player_8c.html#a5307f0fc5295602df1d60825c863b66a">evaluate</a> (<a class="el" href="struct_board.html">Board</a> *board)</td></tr>
+<tr class="memdesc:a5307f0fc5295602df1d60825c863b66a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates a <a class="el" href="struct_move.html" title="Represents a possible move for a Tower.">Move</a> using the <a class="el" href="struct_board.html" title="Game field.">Board</a>.  <a href="_single_player_8c.html#a5307f0fc5295602df1d60825c863b66a">More...</a><br /></td></tr>
+<tr class="separator:a5307f0fc5295602df1d60825c863b66a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01ddba8c9d5bf4af6be422b3889a1005"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_single_player_8c.html#a01ddba8c9d5bf4af6be422b3889a1005">minimax</a> (<a class="el" href="struct_move.html">Move</a> *move, int depth, <a class="el" href="_tower_8h.html#ab87bacfdad76e61b9412d7124be44c1c">Color</a> turn, <a class="el" href="struct_board.html">Board</a> *board)</td></tr>
+<tr class="memdesc:a01ddba8c9d5bf4af6be422b3889a1005"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chooses a <a class="el" href="struct_move.html" title="Represents a possible move for a Tower.">Move</a> to be played using the Minimax algorithm.  <a href="_single_player_8c.html#a01ddba8c9d5bf4af6be422b3889a1005">More...</a><br /></td></tr>
+<tr class="separator:a01ddba8c9d5bf4af6be422b3889a1005"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3c92507d3bf6f4adb2db3cdbf75878f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_single_player_8c.html#af3c92507d3bf6f4adb2db3cdbf75878f">random_cpu</a> (<a class="el" href="struct_moves.html">Moves</a> *moves)</td></tr>
 <tr class="memdesc:af3c92507d3bf6f4adb2db3cdbf75878f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Random CPU player.  <a href="_single_player_8c.html#af3c92507d3bf6f4adb2db3cdbf75878f">More...</a><br /></td></tr>
 <tr class="separator:af3c92507d3bf6f4adb2db3cdbf75878f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -121,6 +128,85 @@ Functions</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>August 19, 2021</dd></dl>
 <p>This file contains all methods needed to play a player vs CPU game. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a5307f0fc5295602df1d60825c863b66a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5307f0fc5295602df1d60825c863b66a">&#9670;&nbsp;</a></span>evaluate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double evaluate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_board.html">Board</a> *&#160;</td>
+          <td class="paramname"><em>board</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Evaluates a <a class="el" href="struct_move.html" title="Represents a possible move for a Tower.">Move</a> using the <a class="el" href="struct_board.html" title="Game field.">Board</a>. </p>
+<p>Using the number of current pieces and current kings, calculates how good the situation for a player after performing a <a class="el" href="struct_move.html" title="Represents a possible move for a Tower.">Move</a>. The formula that is being used: (white_pieces - black_pieces) * (white_kings * 0.5 + black_kings * 0.5) indicates how the evaluation is calibrated. The best thing that can happen in a <a class="el" href="struct_move.html" title="Represents a possible move for a Tower.">Move</a> is conquering a piece, if no conquest is possible than we'll check if we can promote a Soldier to an Officer. These parameters can be adjusted as pleased. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">board</td><td>The board to be evaluated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A number indicating the evaluation </dd></dl>
+
+</div>
+</div>
+<a id="a01ddba8c9d5bf4af6be422b3889a1005"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01ddba8c9d5bf4af6be422b3889a1005">&#9670;&nbsp;</a></span>minimax()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double minimax </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_move.html">Move</a> *&#160;</td>
+          <td class="paramname"><em>move</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>depth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_tower_8h.html#ab87bacfdad76e61b9412d7124be44c1c">Color</a>&#160;</td>
+          <td class="paramname"><em>maximizing_player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_board.html">Board</a> *&#160;</td>
+          <td class="paramname"><em>board</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Chooses a <a class="el" href="struct_move.html" title="Represents a possible move for a Tower.">Move</a> to be played using the Minimax algorithm. </p>
+<p><b>Minimax</b> <b>Algorithm:</b> the Minimax algorithm creates a game tree based on all of the possible moves a player can make. Every level of the tree, indicated by the <code>depth</code>, contains the children of the <code>depth</code> + 1, meaning every <a class="el" href="struct_move.html" title="Represents a possible move for a Tower.">Move</a> the opposite user can make after the user has chosen one of the moves. Once the tree has been generated, it recursively traverses the tree adding a value to every move, this value depends on how useful the <a class="el" href="struct_move.html" title="Represents a possible move for a Tower.">Move</a> is for a user, for example if it can conquer a piece or make a piece become officer. The higher the value, the better it is for the <code>maximizing_player</code>. Then, it chooses between <a class="el" href="struct_moves.html" title="Array of Move.">Moves</a> of the same level comparing these values, if the turn that is being checked is the <code>maximizing_player's</code> one, chooses the highest value, if not it chooses the lowest, since it is the worst decision to make for the opponent. Finally, it copies the best <a class="el" href="struct_move.html" title="Represents a possible move for a Tower.">Move</a> into the <code>move</code> so that we can use it to perform that move. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">move</td><td>The <a class="el" href="struct_move.html" title="Represents a possible move for a Tower.">Move</a> that is being checked. </td></tr>
+    <tr><td class="paramname">depth</td><td>How many turns the AI is checking to choose the <a class="el" href="struct_move.html" title="Represents a possible move for a Tower.">Move</a>, the higher this number is, the higher the computing power is needed to search the <a class="el" href="struct_move.html" title="Represents a possible move for a Tower.">Move</a>. The computational complexity is <b>O(b^m)</b>, where b is the number of legal moves at each point and m is the maximum depth of the tree. </td></tr>
+    <tr><td class="paramname">maximizing_player</td><td>The player who is playing and who has to get the best <a class="el" href="struct_move.html" title="Represents a possible move for a Tower.">Move</a>. </td></tr>
+    <tr><td class="paramname">board</td><td>The board which we are the moves simulating on. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The best <a class="el" href="struct_move.html" title="Represents a possible move for a Tower.">Move</a> the AI can make. </dd></dl>
+
+</div>
+</div>
 <a id="af3c92507d3bf6f4adb2db3cdbf75878f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af3c92507d3bf6f4adb2db3cdbf75878f">&#9670;&nbsp;</a></span>random_cpu()</h2>
 

@@ -10,11 +10,62 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
+#include <math.h>
 #include "SinglePlayer.h"
 #include "Board.h"
 #include "Bool.h"
 #include "Game.h"
-#include "MinimaxAI.h"
+
+double evaluate(Board *board) {
+    int x, y, white_left = 0, black_left = 0, white_officers = 0, black_officers = 0;
+    Cell *cell;
+    for (x = 1; x <= board_get_rows(board); x++) {
+        for (y = 1; y <= board_get_columns(board); y++) {
+            cell = board_get_cell(board, x, y);
+            if (is_cell_in_board(cell) && !is_cell_empty(cell)) {
+                if (tower_get_color(cell_get_tower(board_get_cell(board, x, y))) == WHITE) {
+                    white_left++;
+                    if (tower_get_type(cell_get_tower(board_get_cell(board, x, y))) == OFFICER)
+                        white_officers++;
+                } else if (tower_get_type(cell_get_tower(board_get_cell(board, x, y))) == OFFICER) {
+                    black_officers++;
+                    black_left++;
+                }
+            }
+        }
+    }
+    return white_left - black_left + (white_officers * 0.5 - black_officers * 0.5);
+}
+
+double minimax(Move *move, int depth, Color turn, Board *board) {
+    double max_eval, min_eval, eval;
+    int i;
+    Moves *moves;
+    if (depth == 0)
+        return evaluate(board);
+    moves = calculate_moves(board, turn);
+    if (turn == WHITE) {
+        max_eval = (int) -INFINITY;
+        for (i = 0; i < moves_get_size(moves); i++) {
+            eval = minimax(move, depth - 1, BLACK, board);
+            if (max_eval < eval) {
+                max_eval = eval;
+                move_set_move(move, moves_get_move(moves, i));
+            }
+        }
+        return max_eval;
+    } else {
+        min_eval = INFINITY;
+        for (i = 0; i < moves_get_size(moves); i++) {
+            eval = minimax(move, depth - 1, WHITE, board);
+            if (min_eval > eval) {
+                min_eval = eval;
+                move_set_move(move, moves_get_move(moves, i));
+            }
+        }
+        return min_eval;
+    }
+}
 
 void random_cpu(Moves *moves) {
     int index;

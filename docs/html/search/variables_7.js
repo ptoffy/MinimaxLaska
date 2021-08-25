@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rows_200',['rows',['../struct_board.html#ab0678710e0cb026be902dbb6a8ad8c40',1,'Board']]]
+  ['rows_196',['rows',['../struct_board.html#ab0678710e0cb026be902dbb6a8ad8c40',1,'Board']]]
 ];
