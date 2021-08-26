@@ -29,17 +29,17 @@ var NAVTREE =
     [ "Struttura", "index.html#Struttura", null ],
     [ "Funzionalità", "index.html#Funzionalità", null ],
     [ "Minimax", "index.html#Minimax", null ],
-    [ "Progetto Lasca", "md__relazione.html", [
-      [ "Introduzione", "md__relazione.html#autotoc_md1", null ],
-      [ "Struttura", "md__relazione.html#autotoc_md2", [
-        [ "struct", "md__relazione.html#autotoc_md3", null ],
-        [ "enum", "md__relazione.html#autotoc_md4", null ]
+    [ "Progetto Lasca", "md__r_e_a_d_m_e.html", [
+      [ "Introduzione", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
+      [ "Struttura", "md__r_e_a_d_m_e.html#autotoc_md2", [
+        [ "struct", "md__r_e_a_d_m_e.html#autotoc_md3", null ],
+        [ "enum", "md__r_e_a_d_m_e.html#autotoc_md4", null ]
       ] ],
-      [ "Funzionalità", "md__relazione.html#autotoc_md5", [
-        [ "MiniMax", "md__relazione.html#autotoc_md6", null ]
+      [ "Funzionalità", "md__r_e_a_d_m_e.html#autotoc_md5", [
+        [ "MiniMax", "md__r_e_a_d_m_e.html#autotoc_md6", null ]
       ] ],
-      [ "Possibili miglioramenti", "md__relazione.html#autotoc_md7", null ],
-      [ "Difficoltà incontrate", "md__relazione.html#autotoc_md8", null ]
+      [ "Possibili miglioramenti", "md__r_e_a_d_m_e.html#autotoc_md7", null ],
+      [ "Difficoltà incontrate", "md__r_e_a_d_m_e.html#autotoc_md8", null ]
     ] ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],

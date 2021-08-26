@@ -1,7 +1,7 @@
 var searchData=
 [
   ['make_5fmove_48',['make_move',['../_moves_8c.html#af4e7efd7818aabb39534b9bf2a883c1d',1,'make_move(Move *move, bool conquer):&#160;Moves.c'],['../_moves_8h.html#af4e7efd7818aabb39534b9bf2a883c1d',1,'make_move(Move *move, bool conquer):&#160;Moves.c']]],
-  ['minimax_49',['minimax',['../_single_player_8c.html#a01ddba8c9d5bf4af6be422b3889a1005',1,'minimax(Move *move, int depth, Color turn, Board *board):&#160;SinglePlayer.c'],['../_single_player_8h.html#a94e78fbedcd95a515b62ec0b276f59e0',1,'minimax(Move *move, int depth, Color maximizing_player, Board *board):&#160;SinglePlayer.c']]],
+  ['minimax_49',['minimax',['../_single_player_8c.html#a94e78fbedcd95a515b62ec0b276f59e0',1,'minimax(Move *move, int depth, Color maximizing_player, Board *board):&#160;SinglePlayer.c'],['../_single_player_8h.html#a94e78fbedcd95a515b62ec0b276f59e0',1,'minimax(Move *move, int depth, Color maximizing_player, Board *board):&#160;SinglePlayer.c']]],
   ['move_50',['Move',['../struct_move.html',1,'Move'],['../_moves_8h.html#abf059843cfb9c8977466edd4f98ba545',1,'Move():&#160;Moves.h']]],
   ['move_5fget_5fconquer_51',['move_get_conquer',['../_moves_8c.html#a2160ee9c7ae10f0ae70ea4b600ca9bad',1,'move_get_conquer(Move *move):&#160;Moves.c'],['../_moves_8h.html#a2160ee9c7ae10f0ae70ea4b600ca9bad',1,'move_get_conquer(Move *move):&#160;Moves.c']]],
   ['move_5fget_5fdestination_5fcell_52',['move_get_destination_cell',['../_moves_8c.html#a573ac7ffcfc1e30b5435cae79f01447f',1,'move_get_destination_cell(Move *move):&#160;Moves.c'],['../_moves_8h.html#a573ac7ffcfc1e30b5435cae79f01447f',1,'move_get_destination_cell(Move *move):&#160;Moves.c']]],
